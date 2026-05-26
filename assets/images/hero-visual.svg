@@ -1,0 +1,139 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Studio backdrop -->
+    <radialGradient id="bgGlow" cx="50%" cy="0%" r="95%">
+      <stop offset="0%" stop-color="#f9fbff"></stop>
+      <stop offset="45%" stop-color="#e5f0ff"></stop>
+      <stop offset="100%" stop-color="#cbd5f5"></stop>
+    </radialGradient>
+
+    <!-- Main panel surface -->
+    <linearGradient id="panelSurface" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"></stop>
+      <stop offset="40%" stop-color="#f8fafc"></stop>
+      <stop offset="100%" stop-color="#eef2ff"></stop>
+    </linearGradient>
+
+    <!-- Accent blue pill -->
+    <linearGradient id="accentBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0a84ff"></stop>
+      <stop offset="100%" stop-color="#2563eb"></stop>
+    </linearGradient>
+
+    <!-- Chart area fill -->
+    <linearGradient id="chartFill" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.45"></stop>
+      <stop offset="100%" stop-color="#bfdbfe" stop-opacity="0.05"></stop>
+    </linearGradient>
+
+    <linearGradient id="panelEdge" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e5e7eb"></stop>
+      <stop offset="100%" stop-color="#cbd5f5"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Backdrop -->
+  <rect width="1600" height="1000" fill="url(#bgGlow)"></rect>
+
+  <!-- Soft halo behind panel -->
+  <ellipse cx="800" cy="520" rx="520" ry="260" fill="#93c5fd" opacity="0.22"></ellipse>
+
+  <!-- Floor shadow -->
+  <ellipse cx="800" cy="760" rx="520" ry="90" fill="#64748b" opacity="0.35"></ellipse>
+  <ellipse cx="800" cy="770" rx="420" ry="60" fill="#0f172a" opacity="0.32"></ellipse>
+
+  <!-- Main floating panel -->
+  <g transform="translate(270,190)">
+    <!-- Outer panel -->
+    <rect x="0" y="0" width="1060" height="560" rx="52" fill="url(#panelSurface)" stroke="url(#panelEdge)" stroke-width="1.8" opacity="0.98"></rect>
+    <!-- Inner border gloss -->
+    <rect x="14" y="16" width="1032" height="528" rx="44" fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="1.2"></rect>
+
+    <!-- Top highlight sheen -->
+    <rect x="0" y="0" width="1060" height="120" rx="52" fill="url(#panelSurface)" opacity="0.45"></rect>
+
+    <!-- Header bar -->
+    <g transform="translate(48,34)">
+      <rect x="0" y="0" width="964" height="52" rx="26" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"></rect>
+      <circle cx="26" cy="26" r="6" fill="#fb7185" opacity="0.95"></circle>
+      <circle cx="48" cy="26" r="6" fill="#facc15" opacity="0.95"></circle>
+      <circle cx="70" cy="26" r="6" fill="#4ade80" opacity="0.95"></circle>
+      <rect x="104" y="17" width="180" height="18" rx="9" fill="#e2e8f0"></rect>
+      <rect x="302" y="17" width="120" height="18" rx="9" fill="#e5e7eb" opacity="0.85"></rect>
+    </g>
+
+    <!-- Left column: overview -->
+    <g transform="translate(68,132)">
+      <!-- Summary card -->
+      <rect x="0" y="0" width="440" height="200" rx="26" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2" opacity="0.98"></rect>
+      <!-- Title -->
+      <rect x="26" y="22" width="210" height="14" rx="7" fill="#cbd5f5"></rect>
+      <!-- Lines -->
+      <rect x="26" y="56" width="290" height="11" rx="5.5" fill="#e5e7eb"></rect>
+      <rect x="26" y="80" width="240" height="11" rx="5.5" fill="#e5e7eb" opacity="0.9"></rect>
+      <rect x="26" y="104" width="260" height="11" rx="5.5" fill="#e5e7eb" opacity="0.85"></rect>
+
+      <!-- Accent pill -->
+      <rect x="26" y="138" width="132" height="28" rx="14" fill="url(#accentBlue)"></rect>
+      <rect x="174" y="142" width="108" height="18" rx="9" fill="#e2e8f0" opacity="0.92"></rect>
+
+      <!-- Two smaller cards -->
+      <g transform="translate(0,220)">
+        <rect x="0" y="0" width="208" height="112" rx="22" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.1"></rect>
+        <rect x="232" y="0" width="208" height="112" rx="22" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.1"></rect>
+
+        <rect x="22" y="18" width="130" height="11" rx="5.5" fill="#dbeafe"></rect>
+        <rect x="22" y="44" width="96" height="9" rx="4.5" fill="#e5e7eb"></rect>
+        <rect x="22" y="64" width="76" height="9" rx="4.5" fill="#e5e7eb" opacity="0.9"></rect>
+
+        <rect x="254" y="18" width="120" height="11" rx="5.5" fill="#e2e8f0"></rect>
+        <rect x="254" y="44" width="90" height="9" rx="4.5" fill="#e5e7eb"></rect>
+        <rect x="254" y="64" width="68" height="9" rx="4.5" fill="#e5e7eb" opacity="0.9"></rect>
+      </g>
+    </g>
+
+    <!-- Right column: chart + checklist -->
+    <g transform="translate(556,132)">
+      <!-- Chart card -->
+      <rect x="0" y="0" width="388" height="236" rx="26" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2"></rect>
+      <!-- Chart title -->
+      <rect x="26" y="22" width="170" height="13" rx="6.5" fill="#cbd5f5"></rect>
+      <!-- Chart grid -->
+      <g transform="translate(26,64)" stroke="#e5e7eb" stroke-width="1">
+        <line x1="0" y1="0" x2="332" y2="0"></line>
+        <line x1="0" y1="32" x2="332" y2="32"></line>
+        <line x1="0" y1="64" x2="332" y2="64"></line>
+        <line x1="0" y1="96" x2="332" y2="96"></line>
+      </g>
+      <!-- Area chart -->
+      <path d="M26 144
+               C80 126 118 92 168 96
+               C218 100 256 70 320 78
+               L320 170 L26 170 Z" fill="url(#chartFill)" opacity="0.7"></path>
+      <!-- Line on top -->
+      <path d="M26 144
+               C80 126 118 92 168 96
+               C218 100 256 70 320 78" fill="none" stroke="#0f9cf5" stroke-width="3" stroke-linecap="round"></path>
+
+      <!-- Checklist card -->
+      <rect x="0" y="256" width="388" height="180" rx="26" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2"></rect>
+      <rect x="26" y="276" width="190" height="13" rx="6.5" fill="#cbd5f5"></rect>
+      <g transform="translate(26,304)">
+        <circle cx="9" cy="9" r="6" fill="#0a84ff"></circle>
+        <rect x="26" y="4" width="200" height="10" rx="5" fill="#e5e7eb"></rect>
+      </g>
+      <g transform="translate(26,334)" opacity="0.95">
+        <circle cx="9" cy="9" r="6" fill="#22c55e"></circle>
+        <rect x="26" y="4" width="176" height="10" rx="5" fill="#e5e7eb"></rect>
+      </g>
+      <g transform="translate(26,364)" opacity="0.9">
+        <circle cx="9" cy="9" r="6" fill="#f97316"></circle>
+        <rect x="26" y="4" width="152" height="10" rx="5" fill="#e5e7eb"></rect>
+      </g>
+    </g>
+  </g>
+
+  <!-- Accent dots -->
+  <circle cx="262" cy="228" r="5" fill="#0a84ff" opacity="0.7"></circle>
+  <circle cx="1350" cy="260" r="5" fill="#2563eb" opacity="0.6"></circle>
+</svg>

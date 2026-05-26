@@ -1,0 +1,59 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="sfBg" cx="50%" cy="0%" r="90%">
+      <stop offset="0%" stop-color="#eff6ff"></stop>
+      <stop offset="45%" stop-color="#dbeafe"></stop>
+      <stop offset="100%" stop-color="#bfdbfe"></stop>
+    </radialGradient>
+
+    <linearGradient id="cardSurface" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"></stop>
+      <stop offset="50%" stop-color="#f7f7fa"></stop>
+      <stop offset="100%" stop-color="#eef2ff"></stop>
+    </linearGradient>
+
+    <linearGradient id="accentChip" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0a84ff"></stop>
+      <stop offset="100%" stop-color="#2563eb"></stop>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="400" height="400" rx="32" fill="url(#sfBg)"></rect>
+
+  <!-- Base shadow -->
+  <ellipse cx="200" cy="290" rx="128" ry="30" fill="#1e293b" opacity="0.26"></ellipse>
+  <ellipse cx="200" cy="296" rx="96" ry="18" fill="#020617" opacity="0.35"></ellipse>
+
+  <!-- Back card -->
+  <g opacity="0.65">
+    <rect x="92" y="100" width="220" height="150" rx="26" fill="url(#cardSurface)" stroke="#cbd5f5" stroke-width="1.2"></rect>
+  </g>
+
+  <!-- Middle card (slight offset) -->
+  <g transform="translate(14,16)" opacity="0.9">
+    <rect x="92" y="100" width="220" height="150" rx="26" fill="url(#cardSurface)" stroke="#cbd5f5" stroke-width="1.2"></rect>
+  </g>
+
+  <!-- Foreground card -->
+  <g>
+    <rect x="78" y="114" width="244" height="162" rx="28" fill="url(#cardSurface)" stroke="#cbd5f5" stroke-width="1.4"></rect>
+
+    <!-- Top "title" -->
+    <rect x="104" y="132" width="150" height="14" rx="7" fill="#dbeafe"></rect>
+
+    <!-- Lines -->
+    <rect x="104" y="162" width="184" height="10" rx="5" fill="#e5e7eb"></rect>
+    <rect x="104" y="184" width="166" height="10" rx="5" fill="#e5e7eb" opacity="0.95"></rect>
+    <rect x="104" y="206" width="140" height="10" rx="5" fill="#e5e7eb" opacity="0.9"></rect>
+
+    <!-- Accent chips -->
+    <rect x="104" y="230" width="86" height="20" rx="10" fill="url(#accentChip)"></rect>
+    <rect x="198" y="232" width="70" height="16" rx="8" fill="#e5e7eb" opacity="0.9"></rect>
+    <circle cx="292" cy="162" r="7" fill="#0a84ff" opacity="0.95"></circle>
+  </g>
+
+  <!-- Accent dots -->
+  <circle cx="88" cy="90" r="4" fill="#0a84ff" opacity="0.75"></circle>
+  <circle cx="314" cy="82" r="4" fill="#2563eb" opacity="0.7"></circle>
+</svg>
