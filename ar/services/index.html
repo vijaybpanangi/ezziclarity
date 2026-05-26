@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="خدمات Ezzi Clarity للمؤسسات والطلاب وأصحاب العمل — نجاح الطلاب، التعلّم التجريبي، والانتقال المهني في أونتاريو.">
+  <meta property="og:title" content="الخدمات — Ezzi Clarity Educational Consulting">
+  <meta property="og:description" content="دعم دافئ ومنظّم للمؤسسات والطلاب وأصحاب العمل.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="index.html">
+  <link rel="stylesheet" href="../../style.css">
+  
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta property="og:image" content="../../assets/images/og-ezzi-clarity.png">
+  <title>الخدمات — إيزي كلاريتي</title>
+</head>
+<body class="static-site">
+
+<a class="skip-link" href="#main-content">الانتقال إلى المحتوى الرئيسي</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a href="../index.html" class="brand" aria-label="إيزي كلاريتي — الرئيسية">
+      <img class="brand-logo" src="../../assets/images/logo-ec.svg" alt="">
+      <div class="brand-text">
+        <span class="brand-name">إيزي كلاريتي</span>
+      </div>
+    </a>
+
+    <!-- Keep nav LTR for visual stability -->
+    <nav class="main-nav" dir="ltr" aria-label="التنقل الرئيسي">
+      <a href="../index.html"           class="nav-link ">الرئيسية</a>
+      <a href="../about/index.html"     class="nav-link ">من نحن</a>
+      <a href="index.html"  class="nav-link nav-active">الخدمات</a>
+      <a href="../resources/index.html" class="nav-link ">الموارد</a>
+      <a href="../contact/index.html"   class="nav-link ">تواصل معنا</a>
+    </nav>
+
+    <div class="lang-switch" dir="ltr" aria-label="اللغة">
+      <a class="nav-link" href="../../en/services/index.html">EN</a>
+      <a class="nav-link" href="../../fr/services/index.html">FR</a>
+      <a class="nav-link nav-cta" href="index.html" aria-current="true">AR</a>
+    </div>
+
+    <a href="../contact/index.html" class="header-cta">احجز مكالمة</a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="فتح القائمة">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <nav class="mobile-nav-links" dir="rtl" aria-label="التنقل على الجوال">
+    <a href="../index.html"           class="">الرئيسية</a>
+    <a href="../about/index.html"     class="">من نحن</a>
+    <a href="index.html"  class="nav-active">الخدمات</a>
+    <a href="../resources/index.html" class="">الموارد</a>
+    <a href="../contact/index.html"   class="">تواصل معنا</a>
+  </nav>
+  <div class="mobile-lang" dir="ltr">
+    <a href="../../en/services/index.html">EN</a>
+    <a href="../../fr/services/index.html">FR</a>
+    <a class="nav-cta" href="index.html">AR</a>
+  </div>
+  <a href="../contact/index.html" class="mobile-cta">احجز مكالمة تعريفية</a>
+</div>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var drawer = document.getElementById('mobile-nav');
+  if(!btn || !drawer) return;
+  btn.addEventListener('click', function(){
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    drawer.classList.toggle('is-open', !open);
+    drawer.setAttribute('aria-hidden', String(open));
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && drawer.classList.contains('is-open')){
+      btn.setAttribute('aria-expanded','false');
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden','true');
+      btn.focus();
+    }
+  });
+})();
+</script>
+
+<main id="main-content">
+
+  <section class="page-header">
+    <div class="container">
+      <p class="eyebrow">خدماتنا</p>
+      <h1>دعم عملي.<br><em>اتجاه واضح.</em></h1>
+      <p>
+        سواء كنت طالبًا يبحث عن توجيه، أو مؤسسة تسعى لتحسين برامجها، أو صاحب عمل يريد التعامل مع الجيل القادم من المواهب —
+        نلتقيك حيث أنت، بإرشاد عملي وصادق.
+      </p>
+      <p>
+        وينظَّم عملنا عبر ثلاثة مجالات مترابطة. كل مجال يخاطب جزءًا مختلفًا من هذا النظام، لكن الغاية المشتركة تظل واحدة: مزيد من الوضوح، وتوافق أقوى، ونتائج أكثر فائدة لمن يشارك في التجربة.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">ما نقدّمه</p>
+        <h2>ثلاثة مجالات دعم مركّز</h2>
+        <p>كل خدمة مصمّمة حول احتياجات حقيقية — لا أطر نظرية. عملية وقابلة للتنفيذ ومحدّدة النطاق.</p>
+      </div>
+      <div class="grid grid-3">
+
+        <article class="service-card card-inst">
+          <div class="service-card-img">
+            <img src="../../assets/images/services-institution.png"
+                 alt="أعضاء هيئة التدريس والموظفون يتعاونون" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <span class="svc-pill inst">المؤسسات</span>
+            <h3>خدمات للمؤسسات</h3>
+            <p>دعم للجامعات والكليات التي ترغب في تعزيز التعلّم التجريبي ودمج الطلاب الدوليين والبرامج الأكاديمية.</p>
+            <ul class="checklist">
+              <li>تصميم برامج التعلّم التجريبي</li>
+              <li>دعم اندماج الطلاب الدوليين</li>
+              <li>تصميم برامج النجاح الأكاديمي</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="service-card card-stud">
+          <div class="service-card-img">
+            <img src="../../assets/images/services-student.png"
+                 alt="طالب ومستشار في حوار" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <span class="svc-pill stud">الطلاب</span>
+            <h3>خدمات للطلاب</h3>
+            <p>دعم الانتقال الأكاديمي والمهني للطلاب المحليين والدوليين الذين يستفيدون من التوجيه المنظّم والتوقعات الواضحة.</p>
+            <ul class="checklist">
+              <li>توجيه الانتقال الأكاديمي والمهني</li>
+              <li>ورش التواصل المهني</li>
+              <li>استراتيجيات الدراسة ومهارات التعلّم</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="service-card card-empl">
+          <div class="service-card-img">
+            <img src="../../assets/images/services-employer.png"
+                 alt="صاحب عمل يتحدث مع مواهب في بداية مسيرتهم" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <span class="svc-pill empl">أصحاب العمل</span>
+            <h3>خدمات لأصحاب العمل</h3>
+            <p>استشارات في التوظيف الجامعي واستقطاب المواهب في بداية مسيرتهم لأصحاب العمل الذين يعملون مع الطلاب والخريجين.</p>
+            <ul class="checklist">
+              <li>استراتيجية التوظيف الجامعي</li>
+              <li>تخطيط استقطاب المواهب</li>
+              <li>تحديد موقع العلامة كصاحب عمل</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">كيف نعمل</p>
+        <h2>عملية مبنية على الاستماع أولاً</h2>
+        <p>كل مشروع يبدأ بمحادثة حقيقية — نحتاج أن نفهم وضعك قبل أن نقترح أي شيء مفيد.</p>
+      </div>
+      <div class="process process-two-column">
+        <div class="process-step">
+          <div class="process-number">١</div>
+          <div>
+            <h3>الاستماع وفهم السياق</h3>
+            <p>نبدأ بمحادثة منظّمة لفهم سياقك وبرامجك الحالية وقيودك والنتائج التي تهمك أكثر.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">٢</div>
+          <div>
+            <h3>توضيح الأهداف والنطاق</h3>
+            <p>نحدد معًا أهدافًا واقعية ونطاقًا واضحًا يتناسب مع الموارد المتاحة والواقع المؤسسي.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">٣</div>
+          <div>
+            <h3>تصميم خطوات عملية</h3>
+            <p>نضع خطوات يمكن تنفيذها فعليًا، مع التركيز على الوضوح والبساطة وتجربة الطلاب والموظفين.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">٤</div>
+          <div>
+            <h3>دعم التنفيذ والتأمل</h3>
+            <p>عند الاقتضاء، نبقى متاحين لدعم المراحل الأولى من التنفيذ والتأمل بصدق فيما ينجح وما يحتاج تعديلاً.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">أسئلة شائعة</p>
+        <h2>ما يُسألنا كثيرًا</h2>
+      </div>
+      <div style="display:grid; gap:1rem; max-width:800px;">
+        <div class="faq">
+          <p class="faq-q">هل تقدّمون خدمات في مجال الهجرة أو التأشيرات؟</p>
+          <p class="faq-a">لا. لا تقدّم Ezzi Clarity أي استشارات في الهجرة أو التأشيرات. نحن نركّز حصريًا على الانتقال الأكاديمي ونجاح الطلاب والتعلّم التجريبي.</p>
+        </div>
+        <div class="faq">
+          <p class="faq-q">هل تعملون مع مؤسسات خارج أونتاريو؟</p>
+          <p class="faq-a">تركيزنا الأساسي هو جنوب أونتاريو. بالنسبة للمؤسسات خارج هذه المنطقة، ندرس التوافق حالة بحالة حسب النطاق وطريقة التقديم.</p>
+        </div>
+        <div class="faq">
+          <p class="faq-q">هل تقدّمون دعمًا فرديًا للطلاب؟</p>
+          <p class="faq-a">نعم. نقدّم توجيهًا فرديًا للانتقال الأكاديمي والمهني وورشًا مخصصة للطلاب الذين يرغبون في إرشاد منظّم.</p>
+        </div>
+        <div class="faq">
+          <p class="faq-q">كم يستغرق المشروع النموذجي؟</p>
+          <p class="faq-a">يعتمد كليًا على النطاق. بعض المشاريع تقتصر على ورشة واحدة أو استشارة. أخرى تتضمن عملًا استشاريًا مستمرًا على مدار فصل دراسي أو سنة أكاديمية. نتفق دائمًا على النطاق قبل البدء.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-cta">
+    <div class="container section-cta-inner">
+      <div>
+        <p class="eyebrow">هل أنت مستعد للخطوة الأولى؟</p>
+        <h2>لنكتشف إن كنا الشريك المناسب.</h2>
+        <p>مكالمة تعريفية قصيرة هي أفضل نقطة بداية — بلا التزام، مجرد حوار صادق حول وضعك.</p>
+      </div>
+      <div>
+        <a href="../contact/index.html" class="btn-primary btn-lg">احجز مكالمة مجانية</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" dir="rtl">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <img class="footer-logo" src="../../assets/images/logo-ec.svg" alt="شعار إيزي كلاريتي">
+        <span class="footer-name">إيزي كلاريتي للاستشارات التعليمية</span>
+        <p class="footer-desc">استشارات في نجاح الطلاب والتعلّم التجريبي للطلاب والمؤسسات وأصحاب العمل في جنوب أونتاريو. تأسست على يد أروى عزّي، ماجستير في التربية (OISE، جامعة تورونتو).</p>
+        <p class="footer-desc" style="margin-top:0.25rem; font-style:italic;">جميع خدماتنا أكاديمية ومهنية. لا نقدم أي استشارات في مجال الهجرة أو التأشيرات.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>التنقل</h4>
+        <ul>
+          <li><a href="../index.html">الرئيسية</a></li>
+          <li><a href="../about/index.html">من نحن</a></li>
+          <li><a href="index.html">الخدمات</a></li>
+          <li><a href="../resources/index.html">الموارد</a></li>
+          <li><a href="../contact/index.html">تواصل معنا</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col" dir="ltr">
+        <h4 dir="rtl">تواصل معنا</h4>
+        <ul>
+          <li><a href="tel:+16475059487">+1 (647) 505-9487</a></li>
+          <li><a href="tel:+12263368100">+1 (226) 336-8100</a></li>
+          <li><a href="mailto:info@ezziclarity.ca">info@ezziclarity.ca</a></li>
+          <li style="color:rgba(255,255,255,0.45); font-size:0.8rem; margin-top:0.5rem; direction:rtl;">منطقة واترلو، أونتاريو</li>
+          <li><a href="https://book.titan.email/ezziclarity/intro" target="_blank" rel="noopener">احجز مكالمة ←</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom" dir="ltr">
+      <p>© 2026 إيزي كلاريتي للاستشارات التعليمية</p>
+      <div class="footer-lang">
+        <a href="../../en/index.html">EN</a>
+        <a href="../../fr/index.html">FR</a>
+        <a class="active" href="../index.html">AR</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

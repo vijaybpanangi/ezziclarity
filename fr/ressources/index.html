@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ressources pratiques sur la transition académique, l'apprentissage expérientiel et le développement en début de carrière — pour étudiants, établissements et employeurs.">
+  <meta property="og:title" content="Ressources — Ezzi Clarity Educational Consulting">
+  <meta property="og:description" content="Des repères concrets sur les transitions académiques, l'apprentissage expérientiel et le développement professionnel.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="index.html">
+  <link rel="stylesheet" href="../../style.css">
+  
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta property="og:image" content="../../assets/images/og-ezzi-clarity.png">
+  <title>Ressources — Ezzi Clarity</title>
+</head>
+<body class="page-resources">
+
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a href="../index.html" class="brand" aria-label="Ezzi Clarity — Accueil">
+      <img class="brand-logo" src="../../assets/images/logo-ec.svg" alt="">
+      <div class="brand-text">
+        <span class="brand-name">Ezzi Clarity</span>
+      </div>
+    </a>
+
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="../index.html"           class="nav-link ">Accueil</a>
+      <a href="../a-propos/index.html"  class="nav-link ">À propos</a>
+      <a href="../services/index.html"  class="nav-link ">Services</a>
+      <a href="index.html" class="nav-link nav-active">Ressources</a>
+      <a href="../contact/index.html"   class="nav-link ">Contact</a>
+    </nav>
+
+    <div class="lang-switch" aria-label="Langue">
+      <a class="nav-link" href="../../en/resources/index.html">EN</a>
+      <a class="nav-link nav-cta" href="index.html" aria-current="true">FR</a>
+      <a class="nav-link" href="../../ar/resources/index.html">AR</a>
+    </div>
+
+    <a href="../contact/index.html" class="header-cta">Prendre rendez-vous</a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <nav class="mobile-nav-links" aria-label="Navigation mobile">
+    <a href="../index.html"           class="">Accueil</a>
+    <a href="../a-propos/index.html"  class="">À propos</a>
+    <a href="../services/index.html"  class="">Services</a>
+    <a href="index.html" class="nav-active">Ressources</a>
+    <a href="../contact/index.html"   class="">Contact</a>
+  </nav>
+  <div class="mobile-lang">
+    <a href="../../en/resources/index.html">EN</a>
+    <a class="nav-cta" href="index.html">FR</a>
+    <a href="../../ar/resources/index.html">AR</a>
+  </div>
+  <a href="../contact/index.html" class="mobile-cta">Prendre un rendez-vous</a>
+</div>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var drawer = document.getElementById('mobile-nav');
+  if(!btn || !drawer) return;
+  btn.addEventListener('click', function(){
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    drawer.classList.toggle('is-open', !open);
+    drawer.setAttribute('aria-hidden', String(open));
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && drawer.classList.contains('is-open')){
+      btn.setAttribute('aria-expanded','false');
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden','true');
+      btn.focus();
+    }
+  });
+})();
+</script>
+
+<main id="main-content">
+
+  <section class="page-header">
+    <div class="container">
+      <p class="eyebrow">Outils et repères</p>
+      <h1>Des perspectives concrètes pour<br>des décisions éclairées.</h1>
+      <p>
+        Ces sujets reflètent les questions que nous entendons le plus souvent de la part des étudiants, des établissements et des employeurs.
+        Chacun est ancré dans l'expérience concrète — pas dans la théorie abstraite.
+      </p>
+      <p>
+        L'objectif de cet espace n'est pas d'accumuler de l'information pour elle-même, mais d'offrir un cadre utile, des repères plus clairs et des pistes réellement exploitables pour les décisions qui comptent.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Pour les étudiants et les établissements</p>
+        <h2>Transition académique</h2>
+        <p>Ce qui aide les étudiants à aborder la vie postsecondaire canadienne avec des attentes réalistes et une vision claire de ce qui les attend.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="service-card card-inst">
+          <div class="service-card-img">
+            <img src="../../assets/images/resources-academic-1.png"
+                 alt="Illustration des attentes académiques" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <span class="svc-pill inst">Académique</span>
+            <h3>Comprendre les attentes académiques au Canada</h3>
+            <p>Un aperçu concis du fonctionnement des salles de classe canadiennes — participation, évaluation, heures de disponibilité et soutien académique.</p>
+          </div>
+        </article>
+        <article class="service-card card-inst">
+          <div class="service-card-img">
+            <img src="../../assets/images/resources-academic-2.png"
+                 alt="Illustration des stratégies d'étude" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <span class="svc-pill inst">Méthodes</span>
+            <h3>Construire des stratégies d'étude durables</h3>
+            <p>Des approches concrètes de planification, prise de notes, lecture et préparation aux examens qui aident les étudiants à gérer leur charge de travail.</p>
+          </div>
+        </article>
+        <article class="service-card card-inst">
+          <div class="service-card-img">
+            <img src="../../assets/images/resources-academic-3.png"
+                 alt="Illustration de la rétroaction" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <span class="svc-pill inst">Rétroaction</span>
+            <h3>Travailler avec la rétroaction</h3>
+            <p>Comment recevoir, comprendre et utiliser la rétroaction académique pour en faire un outil de progression plutôt qu'une source d'anxiété.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Pour les établissements et les employeurs</p>
+        <h2>Apprentissage expérientiel</h2>
+        <p>Principes de conception et considérations pratiques pour les établissements qui créent ou renforcent des programmes d'apprentissage intégré au travail.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="service-card card-stud">
+          <div class="service-card-img">
+            <img src="../../assets/images/resources-experiential-1.png"
+                 alt="Illustration de l'apprentissage expérientiel" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <span class="svc-pill stud">Aperçu</span>
+            <h3>Comment l'apprentissage expérientiel améliore les résultats</h3>
+            <p>Un survol du WIL, des stages coop, des stages et des projets appliqués — et comment ils renforcent la confiance et la préparation à la carrière.</p>
+          </div>
+        </article>
+        <article class="service-card card-stud">
+          <div class="service-card-img">
+            <img src="../../assets/images/resources-experiential-2.png"
+                 alt="Illustration de la conception de programme" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <span class="svc-pill stud">Conception</span>
+            <h3>Concevoir des programmes d'apprentissage expérientiel</h3>
+            <p>Éléments clés à considérer pour planifier ou affiner des offres d'apprentissage expérientiel — résultats clairs, préparation des étudiants, communication avec les partenaires.</p>
+          </div>
+        </article>
+        <article class="service-card card-stud">
+          <div class="service-card-img">
+            <img src="../../assets/images/resources-experiential-3.png"
+                 alt="Illustration de partenariat employeur" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <span class="svc-pill stud">Partenariats</span>
+            <h3>Bâtir des partenariats employeurs durables</h3>
+            <p>Repères pratiques pour entretenir des relations employeurs qui soutiennent les étudiants sans surcharger la capacité institutionnelle ou celle des employeurs.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Pour les étudiants et les employeurs</p>
+        <h2>Développement en début de carrière</h2>
+        <p>Des cadres pour aider les étudiants et les nouveaux diplômés à vivre cette transition de la vie académique au monde professionnel avec plus d'intention et moins d'incertitude.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="service-card card-empl">
+          <div class="service-card-img">
+            <img src="../../assets/images/resources-earlycareer-1.png"
+                 alt="Illustration de la préparation au début de carrière" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <span class="svc-pill empl">Préparation</span>
+            <h3>Préparer les talents émergents pour le monde du travail</h3>
+            <p>Comment aider les étudiants à passer de la confiance en classe à la préparation au milieu professionnel — avec une vision réaliste des compétences et de l'expérience.</p>
+          </div>
+        </article>
+        <article class="service-card card-empl">
+          <div class="service-card-img">
+            <img src="../../assets/images/resources-earlycareer-2.png"
+                 alt="Illustration de la marque employeur" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <span class="svc-pill empl">Employeurs</span>
+            <h3>Positionnement de la marque employeur auprès des étudiants</h3>
+            <p>Comment présenter son travail, sa culture et ses attentes de façon à résonner avec les étudiants, en restant transparent sur les exigences et les limites.</p>
+          </div>
+        </article>
+        <article class="service-card card-empl">
+          <div class="service-card-img">
+            <img src="../../assets/images/resources-earlycareer-3.png"
+                 alt="Illustration de conversations de carrière" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <span class="svc-pill empl">Conversations</span>
+            <h3>Soutenir des conversations de carrière réalistes</h3>
+            <p>Des approches pour parler de carrière avec les étudiants en équilibrant aspiration et honnêteté, et en clarifiant opportunités et limites avec bienveillance.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-cta">
+    <div class="container section-cta-inner">
+      <div>
+        <p class="eyebrow">Pour aller plus loin</p>
+        <h2>D'autres ressources arrivent bientôt.</h2>
+        <p>Cette bibliothèque continuera de s'enrichir. En attendant, ces thèmes guident tout notre travail de conseil — contactez-nous si vous avez une question spécifique.</p>
+      </div>
+      <div>
+        <a href="../contact/index.html" class="btn-primary btn-lg">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <img class="footer-logo" src="../../assets/images/logo-ec.svg" alt="Ezzi Clarity logo">
+        <span class="footer-name">Ezzi Clarity Educational Consulting</span>
+        <p class="footer-desc">Cabinet-conseil en réussite étudiante et apprentissage expérientiel pour étudiants, établissements et employeurs en Ontario. Fondé par Arva Ezzi, M.Éd. (OISE, Université de Toronto).</p>
+        <p class="footer-desc" style="margin-top:0.25rem; font-style:italic;">Tous nos services sont axés sur l'académique et la carrière. Aucun conseil en immigration ou en visas n'est offert.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="../a-propos/index.html">À propos</a></li>
+          <li><a href="../services/index.html">Services</a></li>
+          <li><a href="index.html">Ressources</a></li>
+          <li><a href="../contact/index.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+16475059487">+1 (647) 505-9487 (Mobile)</a></li>
+          <li><a href="tel:+12263368100">+1 (226) 336-8100 (Bureau)</a></li>
+          <li><a href="mailto:info@ezziclarity.ca">info@ezziclarity.ca</a></li>
+          <li style="color:rgba(255,255,255,0.45); font-size:0.8rem; margin-top:0.5rem;">Région de Waterloo, Ontario</li>
+          <li><a href="https://book.titan.email/ezziclarity/intro" target="_blank" rel="noopener">Réserver un appel →</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Ezzi Clarity Educational Consulting Services Inc. Tous droits réservés.</p>
+      <div class="footer-lang">
+        <a href="../../en/index.html">EN</a>
+        <a class="active" href="../index.html">FR</a>
+        <a href="../../ar/index.html">AR</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Ezzi Clarity — book an intro call or reach us by phone or email. Based in Waterloo Region, Ontario.">
+  <meta property="og:title" content="Contact — Ezzi Clarity Educational Consulting">
+  <meta property="og:description" content="Book a free intro call or reach us directly. We're based in Waterloo Region, Ontario and always happy to talk.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="index.html">
+  <link rel="stylesheet" href="../../style.css">
+  
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta property="og:image" content="../../assets/images/og-ezzi-clarity.png">
+  <title>Contact — Ezzi Clarity</title>
+</head>
+<body class="static-site">
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a href="../index.html" class="brand" aria-label="Ezzi Clarity — Home">
+      <img class="brand-logo" src="../../assets/images/logo-ec.svg" alt="">
+      <div class="brand-text">
+        <span class="brand-name">Ezzi Clarity</span>
+      </div>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="../index.html"           class="nav-link ">Home</a>
+      <a href="../about/index.html"     class="nav-link ">About</a>
+      <a href="../services/index.html"  class="nav-link ">Services</a>
+      <a href="../resources/index.html" class="nav-link ">Resources</a>
+      <a href="index.html"   class="nav-link nav-active">Contact</a>
+    </nav>
+
+    <div class="lang-switch" aria-label="Language">
+      <a class="nav-link nav-cta" href="index.html" aria-current="true">EN</a>
+      <a class="nav-link" href="../../fr/contact/index.html">FR</a>
+      <a class="nav-link" href="../../ar/contact/index.html">AR</a>
+    </div>
+
+    <a href="index.html" class="header-cta">Book a Call</a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- Mobile nav drawer -->
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <nav class="mobile-nav-links" aria-label="Mobile navigation">
+    <a href="../index.html"           class="">Home</a>
+    <a href="../about/index.html"     class="">About</a>
+    <a href="../services/index.html"  class="">Services</a>
+    <a href="../resources/index.html" class="">Resources</a>
+    <a href="index.html"   class="nav-active">Contact</a>
+  </nav>
+  <div class="mobile-lang">
+    <a class="nav-cta" href="index.html">EN</a>
+    <a href="../../fr/contact/index.html">FR</a>
+    <a href="../../ar/contact/index.html">AR</a>
+  </div>
+  <a href="index.html" class="mobile-cta">Book an Intro Call</a>
+</div>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var drawer = document.getElementById('mobile-nav');
+  if(!btn || !drawer) return;
+  btn.addEventListener('click', function(){
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    drawer.classList.toggle('is-open', !open);
+    drawer.setAttribute('aria-hidden', String(open));
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && drawer.classList.contains('is-open')){
+      btn.setAttribute('aria-expanded','false');
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden','true');
+      btn.focus();
+    }
+  });
+})();
+</script>
+
+<main id="main-content">
+
+  <!-- ── PAGE HEADER ──────────────────────────── -->
+  <section class="page-header">
+    <div class="container">
+      <p class="eyebrow">We'd love to hear from you</p>
+      <h1>Start with a<br>clear conversation.</h1>
+      <p>A short introductory call is the best place to begin — focused, practical, and designed to understand where you are and how we can help.</p>
+      <p>Whether you are reaching out as a student, an institutional leader, or an employer, the purpose of the first conversation is simple: understand your context, clarify what you need, and determine whether there is a sensible next step.</p>
+      <div class="hero-actions">
+        <a class="btn-primary btn-lg" href="https://book.titan.email/ezziclarity/intro" target="_blank" rel="noopener noreferrer">
+          Book an Intro Call
+        </a>
+        <a class="btn-secondary" href="tel:+16475059487">Call Us Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT LAYOUT ───────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- LEFT: Contact details -->
+        <div class="card contact-form contact-card">
+          <h2 style="margin-top:0;">Contact Information</h2>
+          <p class="muted">Mobile is the fastest way to reach us. If we miss you, leave a voicemail and we'll call you back promptly.</p>
+          <p class="muted">There is no obligation attached to the first conversation. It is simply a practical way to understand your situation, answer initial questions, and see whether our work is the right fit for what you need.</p>
+
+          <ul class="contact-list">
+            <li>
+              <strong>Mobile (fastest):</strong>
+              <a href="tel:+16475059487"><span class="ltr">+1 (647) 505-9487</span></a>
+            </li>
+            <li>
+              <strong>Office:</strong>
+              <a href="tel:+12263368100"><span class="ltr">+1 (226) 336-8100</span></a>
+            </li>
+            <li>
+              <strong>Email:</strong>
+              <a href="mailto:info@ezziclarity.ca"><span class="ltr">info@ezziclarity.ca</span></a>
+            </li>
+          </ul>
+
+          <h3 style="margin-top:1.5rem; margin-bottom:0.4rem;">Business Address</h3>
+          <p class="muted" style="margin-bottom:0;">180 Northfield Drive West, Unit 4, 1st Floor<br>Waterloo, ON N2L 0C7, Canada</p>
+
+          <h3 style="margin-top:1.25rem; margin-bottom:0.4rem;">Registered Office</h3>
+          <p class="muted" style="margin-bottom:0;">650 West Georgia Street, Suite 2110<br>Vancouver, BC V6B 4N8, Canada</p>
+
+          <div style="margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid var(--border);">
+            <a class="btn-primary" href="https://book.titan.email/ezziclarity/intro" target="_blank" rel="noopener noreferrer" style="width:100%; justify-content:center;">
+              Book a Free Intro Call →
+            </a>
+          </div>
+
+          <p class="small muted" style="margin-top:1rem; margin-bottom:0;">
+            All services are academic, career, and institution-focused. We do not provide immigration or visa advice.
+          </p>
+          <p class="small muted" style="margin-top:0.75rem; margin-bottom:0;">
+            If your question is still taking shape, that is perfectly fine. We can often help clarify the issue before discussing any larger scope of support.
+          </p>
+        </div>
+
+        <!-- RIGHT: Image + Map -->
+        <div style="display:grid; gap:1.25rem;">
+
+          <div class="card contact-photo-card" style="overflow:hidden; border-radius:var(--r-lg);">
+            <img
+              src="../../assets/images/contact-advisor-student.png"
+              alt="Advisor and student in conversation"
+              style="display:block;"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="card">
+            <h3 style="margin-top:0; margin-bottom:0.75rem;">Business Office</h3>
+            <div style="border-radius:var(--r-md); overflow:hidden; border:1px solid var(--border);">
+              <iframe
+                title="Ezzi Clarity business office location"
+                src="https://www.google.com/maps?q=180%20Northfield%20Drive%20West%20Unit%204%20Waterloo%20ON%20N2L0C7&output=embed"
+                width="100%" height="220"
+                style="border:0; display:block;"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <img class="footer-logo" src="../../assets/images/logo-ec.svg" alt="Ezzi Clarity logo">
+        <span class="footer-name">Ezzi Clarity Educational Consulting</span>
+        <p class="footer-desc">Student success and experiential learning advisory for students, institutions, and employers across Southern Ontario. Founded by Arva Ezzi, MEd (OISE, University of Toronto).</p>
+        <p class="footer-desc" style="margin-top:0.25rem; font-style:italic;">All services are academic and career focused. No immigration or visa consulting is provided.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about/index.html">About</a></li>
+          <li><a href="../services/index.html">Services</a></li>
+          <li><a href="../resources/index.html">Resources</a></li>
+          <li><a href="index.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+16475059487">+1 (647) 505-9487 (Mobile)</a></li>
+          <li><a href="tel:+12263368100">+1 (226) 336-8100 (Office)</a></li>
+          <li><a href="mailto:info@ezziclarity.ca">info@ezziclarity.ca</a></li>
+          <li style="color:rgba(255,255,255,0.45); font-size:0.8rem; margin-top:0.5rem;">Waterloo Region, Ontario</li>
+          <li><a href="https://book.titan.email/ezziclarity/intro" target="_blank" rel="noopener">Book an Intro Call →</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Ezzi Clarity Educational Consulting Services Inc. All rights reserved.</p>
+      <div class="footer-lang">
+        <a class="active" href="../index.html">EN</a>
+        <a href="../../fr/index.html">FR</a>
+        <a href="../../ar/index.html">AR</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

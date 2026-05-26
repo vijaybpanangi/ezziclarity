@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>/</loc></url>
+  <url><loc>/en/</loc></url>
+  <url><loc>/en/about/</loc></url>
+  <url><loc>/en/services/</loc></url>
+  <url><loc>/en/resources/</loc></url>
+  <url><loc>/en/contact/</loc></url>
+  <url><loc>/fr/</loc></url>
+  <url><loc>/fr/a-propos/</loc></url>
+  <url><loc>/fr/services/</loc></url>
+  <url><loc>/fr/ressources/</loc></url>
+  <url><loc>/fr/contact/</loc></url>
+  <url><loc>/ar/</loc></url>
+  <url><loc>/ar/about/</loc></url>
+  <url><loc>/ar/services/</loc></url>
+  <url><loc>/ar/resources/</loc></url>
+  <url><loc>/ar/contact/</loc></url>
+</urlset>

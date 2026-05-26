@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ezzi Clarity services for institutions, students and employers — experiential learning, academic transition coaching, and early career talent engagement across Southern Ontario.">
+  <meta property="og:title" content="Services — Ezzi Clarity Educational Consulting">
+  <meta property="og:description" content="Warm, structured support for institutions, students and employers across the education-to-career ecosystem.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="index.html">
+  <link rel="stylesheet" href="../../style.css">
+  
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta property="og:image" content="../../assets/images/og-ezzi-clarity.png">
+  <title>Services — Ezzi Clarity</title>
+</head>
+<body class="static-site">
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a href="../index.html" class="brand" aria-label="Ezzi Clarity — Home">
+      <img class="brand-logo" src="../../assets/images/logo-ec.svg" alt="">
+      <div class="brand-text">
+        <span class="brand-name">Ezzi Clarity</span>
+      </div>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="../index.html"           class="nav-link ">Home</a>
+      <a href="../about/index.html"     class="nav-link ">About</a>
+      <a href="index.html"  class="nav-link nav-active">Services</a>
+      <a href="../resources/index.html" class="nav-link ">Resources</a>
+      <a href="../contact/index.html"   class="nav-link ">Contact</a>
+    </nav>
+
+    <div class="lang-switch" aria-label="Language">
+      <a class="nav-link nav-cta" href="index.html" aria-current="true">EN</a>
+      <a class="nav-link" href="../../fr/services/index.html">FR</a>
+      <a class="nav-link" href="../../ar/services/index.html">AR</a>
+    </div>
+
+    <a href="../contact/index.html" class="header-cta">Book a Call</a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- Mobile nav drawer -->
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <nav class="mobile-nav-links" aria-label="Mobile navigation">
+    <a href="../index.html"           class="">Home</a>
+    <a href="../about/index.html"     class="">About</a>
+    <a href="index.html"  class="nav-active">Services</a>
+    <a href="../resources/index.html" class="">Resources</a>
+    <a href="../contact/index.html"   class="">Contact</a>
+  </nav>
+  <div class="mobile-lang">
+    <a class="nav-cta" href="index.html">EN</a>
+    <a href="../../fr/services/index.html">FR</a>
+    <a href="../../ar/services/index.html">AR</a>
+  </div>
+  <a href="../contact/index.html" class="mobile-cta">Book an Intro Call</a>
+</div>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var drawer = document.getElementById('mobile-nav');
+  if(!btn || !drawer) return;
+  btn.addEventListener('click', function(){
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    drawer.classList.toggle('is-open', !open);
+    drawer.setAttribute('aria-hidden', String(open));
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && drawer.classList.contains('is-open')){
+      btn.setAttribute('aria-expanded','false');
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden','true');
+      btn.focus();
+    }
+  });
+})();
+</script>
+
+<main id="main-content">
+
+  <!-- ── PAGE HEADER ──────────────────────────── -->
+  <section class="page-header">
+    <div class="container">
+      <p class="eyebrow">Our Services</p>
+      <h1>Practical support.<br>Clear direction.</h1>
+      <p>
+        Whether you're a student finding your footing, an institution building better programs, or an employer engaging the next generation of talent, we meet you where you are with practical, honest guidance.
+      </p>
+      <p>
+        Our work is structured around three connected areas. Each responds to a different part of the educational ecosystem, but all three are shaped by the same goal: creating more clarity, stronger alignment, and better outcomes for the people involved.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── THREE SERVICE CARDS ──────────────────── -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">What we offer</p>
+        <h2>Three areas of focused support</h2>
+        <p>Each service is designed around real needs rather than abstract frameworks. The aim is not to add layers of complexity, but to create support that is practical, achievable, and appropriately scoped to the context.</p>
+      </div>
+      <div class="grid grid-3">
+
+        <article class="service-card card-inst">
+          <div class="service-card-img">
+            <img src="../../assets/images/services-institution.png"
+                 alt="Faculty and staff collaborating" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <span class="svc-pill inst">Institutions</span>
+            <h3>Institutional Services</h3>
+            <p>Support for universities and colleges that want to strengthen experiential learning, international student integration, and academic success programming. We work with institutions to clarify goals, tighten program design, and improve the connection between what is intended administratively and what students actually experience.</p>
+            <ul class="checklist">
+              <li>Experiential education program development</li>
+              <li>International student integration support</li>
+              <li>Academic success program design</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="service-card card-stud">
+          <div class="service-card-img">
+            <img src="../../assets/images/services-student.png"
+                 alt="Student and advisor in conversation" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <span class="svc-pill stud">Students</span>
+            <h3>Student Services</h3>
+            <p>Academic and career transition support for domestic and international students who would benefit from structured guidance and clear expectations. We help students make sense of the systems around them, understand what success requires, and move forward with choices that are both ambitious and grounded.</p>
+            <ul class="checklist">
+              <li>Academic and career transition coaching</li>
+              <li>Professional communication workshops</li>
+              <li>Study strategy and learning skills support</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="service-card card-empl">
+          <div class="service-card-img">
+            <img src="../../assets/images/services-employer.png"
+                 alt="Employer speaking with early career talent" loading="lazy">
+          </div>
+          <div class="service-card-body">
+            <span class="svc-pill empl">Employers</span>
+            <h3>Employer Services</h3>
+            <p>Campus recruitment and early talent engagement advisory for employers who work with students and new graduates. We help shape communication, expectations, and student-facing experiences so that opportunities are easier to understand, easier to trust, and more likely to lead to strong outcomes on both sides.</p>
+            <ul class="checklist">
+              <li>Campus recruitment strategy</li>
+              <li>Early talent engagement planning</li>
+              <li>Employer brand positioning for students</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW WE WORK ───────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">How we work</p>
+        <h2>A process built on listening first</h2>
+        <p>Every engagement starts with a genuine conversation — we need to understand your situation before we can offer anything useful. Not every question requires a large engagement; sometimes what matters most is a clear conversation that sharpens the issue and identifies the most sensible next step.</p>
+      </div>
+      <div class="process process-two-column">
+        <div class="process-step">
+          <div class="process-number">1</div>
+          <div>
+            <h3>Listen and understand context</h3>
+            <p>We begin with a structured conversation to understand your context, current programs, constraints, and the outcomes you care about most.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">2</div>
+          <div>
+            <h3>Clarify objectives and scope</h3>
+            <p>Together we define realistic objectives and a clear scope that matches available resources and institutional or organizational realities.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">3</div>
+          <div>
+            <h3>Design practical steps</h3>
+            <p>We outline steps that can actually be implemented, with an emphasis on clarity, simplicity, and the lived experience of students and staff.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">4</div>
+          <div>
+            <h3>Support implementation and reflection</h3>
+            <p>Where appropriate, we remain available to support early implementation and to reflect honestly on what is working and what should be adjusted.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ──────────────────────────────────── -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Common questions</p>
+        <h2>Things people often ask us</h2>
+      </div>
+      <div style="display:grid; gap:1rem; max-width:800px;">
+        <div class="faq">
+          <p class="faq-q">Do you provide immigration or visa services?</p>
+          <p class="faq-a">No. Ezzi Clarity does not provide immigration advice, visa guidance, or any form of regulated immigration consulting. We focus exclusively on academic transition, student success, and experiential learning.</p>
+        </div>
+        <div class="faq">
+          <p class="faq-q">Can you work with institutions outside Ontario?</p>
+          <p class="faq-a">Our primary focus is Southern Ontario. For institutions outside this region, we review fit on a case-by-case basis depending on scope and mode of delivery.</p>
+        </div>
+        <div class="faq">
+          <p class="faq-q">Do you offer one-on-one support for students?</p>
+          <p class="faq-a">Yes. We offer academic and career transition coaching and select workshops designed for students who want structured guidance as they adapt to Canadian academic and professional settings.</p>
+        </div>
+        <div class="faq">
+          <p class="faq-q">How long does a typical engagement take?</p>
+          <p class="faq-a">It depends entirely on scope. Some engagements are a single workshop or consultation. Others involve ongoing advisory work over a semester or academic year. We always agree on scope before starting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ──────────────────────────────────── -->
+  <section class="section-cta">
+    <div class="container section-cta-inner">
+      <div>
+        <p class="eyebrow">Ready to take the next step?</p>
+        <h2>Let's find out if we're the right fit.</h2>
+        <p>A short intro call is the best place to start. There is no obligation, just a focused and honest conversation about your situation, what support may be useful, and whether there is a strong fit.</p>
+      </div>
+      <div>
+        <a href="../contact/index.html" class="btn-primary btn-lg">Book a Free Intro Call</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <img class="footer-logo" src="../../assets/images/logo-ec.svg" alt="Ezzi Clarity logo">
+        <span class="footer-name">Ezzi Clarity Educational Consulting</span>
+        <p class="footer-desc">Student success and experiential learning advisory for students, institutions, and employers across Southern Ontario. Founded by Arva Ezzi, MEd (OISE, University of Toronto).</p>
+        <p class="footer-desc" style="margin-top:0.25rem; font-style:italic;">All services are academic and career focused. No immigration or visa consulting is provided.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about/index.html">About</a></li>
+          <li><a href="index.html">Services</a></li>
+          <li><a href="../resources/index.html">Resources</a></li>
+          <li><a href="../contact/index.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+16475059487">+1 (647) 505-9487 (Mobile)</a></li>
+          <li><a href="tel:+12263368100">+1 (226) 336-8100 (Office)</a></li>
+          <li><a href="mailto:info@ezziclarity.ca">info@ezziclarity.ca</a></li>
+          <li style="color:rgba(255,255,255,0.45); font-size:0.8rem; margin-top:0.5rem;">Waterloo Region, Ontario</li>
+          <li><a href="https://book.titan.email/ezziclarity/intro" target="_blank" rel="noopener">Book an Intro Call →</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Ezzi Clarity Educational Consulting Services Inc. All rights reserved.</p>
+      <div class="footer-lang">
+        <a class="active" href="../index.html">EN</a>
+        <a href="../../fr/index.html">FR</a>
+        <a href="../../ar/index.html">AR</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

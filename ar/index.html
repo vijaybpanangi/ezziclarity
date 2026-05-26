@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ezzi Clarity Educational Consulting — استشارات في نجاح الطلاب والتعلّم التجريبي للطلاب والمؤسسات وأصحاب العمل في أونتاريو.">
+  <meta property="og:title" content="إيزي كلاريتي — مسارات واضحة. قرارات واثقة.">
+  <meta property="og:description" content="استشارات في نجاح الطلاب والتعلّم التجريبي للطلاب والمؤسسات وأصحاب العمل في أونتاريو.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="index.html">
+  <link rel="stylesheet" href="../style.css">
+  
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../assets/images/favicon.png">
+  <meta property="og:image" content="../assets/images/og-ezzi-clarity.png">
+  <title>إيزي كلاريتي — مسارات واضحة. قرارات واثقة.</title>
+</head>
+<body class="static-site">
+
+<a class="skip-link" href="#main-content">الانتقال إلى المحتوى الرئيسي</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a href="index.html" class="brand" aria-label="إيزي كلاريتي — الرئيسية">
+      <img class="brand-logo" src="../assets/images/logo-ec.svg" alt="">
+      <div class="brand-text">
+        <span class="brand-name">إيزي كلاريتي</span>
+      </div>
+    </a>
+
+    <!-- Keep nav LTR for visual stability -->
+    <nav class="main-nav" dir="ltr" aria-label="التنقل الرئيسي">
+      <a href="index.html"           class="nav-link nav-active">الرئيسية</a>
+      <a href="about/index.html"     class="nav-link ">من نحن</a>
+      <a href="services/index.html"  class="nav-link ">الخدمات</a>
+      <a href="resources/index.html" class="nav-link ">الموارد</a>
+      <a href="contact/index.html"   class="nav-link ">تواصل معنا</a>
+    </nav>
+
+    <div class="lang-switch" dir="ltr" aria-label="اللغة">
+      <a class="nav-link" href="../en/index.html">EN</a>
+      <a class="nav-link" href="../fr/index.html">FR</a>
+      <a class="nav-link nav-cta" href="index.html" aria-current="true">AR</a>
+    </div>
+
+    <a href="contact/index.html" class="header-cta">احجز مكالمة</a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="فتح القائمة">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <nav class="mobile-nav-links" dir="rtl" aria-label="التنقل على الجوال">
+    <a href="index.html"           class="nav-active">الرئيسية</a>
+    <a href="about/index.html"     class="">من نحن</a>
+    <a href="services/index.html"  class="">الخدمات</a>
+    <a href="resources/index.html" class="">الموارد</a>
+    <a href="contact/index.html"   class="">تواصل معنا</a>
+  </nav>
+  <div class="mobile-lang" dir="ltr">
+    <a href="../en/index.html">EN</a>
+    <a href="../fr/index.html">FR</a>
+    <a class="nav-cta" href="index.html">AR</a>
+  </div>
+  <a href="contact/index.html" class="mobile-cta">احجز مكالمة تعريفية</a>
+</div>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var drawer = document.getElementById('mobile-nav');
+  if(!btn || !drawer) return;
+  btn.addEventListener('click', function(){
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    drawer.classList.toggle('is-open', !open);
+    drawer.setAttribute('aria-hidden', String(open));
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && drawer.classList.contains('is-open')){
+      btn.setAttribute('aria-expanded','false');
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden','true');
+      btn.focus();
+    }
+  });
+})();
+</script>
+
+<main id="main-content">
+
+  <!-- ── HERO ────────────────────────────────── -->
+  <section class="hero">
+    <div class="container hero-inner">
+
+      <div class="hero-copy">
+        <p class="eyebrow">استشارات تعليمية · أونتاريو</p>
+        <h1>مسارات واضحة.<br><em>قرارات واثقة.</em></h1>
+        <p>
+          نُرشد الطلاب والمؤسسات وأصحاب العمل لفهم الأنظمة الأكاديمية في كندا بوضوح وتنظيم وواقعية.
+        </p>
+        <p>
+          يتركّز عملنا عند تقاطع الانتقال الأكاديمي والتعلّم التجريبي وبدايات المسار المهني. لذلك فنحن لا ننظر إلى احتياجات الطلاب أو أولويات المؤسسات أو توقعات أصحاب العمل كملفات منفصلة، بل كعناصر مترابطة يحتاج كلٌّ منها إلى فهم أوضح وتوافق أفضل.
+        </p>
+        <p>
+          ونهجنا مبني على خبرة مباشرة داخل بيئات التعليم ما بعد الثانوي في كندا، مع تركيز على قرارات عملية ومدروسة وقابلة للتطبيق في الواقع، لا على لغة عامة أو وعود واسعة.
+        </p>
+        <div class="hero-actions">
+          <a href="contact/index.html" class="btn-primary btn-lg">احجز مكالمة تعريفية</a>
+          <a href="services/index.html" class="btn-secondary">خدماتنا</a>
+        </div>
+        <p class="hero-footnote">خدمات أكاديمية ومهنية فقط. لا نقدم استشارات في الهجرة أو التأشيرات.</p>
+      </div>
+
+      <div class="hero-panel">
+        <div class="hero-visual">
+          <img src="../assets/images/hero-ecosystem.png"
+               alt="طلاب ومؤسسات وأصحاب عمل يعملون معًا"
+               loading="eager">
+        </div>
+        <aside class="hero-card">
+          <p class="eyebrow">من نعمل معهم</p>
+          <ul class="checklist">
+            <li>جامعات وكليات تسعى إلى تعزيز برامج التعلّم التجريبي ونجاح الطلاب.</li>
+            <li>طلاب محليون ودوليون يتعاملون مع التوقعات الأكاديمية في كندا.</li>
+            <li>أصحاب عمل يرغبون في استقطاب المواهب الناشئة بشكل أكثر تعمدًا.</li>
+          </ul>
+        </aside>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── TRUST BAR ─────────────────────────────── -->
+  <div class="trust-bar">
+    <div class="container trust-bar-inner">
+      <span class="trust-item">مقرنا في أونتاريو</span>
+      <span class="trust-item">ماجستير في التربية — OISE، جامعة تورونتو</span>
+      <span class="trust-item">طلاب · مؤسسات · أصحاب عمل</span>
+      <span class="trust-item">EN · FR · AR</span>
+    </div>
+  </div>
+
+  <!-- ── نهجنا ─────────────────────────────────── -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header" style="text-align:center; margin-bottom:2.5rem;">
+        <p class="eyebrow">نهجنا</p>
+        <h2>كيف يبدو العمل معنا</h2>
+      </div>
+
+      <div class="section-visual section-visual--feels">
+        <img src="../assets/images/section-feels-ezzi.png"
+             alt="بيئة تعلّم هادئة ومنظّمة" loading="lazy">
+      </div>
+
+      <div class="grid grid-3" style="margin-top:2rem;">
+        <div class="card card--accent">
+          <p class="card-tag">وضوح</p>
+          <h3>الوضوح قبل التعقيد</h3>
+          <p>نترجم السياسات والتوقعات ومتطلبات البرامج إلى لغة بسيطة وخطوات عملية — للطلاب والموظفين وأصحاب العمل على حدٍّ سواء.</p>
+        </div>
+        <div class="card card--accent">
+          <p class="card-tag">خبرة</p>
+          <h3>مبني على خبرة واقعية</h3>
+          <p>يستند عملنا إلى تجربة مباشرة داخل الجامعات الكندية وفهم واقعي لكيفية تعامل الطلاب الفعلي مع الأنظمة الأكاديمية.</p>
+        </div>
+        <div class="card card--accent">
+          <p class="card-tag">هيكل</p>
+          <h3>مهني وهادئ ومنظّم</h3>
+          <p>نقدم أسلوبًا هادئًا ومنظمًا يراعي الفروق الثقافية ويحترم واقع المؤسسات واحتياجات الطلاب في الوقت ذاته.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── الخدمات الأساسية ────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">لمحة عن الخدمات</p>
+        <h2>مجالاتنا الأساسية</h2>
+        <p>دعم مركّز وعملي عبر منظومة الطالب–المؤسسة–صاحب العمل.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <article class="service-card">
+          <img src="../assets/images/services-institution.png"
+               alt="أعضاء هيئة التدريس والموظفون يتعاونون" class="service-illustration" loading="lazy">
+          <h3>خدمات للمؤسسات</h3>
+          <p>دعم للجامعات والكليات الساعية إلى تعزيز التعلّم التجريبي ودمج الطلاب الدوليين ومبادرات النجاح الأكاديمي.</p>
+          <ul class="checklist">
+            <li>تصميم برامج التعلّم التجريبي</li>
+            <li>دعم انتقال الطلاب الدوليين واندماجهم</li>
+            <li>برامج النجاح الأكاديمي والاستمرارية</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <img src="../assets/images/services-student.png"
+               alt="طالب ومستشار في حوار" class="service-illustration" loading="lazy">
+          <h3>خدمات للطلاب</h3>
+          <p>دعم فردي وجماعي للطلاب الذين يتعاملون مع التوقعات الأكاديمية وقرارات بداية المسار المهني في كندا.</p>
+          <ul class="checklist">
+            <li>توجيه الانتقال الأكاديمي والمهني</li>
+            <li>ورش التواصل المهني</li>
+            <li>استراتيجيات الدراسة ومهارات التعلّم</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <img src="../assets/images/services-employer.png"
+               alt="صاحب عمل يتحدث مع مواهب في بداية مسيرتهم" class="service-illustration" loading="lazy">
+          <h3>خدمات لأصحاب العمل</h3>
+          <p>إرشاد لأصحاب العمل الراغبين في التفاعل مع الطلاب والخريجين بطريقة متسقة ومراعية لواقعهم.</p>
+          <ul class="checklist">
+            <li>استراتيجية استقطاب المواهب الناشئة</li>
+            <li>أطر الإعداد المهني للطلاب</li>
+            <li>مواءمة توقعات بيئة العمل</li>
+          </ul>
+        </article>
+      </div>
+
+      <div style="text-align:center; margin-top:2rem;">
+        <a href="services/index.html" class="btn-secondary">عرض جميع الخدمات</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ────────────────────────────────────── -->
+  <section class="section-cta">
+    <div class="container section-cta-inner">
+      <div>
+        <p class="eyebrow">هل أنت مستعد للبدء؟</p>
+        <h2>لنتحدث عن سياقك المحدد.</h2>
+        <p>سواء كنت طالبًا أو مؤسسة أو صاحب عمل — تبدأ المحادثة بفهم وضعك.</p>
+      </div>
+      <div>
+        <a href="contact/index.html" class="btn-primary btn-lg">احجز مكالمة مجانية</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" dir="rtl">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <img class="footer-logo" src="../assets/images/logo-ec.svg" alt="شعار إيزي كلاريتي">
+        <span class="footer-name">إيزي كلاريتي للاستشارات التعليمية</span>
+        <p class="footer-desc">استشارات في نجاح الطلاب والتعلّم التجريبي للطلاب والمؤسسات وأصحاب العمل في جنوب أونتاريو. تأسست على يد أروى عزّي، ماجستير في التربية (OISE، جامعة تورونتو).</p>
+        <p class="footer-desc" style="margin-top:0.25rem; font-style:italic;">جميع خدماتنا أكاديمية ومهنية. لا نقدم أي استشارات في مجال الهجرة أو التأشيرات.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>التنقل</h4>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="about/index.html">من نحن</a></li>
+          <li><a href="services/index.html">الخدمات</a></li>
+          <li><a href="resources/index.html">الموارد</a></li>
+          <li><a href="contact/index.html">تواصل معنا</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col" dir="ltr">
+        <h4 dir="rtl">تواصل معنا</h4>
+        <ul>
+          <li><a href="tel:+16475059487">+1 (647) 505-9487</a></li>
+          <li><a href="tel:+12263368100">+1 (226) 336-8100</a></li>
+          <li><a href="mailto:info@ezziclarity.ca">info@ezziclarity.ca</a></li>
+          <li style="color:rgba(255,255,255,0.45); font-size:0.8rem; margin-top:0.5rem; direction:rtl;">منطقة واترلو، أونتاريو</li>
+          <li><a href="https://book.titan.email/ezziclarity/intro" target="_blank" rel="noopener">احجز مكالمة ←</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom" dir="ltr">
+      <p>© 2026 إيزي كلاريتي للاستشارات التعليمية</p>
+      <div class="footer-lang">
+        <a href="../en/index.html">EN</a>
+        <a href="../fr/index.html">FR</a>
+        <a class="active" href="index.html">AR</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

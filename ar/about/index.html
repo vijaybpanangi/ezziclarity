@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="عن إيزي كلاريتي — نهج واضح ومنظّم لنجاح الطلاب والتعلّم التجريبي. تأسست على يد أروى عزّي، ماجستير في التربية.">
+  <meta property="og:title" content="من نحن — إيزي كلاريتي">
+  <meta property="og:description" content="نهج واضح ومنظّم لنجاح الطلاب والتعلّم التجريبي.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="index.html">
+  <link rel="stylesheet" href="../../style.css">
+  
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta property="og:image" content="../../assets/images/og-ezzi-clarity.png">
+  <title>من نحن — إيزي كلاريتي</title>
+</head>
+<body class="static-site">
+
+<a class="skip-link" href="#main-content">الانتقال إلى المحتوى الرئيسي</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a href="../index.html" class="brand" aria-label="إيزي كلاريتي — الرئيسية">
+      <img class="brand-logo" src="../../assets/images/logo-ec.svg" alt="">
+      <div class="brand-text">
+        <span class="brand-name">إيزي كلاريتي</span>
+      </div>
+    </a>
+
+    <!-- Keep nav LTR for visual stability -->
+    <nav class="main-nav" dir="ltr" aria-label="التنقل الرئيسي">
+      <a href="../index.html"           class="nav-link ">الرئيسية</a>
+      <a href="index.html"     class="nav-link nav-active">من نحن</a>
+      <a href="../services/index.html"  class="nav-link ">الخدمات</a>
+      <a href="../resources/index.html" class="nav-link ">الموارد</a>
+      <a href="../contact/index.html"   class="nav-link ">تواصل معنا</a>
+    </nav>
+
+    <div class="lang-switch" dir="ltr" aria-label="اللغة">
+      <a class="nav-link" href="../../en/about/index.html">EN</a>
+      <a class="nav-link" href="../../fr/a-propos/index.html">FR</a>
+      <a class="nav-link nav-cta" href="index.html" aria-current="true">AR</a>
+    </div>
+
+    <a href="../contact/index.html" class="header-cta">احجز مكالمة</a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="فتح القائمة">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <nav class="mobile-nav-links" dir="rtl" aria-label="التنقل على الجوال">
+    <a href="../index.html"           class="">الرئيسية</a>
+    <a href="index.html"     class="nav-active">من نحن</a>
+    <a href="../services/index.html"  class="">الخدمات</a>
+    <a href="../resources/index.html" class="">الموارد</a>
+    <a href="../contact/index.html"   class="">تواصل معنا</a>
+  </nav>
+  <div class="mobile-lang" dir="ltr">
+    <a href="../../en/about/index.html">EN</a>
+    <a href="../../fr/a-propos/index.html">FR</a>
+    <a class="nav-cta" href="index.html">AR</a>
+  </div>
+  <a href="../contact/index.html" class="mobile-cta">احجز مكالمة تعريفية</a>
+</div>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var drawer = document.getElementById('mobile-nav');
+  if(!btn || !drawer) return;
+  btn.addEventListener('click', function(){
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    drawer.classList.toggle('is-open', !open);
+    drawer.setAttribute('aria-hidden', String(open));
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && drawer.classList.contains('is-open')){
+      btn.setAttribute('aria-expanded','false');
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden','true');
+      btn.focus();
+    }
+  });
+})();
+</script>
+
+<main id="main-content">
+
+  <section class="page-header">
+    <div class="container">
+      <p class="eyebrow">عن إيزي كلاريتي</p>
+      <h1>نهج واضح ومنظّم لنجاح الطلاب والتعلّم التجريبي.</h1>
+      <p>
+        تعمل إيزي كلاريتي عند نقطة التقاء المؤسسات والطلاب وأصحاب العمل. هدفنا بسيط: توضيح التوقعات، وتحسين التوافق، ودعم نتائج أفضل بإرشاد عملي وموثوق.
+      </p>
+      <p>
+        ونهتم على وجه الخصوص بالمناطق التي تلتقي فيها النوايا الجيدة مع تعقيدات الواقع: عندما يحاول الطلاب فهم أنظمة جديدة، وعندما تسعى المؤسسات إلى تقديم دعم أكثر فاعلية، وعندما يرغب أصحاب العمل في بناء تواصل أنضج مع المواهب في بداياتها المهنية.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-alt about-founder-section">
+    <div class="container">
+      <div class="about-founder-card">
+        <p class="eyebrow">قصتنا</p>
+        <h2>لماذا وُجدت إيزي كلاريتي</h2>
+        <p>
+          وُجدت إيزي كلاريتي استجابةً لحقيقة بسيطة: الفجوة بين ما تعد به المؤسسات وما يعيشه الطلاب فعليًا تكون في كثير من الأحيان أوسع مما ينبغي.
+        </p>
+        <p>
+          بعد سنوات من العمل داخل الجامعات الكندية، رأت أروى عزّي كيف تخلق هذه الفجوة قدرًا من الاحتكاك لدى الطلاب والمؤسسات وأصحاب العمل على حد سواء. فالبرامج تُبنى بنية جيدة، لكن التوقعات لا تكون دائمًا منسجمة مع الواقع العملي.
+        </p>
+        <p>
+          وُجدت إيزي كلاريتي لتقليص هذه الفجوة، عبر إرشاد عملي ومنظّم يحترم التعقيد من دون أن يزيده تعقيدًا.
+        </p>
+        <div class="about-founder-divider"></div>
+        <p class="eyebrow">المؤسِّسة</p>
+        <h2>أروى عزّي، ماجستير في التربية</h2>
+        <p>
+          تحمل أروى عزّي درجة الماجستير في التربية من OISE بجامعة تورونتو، مع تركيز على نجاح الطلاب والتعلّم التجريبي.
+        </p>
+        <p>
+          يتشكّل عملها من خبرة مباشرة داخل مؤسسات التعليم ما بعد الثانوي في كندا، في دعم الطلاب وأعضاء هيئة التدريس وفرق البرامج عبر سياقات أكاديمية متنوّعة.
+        </p>
+        <p>
+          وهي تقدّم نهجًا عمليًا ومنظّمًا في الاستشارات التعليمية، منطلقًا من احتياجات الطلاب الفعلية وما تستطيع المؤسسات تقديمه بصورة واقعية.
+        </p>
+        <div style="margin-top:1.25rem;">
+          <a href="../contact/index.html" class="btn-primary">تواصل معنا</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">كيف نعمل</p>
+        <h2>مبادؤنا</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="card card--accent">
+          <p class="card-tag">وضوح</p>
+          <h3>نقول ما هو صحيح</h3>
+          <p>نقدّم للطلاب والمؤسسات ما هو دقيق وقابل للتطبيق، بدلًا من الوعود المريحة أو التوقعات غير الواقعية.</p>
+        </div>
+        <div class="card card--accent">
+          <p class="card-tag">احترام</p>
+          <h3>نحترم الواقع المؤسسي</h3>
+          <p>نعمل ضمن القيود والاعتبارات الحقيقية للمؤسسات، بحيث تكون توصياتنا قابلة للتنفيذ لا مجرد أفكار جميلة.</p>
+        </div>
+        <div class="card card--accent">
+          <p class="card-tag">تنظيم</p>
+          <h3>نقلّل التعقيد ولا نضيفه</h3>
+          <p>كل توصية وكل محادثة وكل مخرج نصمّمه ليجعل الأمور أوضح وأكثر قابلية للتقدّم.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-cta">
+    <div class="container section-cta-inner">
+      <div>
+        <p class="eyebrow">جاهزون للتواصل؟</p>
+        <h2>ابدأ بمحادثة واضحة.</h2>
+        <p>أخبرنا بما تعمل عليه، وسنوضح لك بصدق كيف يمكننا أن نكون مفيدين.</p>
+      </div>
+      <div>
+        <a href="../contact/index.html" class="btn-primary btn-lg">احجز مكالمة تعريفية</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" dir="rtl">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <img class="footer-logo" src="../../assets/images/logo-ec.svg" alt="شعار إيزي كلاريتي">
+        <span class="footer-name">إيزي كلاريتي للاستشارات التعليمية</span>
+        <p class="footer-desc">استشارات في نجاح الطلاب والتعلّم التجريبي للطلاب والمؤسسات وأصحاب العمل في جنوب أونتاريو. تأسست على يد أروى عزّي، ماجستير في التربية (OISE، جامعة تورونتو).</p>
+        <p class="footer-desc" style="margin-top:0.25rem; font-style:italic;">جميع خدماتنا أكاديمية ومهنية. لا نقدم أي استشارات في مجال الهجرة أو التأشيرات.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>التنقل</h4>
+        <ul>
+          <li><a href="../index.html">الرئيسية</a></li>
+          <li><a href="index.html">من نحن</a></li>
+          <li><a href="../services/index.html">الخدمات</a></li>
+          <li><a href="../resources/index.html">الموارد</a></li>
+          <li><a href="../contact/index.html">تواصل معنا</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col" dir="ltr">
+        <h4 dir="rtl">تواصل معنا</h4>
+        <ul>
+          <li><a href="tel:+16475059487">+1 (647) 505-9487</a></li>
+          <li><a href="tel:+12263368100">+1 (226) 336-8100</a></li>
+          <li><a href="mailto:info@ezziclarity.ca">info@ezziclarity.ca</a></li>
+          <li style="color:rgba(255,255,255,0.45); font-size:0.8rem; margin-top:0.5rem; direction:rtl;">منطقة واترلو، أونتاريو</li>
+          <li><a href="https://book.titan.email/ezziclarity/intro" target="_blank" rel="noopener">احجز مكالمة ←</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom" dir="ltr">
+      <p>© 2026 إيزي كلاريتي للاستشارات التعليمية</p>
+      <div class="footer-lang">
+        <a href="../../en/index.html">EN</a>
+        <a href="../../fr/index.html">FR</a>
+        <a class="active" href="../index.html">AR</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+

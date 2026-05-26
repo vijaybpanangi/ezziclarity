@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contactez Ezzi Clarity — réservez un appel d'introduction ou rejoignez-nous par téléphone ou courriel. Basé dans la région de Waterloo, Ontario.">
+  <meta property="og:title" content="Contact — Ezzi Clarity Educational Consulting">
+  <meta property="og:description" content="Réservez un appel gratuit ou contactez-nous directement. Basé dans la région de Waterloo, Ontario.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="index.html">
+  <link rel="stylesheet" href="../../style.css">
+  
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta property="og:image" content="../../assets/images/og-ezzi-clarity.png">
+  <title>Contact — Ezzi Clarity</title>
+</head>
+<body class="static-site">
+
+<a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a href="../index.html" class="brand" aria-label="Ezzi Clarity — Accueil">
+      <img class="brand-logo" src="../../assets/images/logo-ec.svg" alt="">
+      <div class="brand-text">
+        <span class="brand-name">Ezzi Clarity</span>
+      </div>
+    </a>
+
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="../index.html"           class="nav-link ">Accueil</a>
+      <a href="../a-propos/index.html"  class="nav-link ">À propos</a>
+      <a href="../services/index.html"  class="nav-link ">Services</a>
+      <a href="../ressources/index.html" class="nav-link ">Ressources</a>
+      <a href="index.html"   class="nav-link nav-active">Contact</a>
+    </nav>
+
+    <div class="lang-switch" aria-label="Langue">
+      <a class="nav-link" href="../../en/contact/index.html">EN</a>
+      <a class="nav-link nav-cta" href="index.html" aria-current="true">FR</a>
+      <a class="nav-link" href="../../ar/contact/index.html">AR</a>
+    </div>
+
+    <a href="index.html" class="header-cta">Prendre rendez-vous</a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <nav class="mobile-nav-links" aria-label="Navigation mobile">
+    <a href="../index.html"           class="">Accueil</a>
+    <a href="../a-propos/index.html"  class="">À propos</a>
+    <a href="../services/index.html"  class="">Services</a>
+    <a href="../ressources/index.html" class="">Ressources</a>
+    <a href="index.html"   class="nav-active">Contact</a>
+  </nav>
+  <div class="mobile-lang">
+    <a href="../../en/contact/index.html">EN</a>
+    <a class="nav-cta" href="index.html">FR</a>
+    <a href="../../ar/contact/index.html">AR</a>
+  </div>
+  <a href="index.html" class="mobile-cta">Prendre un rendez-vous</a>
+</div>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var drawer = document.getElementById('mobile-nav');
+  if(!btn || !drawer) return;
+  btn.addEventListener('click', function(){
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    drawer.classList.toggle('is-open', !open);
+    drawer.setAttribute('aria-hidden', String(open));
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && drawer.classList.contains('is-open')){
+      btn.setAttribute('aria-expanded','false');
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden','true');
+      btn.focus();
+    }
+  });
+})();
+</script>
+
+<main id="main-content">
+
+  <section class="page-header">
+    <div class="container">
+      <p class="eyebrow">Nous sommes là pour vous</p>
+      <h1>Commencez par une<br>conversation claire.</h1>
+      <p>La meilleure première étape est un court appel d'introduction — sans engagement, juste une conversation centrée sur votre situation et sur comment nous pourrions vous aider.</p>
+      <p>Que vous nous contactiez comme étudiant, responsable institutionnel ou employeur, cette première conversation sert surtout à comprendre votre contexte, préciser votre besoin et déterminer la suite la plus pertinente.</p>
+      <div class="hero-actions">
+        <a class="btn-primary btn-lg" href="https://book.titan.email/ezziclarity/intro" target="_blank" rel="noopener noreferrer">
+          Réserver un appel d'introduction
+        </a>
+        <a class="btn-secondary" href="tel:+16475059487">Appeler maintenant</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-layout">
+
+        <div class="card contact-form contact-card">
+          <h2 style="margin-top:0;">Coordonnées</h2>
+          <p class="muted">Le mobile est le moyen le plus rapide de nous joindre. Si nous manquons votre appel, laissez un message vocal et nous vous rappellerons rapidement.</p>
+
+          <ul class="contact-list">
+            <li>
+              <strong>Mobile (le plus rapide) :</strong>
+              <a href="tel:+16475059487"><span class="ltr">+1 (647) 505-9487</span></a>
+            </li>
+            <li>
+              <strong>Bureau :</strong>
+              <a href="tel:+12263368100"><span class="ltr">+1 (226) 336-8100</span></a>
+            </li>
+            <li>
+              <strong>Courriel :</strong>
+              <a href="mailto:info@ezziclarity.ca"><span class="ltr">info@ezziclarity.ca</span></a>
+            </li>
+          </ul>
+
+          <h3 style="margin-top:1.5rem; margin-bottom:0.4rem;">Adresse commerciale</h3>
+          <p class="muted" style="margin-bottom:0;">180 Northfield Drive West, Unité 4, 1er étage<br>Waterloo, ON N2L 0C7, Canada</p>
+
+          <h3 style="margin-top:1.25rem; margin-bottom:0.4rem;">Siège social enregistré</h3>
+          <p class="muted" style="margin-bottom:0;">650 West Georgia Street, Suite 2110<br>Vancouver, BC V6B 4N8, Canada</p>
+
+          <div style="margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid var(--border);">
+            <a class="btn-primary" href="https://book.titan.email/ezziclarity/intro" target="_blank" rel="noopener noreferrer" style="width:100%; justify-content:center;">
+              Réserver un appel gratuit →
+            </a>
+          </div>
+
+          <p class="small muted" style="margin-top:1rem; margin-bottom:0;">
+            Tous nos services sont axés sur l'académique, la carrière et les établissements. Nous ne fournissons pas de conseils en immigration ou en visas.
+          </p>
+        </div>
+
+        <div style="display:grid; gap:1.25rem;">
+          <div class="card contact-photo-card" style="overflow:hidden; border-radius:var(--r-lg);">
+            <img
+              src="../../assets/images/contact-advisor-student.png"
+              alt="Conseiller et étudiant en conversation"
+              style="display:block;"
+              loading="lazy"
+            />
+          </div>
+          <div class="card">
+            <h3 style="margin-top:0; margin-bottom:0.75rem;">Bureau principal</h3>
+            <div style="border-radius:var(--r-md); overflow:hidden; border:1px solid var(--border);">
+              <iframe
+                title="Localisation du bureau d'Ezzi Clarity"
+                src="https://www.google.com/maps?q=180%20Northfield%20Drive%20West%20Unit%204%20Waterloo%20ON%20N2L0C7&output=embed"
+                width="100%" height="220"
+                style="border:0; display:block;"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <img class="footer-logo" src="../../assets/images/logo-ec.svg" alt="Ezzi Clarity logo">
+        <span class="footer-name">Ezzi Clarity Educational Consulting</span>
+        <p class="footer-desc">Cabinet-conseil en réussite étudiante et apprentissage expérientiel pour étudiants, établissements et employeurs en Ontario. Fondé par Arva Ezzi, M.Éd. (OISE, Université de Toronto).</p>
+        <p class="footer-desc" style="margin-top:0.25rem; font-style:italic;">Tous nos services sont axés sur l'académique et la carrière. Aucun conseil en immigration ou en visas n'est offert.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="../a-propos/index.html">À propos</a></li>
+          <li><a href="../services/index.html">Services</a></li>
+          <li><a href="../ressources/index.html">Ressources</a></li>
+          <li><a href="index.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+16475059487">+1 (647) 505-9487 (Mobile)</a></li>
+          <li><a href="tel:+12263368100">+1 (226) 336-8100 (Bureau)</a></li>
+          <li><a href="mailto:info@ezziclarity.ca">info@ezziclarity.ca</a></li>
+          <li style="color:rgba(255,255,255,0.45); font-size:0.8rem; margin-top:0.5rem;">Région de Waterloo, Ontario</li>
+          <li><a href="https://book.titan.email/ezziclarity/intro" target="_blank" rel="noopener">Réserver un appel →</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Ezzi Clarity Educational Consulting Services Inc. Tous droits réservés.</p>
+      <div class="footer-lang">
+        <a href="../../en/index.html">EN</a>
+        <a class="active" href="../index.html">FR</a>
+        <a href="../../ar/index.html">AR</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
