@@ -1,0 +1,40 @@
+<svg width="1600" height="600" viewBox="0 0 1600 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="tbBg" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" stop-color="#f9fafb"></stop>
+      <stop offset="45%" stop-color="#e5efff"></stop>
+      <stop offset="100%" stop-color="#cbd5f5"></stop>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="600" fill="url(#tbBg)"></rect>
+
+  <!-- Left concentric circles -->
+  <g transform="translate(360,220)" opacity="0.7">
+    <circle cx="0" cy="0" r="150" fill="none" stroke="#cbd5f5" stroke-width="3"></circle>
+    <circle cx="0" cy="0" r="110" fill="none" stroke="#dbeafe" stroke-width="2"></circle>
+    <circle cx="0" cy="0" r="70" fill="none" stroke="#e5e7eb" stroke-width="2"></circle>
+  </g>
+
+  <!-- Right concentric circles -->
+  <g transform="translate(1240,360)" opacity="0.7">
+    <circle cx="0" cy="0" r="160" fill="none" stroke="#cbd5f5" stroke-width="3"></circle>
+    <circle cx="0" cy="0" r="120" fill="none" stroke="#dbeafe" stroke-width="2"></circle>
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#e5e7eb" stroke-width="2"></circle>
+  </g>
+
+  <!-- Waves -->
+  <path d="M180 460 Q520 400 880 420 T1420 430" fill="none" stroke="#93c5fd" stroke-width="3" stroke-linecap="round" stroke-dasharray="10 14" opacity="0.8"></path>
+  <path d="M220 495 Q560 435 920 455 T1420 465" fill="none" stroke="#60a5fa" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.75"></path>
+
+  <!-- Accent bubbles behind where cards roughly sit -->
+  <circle cx="520" cy="300" r="90" fill="#eff6ff" opacity="0.7"></circle>
+  <circle cx="1080" cy="260" r="70" fill="#eff6ff" opacity="0.65"></circle>
+
+  <!-- Accent dots -->
+  <circle cx="250" cy="120" r="5" fill="#0a84ff" opacity="0.65"></circle>
+  <circle cx="520" cy="90" r="4" fill="#2563eb" opacity="0.65"></circle>
+  <circle cx="1180" cy="150" r="5" fill="#0ea5e9" opacity="0.65"></circle>
+  <circle cx="1360" cy="210" r="4" fill="#38bdf8" opacity="0.6"></circle>
+</svg>
