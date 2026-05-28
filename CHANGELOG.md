@@ -45,8 +45,10 @@ The apex DNS still has `SPF` and `DMARC` TXT records referencing `_spf.wpcloud.c
 
 ---
 
-## Earlier
+## Earlier (Q4 2025 – Q2 2026)
 
-The site began as a WordPress theme. It was converted to static HTML/CSS/assets and committed as `Initial upload` — PHP and the WP runtime are no longer required. The original conversion note lives at `README_STATIC.txt`. The CSS file header still carries WordPress theme metadata (`Theme Name: Ezzi Clarity, Version: 8.5.0`) as a harmless leftover.
+The site began as a WordPress theme around Q4 2025, founded for **Arva Ezzi**'s educational-consulting practice. Across roughly six months of iteration with ChatGPT as the primary collaborator, the theme went through ~8 major versions (final WP theme header: `Theme Name: Ezzi Clarity, Version: 8.5.0`), with a typography selection process (Inter / Poppins / Roboto rejected before settling on Plus Jakarta Sans), a palette stabilization toward Sky Blue + Warm Peach + Cream, a trilingual expansion (English + French + Arabic, with French translated slugs and Arabic RTL), and a voice refinement that replaced the earlier *"Less Noise. More Signal."* tagline with the current *"Clear paths. Confident decisions."* The About page initially featured a portrait of Arva that was later removed; two byte-identical orphan PNGs in `assets/images/` are the only trace.
 
-DNS curiosity worth knowing: the apex has `SPF` and `DMARC` TXT records pointing at `_spf.wpcloud.com`. These are legacy from the WordPress.com hosting era and exist to authenticate any email originating from the domain. Leave them alone unless asked.
+The WP-to-static migration happened in Q2 2026, before this git repo was created. The static build was committed as `Initial upload`. The `_spf.wpcloud.com` SPF and `_dmarc` records that still sit at Cloudflare DNS are legacy from the WordPress.com hosting era — slated for replacement during the iCloud+ Custom Email Domain migration on the [ROADMAP](https://github.com/vijaybpanangi/ezziclarity/blob/main/ROADMAP.md).
+
+**Full narrative** — including the rejected design directions (the "Liquid Glass" dark experiment, the too-sparse minimalist phase, the generic-educational-institution look), the imagery overhaul era, and the founder-positioning decisions — lives on the Wiki at **[Project History](https://github.com/vijaybpanangi/ezziclarity/wiki/Project-History)**. The pre-May-2026 section there is reconstructed from a ChatGPT collaboration log produced 2026-05-28 and is marked ≈ approximate, ⚠ inferred, or ✅ verified per claim.
