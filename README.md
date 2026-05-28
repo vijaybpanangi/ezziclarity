@@ -72,6 +72,7 @@ Anything more substantial than copy edits should go through a brainstorm → spe
 
 | Date | Area | What changed |
 |---|---|---|
+| 2026-05-28 | Archive | Dec 2025 stand-in source preserved at [`docs/archive/2025-12-static-standin/`](docs/archive/2025-12-static-standin/); Wiki [Project History](https://github.com/vijaybpanangi/ezziclarity/wiki/Project-History) revised with the corrected pre-May-2026 timeline |
 | 2026-05-28 | 🏷 Release | [`v1.0.0` — Trilingual marketing site live](https://github.com/vijaybpanangi/ezziclarity/releases/tag/v1.0.0) cut as the first formal milestone |
 | 2026-05-28 | Documentation | GitHub [Wiki](https://github.com/vijaybpanangi/ezziclarity/wiki) populated with nine pages plus sidebar — long-form companion to the in-repo docs |
 | 2026-05-28 | Documentation | `ROADMAP.md` added; README/CLAUDE updated to cross-link it |

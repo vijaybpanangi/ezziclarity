@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ezzi Clarity Educational Consulting Services Inc. | Less Noise, More Signal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ezzi Clarity Educational Consulting Services Inc. helps students, parents, and adult learners cut through noise and build realistic, clear education plans." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Icons / PWA -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="favicon.svg" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#0ea5e9" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="logo-ec.svg" alt="Ezzi Clarity logo" class="brand-logo" />
+        <span class="brand-text">
+          <span class="brand-name">Ezzi Clarity</span>
+          <span class="brand-tagline">Educational Consulting Services Inc.</span>
+        </span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="contact.html" class="nav-link nav-cta active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="site-banner">
+  <div class="container site-banner-inner">
+    <p>
+      This is a temporary stand in site while our full Ezzi Clarity website is being built.
+      A more complete version will be launching here soon.
+    </p>
+  </div>
+  </div>
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Contact</h1>
+        <p>
+          Ready to start a conversation, or just want to clarify whether we are the right fit?
+          Reach out and we will respond with clear next steps.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid grid-2 contact-layout">
+        <div>
+          <h2>Send us a message</h2>
+          <!-- Replace action with your form handler when you have one -->
+          <form class="contact-form" method="post" action="#">
+            <div class="form-group">
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+            <div class="form-group">
+              <label for="role">I am a</label>
+              <select id="role" name="role">
+                <option value="">Select one</option>
+                <option value="student">Student</option>
+                <option value="parent">Parent / Guardian</option>
+                <option value="adult">Adult learner</option>
+                <option value="school">School / Organization</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" type="text" />
+            </div>
+            <div class="form-group">
+              <label for="message">How can we help?</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <div class="form-footer">
+              <button type="submit" class="btn-primary">Submit</button>
+              <p class="form-note">
+                By submitting this form, you agree to be contacted about services and next steps.
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <div>
+          <h2>Other ways to connect</h2>
+          <p>
+            If you prefer email or a scheduled call, that works too. Use whichever channel makes it
+            easiest for you to start.
+          </p>
+          <ul class="contact-list">
+            <li><strong>Email:</strong> <a href="mailto:info@ezziclarity.ca">info@ezziclarity.ca</a></li>
+            <li><strong>Website:</strong> <a href="https://www.ezziclarity.ca">www.ezziclarity.ca</a></li>
+          </ul>
+
+          <h3>Where we operate</h3>
+          <ul class="contact-list">
+            <li>
+              <strong>Head Office (BC):</strong><br />
+              650 West Georgia Street, Suite 2110<br />
+              Vancouver, British Columbia, V6B 4N8, Canada
+            </li>
+            <li>
+              <strong>Principal Place of Business (ON):</strong><br />
+              180 Northfield Drive West, Unit 4, 1st Floor<br />
+              Waterloo, Ontario, N2L 0C7, Canada
+            </li>
+          </ul>
+
+          <p>
+            Meetings are by appointment only and are typically held virtually unless otherwise
+            arranged.
+          </p>
+
+          <h3>Before we speak, it helps if you can share:</h3>
+          <ul class="checklist">
+            <li>A short description of your current situation.</li>
+            <li>Your main questions or concerns.</li>
+            <li>Any fixed timelines or deadlines you are working with.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Ezzi Clarity Educational Consulting Services Inc. All rights reserved.</p>
+      <p class="footer-meta">
+        Incorporated under the laws of British Columbia Â· Ontario Corporation Number 1001423284
+      </p>
+      <p class="footer-meta">
+        Head Office: 650 West Georgia Street, Suite 2110, Vancouver, BC V6B 4N8 Â·
+        Principal Place of Business: 180 Northfield Drive West, Unit 4, Waterloo, ON N2L 0C7
+      </p>
+    </div>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
+</body>
+</html>

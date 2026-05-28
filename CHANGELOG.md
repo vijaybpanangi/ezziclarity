@@ -47,8 +47,38 @@ The apex DNS still has `SPF` and `DMARC` TXT records referencing `_spf.wpcloud.c
 
 ## Earlier (Q4 2025 – Q2 2026)
 
-The site began as a WordPress theme around Q4 2025, founded for **Arva Ezzi**'s educational-consulting practice. Across roughly six months of iteration with ChatGPT as the primary collaborator, the theme went through ~8 major versions (final WP theme header: `Theme Name: Ezzi Clarity, Version: 8.5.0`), with a typography selection process (Inter / Poppins / Roboto rejected before settling on Plus Jakarta Sans), a palette stabilization toward Sky Blue + Warm Peach + Cream, a trilingual expansion (English + French + Arabic, with French translated slugs and Arabic RTL), and a voice refinement that replaced the earlier *"Less Noise. More Signal."* tagline with the current *"Clear paths. Confident decisions."* The About page initially featured a portrait of Arva that was later removed; two byte-identical orphan PNGs in `assets/images/` are the only trace.
+The project began in **Q4 2025** with the incorporation of **Ezzi Clarity Educational Consulting Services Inc.** under the laws of British Columbia (Ontario Corporation Number 1001423284; head office Vancouver, principal place of business Waterloo).
 
-The WP-to-static migration happened in Q2 2026, before this git repo was created. The static build was committed as `Initial upload`. The `_spf.wpcloud.com` SPF and `_dmarc` records that still sit at Cloudflare DNS are legacy from the WordPress.com hosting era — slated for replacement during the iCloud+ Custom Email Domain migration on the [ROADMAP](https://github.com/vijaybpanangi/ezziclarity/blob/main/ROADMAP.md).
+### December 2025 — The static stand-in (`docs/archive/2025-12-static-standin/`)
 
-**Full narrative** — including the rejected design directions (the "Liquid Glass" dark experiment, the too-sparse minimalist phase, the generic-educational-institution look), the imagery overhaul era, and the founder-positioning decisions — lives on the Wiki at **[Project History](https://github.com/vijaybpanangi/ezziclarity/wiki/Project-History)**. The pre-May-2026 section there is reconstructed from a ChatGPT collaboration log produced 2026-05-28 and is marked ≈ approximate, ⚠ inferred, or ✅ verified per claim.
+The first production version of `ezziclarity.ca` went live in December 2025 as an explicitly transitional **single-language English-only** static site. Every page carried a yellow banner reading *"This is a temporary stand in site while our full Ezzi Clarity website is being built."*
+
+The Dec 2025 site is preserved verbatim in [`docs/archive/2025-12-static-standin/`](docs/archive/2025-12-static-standin/) — all five HTML pages, the stylesheet, the EC monogram SVG, the robots.txt, plus a README explaining the differences from the current site. Notable for being substantially different in framing from what runs today:
+
+- **Tagline:** *"Less Noise. More Signal."* (the current site uses *"Clear paths. Confident decisions."*)
+- **Audiences:** Students / Parents & Families / Adult Learners — a **B2C family-services framing**, not the current Students / Institutions / Employers triangle.
+- **Typography:** Inter (body) + Playfair Display (headings) — replaced later by Plus Jakarta Sans.
+- **Palette:** Sky → Indigo gradient (`#0ea5e9 → #6366f1`) — replaced later by the warmer Sky / Peach / Cream tokens.
+- **Dark mode** via `prefers-color-scheme: dark` — not carried forward to the current site.
+
+### Q1–Q2 2026 — WordPress theme build (in parallel)
+
+While the Dec 2025 stand-in was live, a separate **WordPress theme** build was underway (theme name `Ezzi Clarity`, text domain `ezzi-clarity`, eventually reaching `Version: 8.5.0`). Across ~6 months and many iterations, the brand and design system shifted substantially:
+
+- Audience pivot **from B2C to B2B + B2C** (the Students/Institutions/Employers triangle is a WordPress-era invention, not original).
+- Typography swapped to **Plus Jakarta Sans** site-wide.
+- Palette evolved to **Sky Blue + Warm Peach + Cream**.
+- Tagline reframed from *"Less Noise. More Signal."* to *"Clear paths. Confident decisions."*
+- **Trilingual expansion** added French and Arabic with the trilingual URL conventions and RTL handling that exist today.
+- Compliance language hardened to the explicit *"No immigration or visa advice provided."*
+- About page acquired (and later lost) a portrait of the founder — two byte-identical orphan PNGs survive in `assets/images/`.
+
+The WordPress build eventually **replaced** the Dec 2025 stand-in (rather than evolving from it). The static conversion happened in Q2 2026, and the result was committed to this repo as `Initial upload`.
+
+### DNS provenance
+
+The `_spf.wpcloud.com` SPF and `_dmarc` records still at Cloudflare DNS are legacy from the WordPress.com hosting era — slated for replacement during the iCloud+ Custom Email Domain migration on the [ROADMAP](ROADMAP.md).
+
+### Full narrative
+
+The Wiki's **[Project History](https://github.com/vijaybpanangi/ezziclarity/wiki/Project-History)** page is the long-form integrated history. It's tagged throughout with four certainty levels (🟢 primary source, ✅ verified, ≈ approximate, ⚠ inferred) so readers can tell which claims are grounded in what evidence.
