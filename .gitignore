@@ -1,0 +1,23 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor / IDE scratch
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.~lock.*
+
+# Logs and crash dumps
+*.log
+
+# Local environment & secrets (defense-in-depth; none expected for a static site)
+.env
+.env.*
+!.env.example
+
+# Brainstorming session artifacts (Claude visual companion, etc.)
+.superpowers/
