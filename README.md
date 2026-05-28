@@ -65,7 +65,14 @@ Anything more substantial than copy edits should go through a brainstorm → spe
 - **`CLAUDE.md`** — repo guidance for Claude Code sessions (architecture, conventions, gotchas).
 - **`docs/superpowers/specs/`** — design specs for non-trivial changes (`YYYY-MM-DD-<topic>-design.md`).
 - **`docs/superpowers/plans/`** — implementation plans matched to specs (`YYYY-MM-DD-<topic>.md`).
+- **`CHANGELOG.md`** — curated trail of notable changes (infrastructure, documentation, deployment).
 - **`README_STATIC.txt`** — original conversion note from the WordPress export. Kept for provenance.
+
+## Recent updates
+
+- **2026-05-28** — `www.ezziclarity.ca` added as a Custom Domain on Cloudflare Pages (was returning 522); project documentation added (this README, `CLAUDE.md`, `docs/superpowers/` scaffold, `.gitignore`); GitHub About panel filled in with description, website, and topics.
+
+Full chronological log: [`CHANGELOG.md`](CHANGELOG.md).
 
 ## Styling notes
 
