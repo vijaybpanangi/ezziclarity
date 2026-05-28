@@ -72,7 +72,8 @@ Anything more substantial than copy edits should go through a brainstorm → spe
 
 | Date | Area | What changed |
 |---|---|---|
-| 2026-05-28 | Archive | Dec 28, 2025 WordPress "Liquid Glass" staging-v4 theme preserved at [`docs/archive/2025-12-28-wordpress-liquid-glass-staging-v4/`](docs/archive/2025-12-28-wordpress-liquid-glass-staging-v4/); Wiki [Project History](https://github.com/vijaybpanangi/ezziclarity/wiki/Project-History) revised (third pass) with the corrected pre-May-2026 three-era timeline |
+| 2026-05-28 | Archive | Liquid Glass theme [`style.css`](docs/archive/2025-12-28-wordpress-liquid-glass-staging-v4/style.css) (~870 lines) added to the Dec 28 archive; Wiki Project History revised (fourth pass) — confirms light-mode glass, Apple system fonts (SF Pro) effective typography, theme `Version: 1.3.0`, royal-blue palette |
+| 2026-05-28 | Archive | Dec 28, 2025 WordPress "Liquid Glass" staging-v4 theme PHP files preserved at [`docs/archive/2025-12-28-wordpress-liquid-glass-staging-v4/`](docs/archive/2025-12-28-wordpress-liquid-glass-staging-v4/); Wiki Project History revised (third pass) with the corrected pre-May-2026 three-era timeline |
 | 2026-05-28 | Archive | Early-Dec 2025 stand-in source preserved at [`docs/archive/2025-12-static-standin/`](docs/archive/2025-12-static-standin/); Wiki Project History revised (second pass) |
 | 2026-05-28 | 🏷 Release | [`v1.0.0` — Trilingual marketing site live](https://github.com/vijaybpanangi/ezziclarity/releases/tag/v1.0.0) cut as the first formal milestone |
 | 2026-05-28 | Documentation | GitHub [Wiki](https://github.com/vijaybpanangi/ezziclarity/wiki) populated with nine pages plus sidebar — long-form companion to the in-repo docs |

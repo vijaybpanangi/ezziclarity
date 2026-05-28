@@ -55,35 +55,39 @@ The project began in **Q4 2025** with the incorporation of **Ezzi Clarity Educat
 
 The first production version of `ezziclarity.ca` was an explicitly transitional **single-language English-only** static site with a B2C family-services framing (Students / Parents & Families / Adult Learners). Inter + Playfair Display typography, sky→indigo gradient palette, full dark-mode support. Banner on every page read *"This is a temporary stand in site while our full Ezzi Clarity website is being built."*
 
-### Late December 2025 — WordPress "Liquid Glass" theme (staging v4)
+### Late December 2025 — WordPress "Liquid Glass" theme (v1.3.0)
 
-[`docs/archive/2025-12-28-wordpress-liquid-glass-staging-v4/`](docs/archive/2025-12-28-wordpress-liquid-glass-staging-v4/) — preserved verbatim (PHP templates only; theme stylesheet not preserved).
+[`docs/archive/2025-12-28-wordpress-liquid-glass-staging-v4/`](docs/archive/2025-12-28-wordpress-liquid-glass-staging-v4/) — preserved verbatim, including the full ~870-line theme stylesheet.
 
-Within ~3 weeks of the stand-in's launch, a substantial WordPress theme on WordPress.com had already reached staging v4 (theme handle `ezzi-clarity-liquid-glass-staging-v4-style`). This iteration shows:
+Within ~3 weeks of the stand-in's launch, a substantial WordPress theme on WordPress.com was at **`Version: 1.3.0`** (theme name *"Ezzi Clarity – Liquid Glass (Staging v4)"*, text domain `ezzi-clarity-liquid-glass-staging-v4`). The CSS itself reveals the design language in detail:
 
-- The **audience pivot to B2B+B2C is complete** — Students / Institutions / Employers, three service tiers, the framing the site has carried ever since.
-- **Compliance disclaimer is hardened** — *"No immigration or visa consulting is provided"* appears in the footer and as a dedicated FAQ entry.
-- **Tagline is still** *"Less Noise. More Signal."* — the swap to *"Clear paths. Confident decisions."* happens later.
-- **Typography is Roboto** — not the current Plus Jakarta Sans.
-- **"Liquid Glass"** is a real, named, multi-iteration design direction (translucency / dark accents per ChatGPT log).
-- **Portrait of Arva** is displayed on the About page (later removed; orphan PNGs survive in `assets/images/`).
-- **Phone numbers and a Titan Email booking link** are visible on the Contact page (not surfaced on the current site).
-- **Founder credit in the header** on every page (later moved to About-only).
+- **Light-mode glass design**, not dark — confirmed by the CSS. Bluish-white page background, semi-transparent radial-gradient surfaces, `backdrop-filter: blur(14-20px)` on every glass surface.
+- **Royal-blue palette** — `--accent: #2563eb`, `--accent-strong: #1d4ed8`. A third distinct palette in the project's history.
+- **Apple system fonts (SF Pro) effective typography** — the CSS opens with a Roboto declaration that's overridden later by `-apple-system, BlinkMacSystemFont, "SF Pro Text", ...`. Roboto loaded as fallback only.
+- **Glass meniscus detail** — every card has a top-edge `::before` highlight mimicking light reflecting off glass.
+- **Hover micro-animations** — cards lift 4px, nav pills 1px, images get saturation boost.
+- **Container width 1120px** (widest of any era).
+- **Late CSS comments document polish work** — *"reduce the squished feel"*, *"CONTACT PAGE POLISH (v3)"*.
 
-The complete contact / founder / language details were captured in this era: mobile +1 (647) 505-9487, office +1 (226) 336-8100, fluent in English, Arabic, Hindi, Urdu, Gujarati. *(Earlier reconstructions had erroneously included French; that was wrong.)*
+The audience pivot is already complete at this point: Students / Institutions / Employers (B2B+B2C), three dedicated service tiers. The compliance disclaimer is hardened (*"No immigration or visa consulting is provided"* in the footer + a dedicated Services FAQ entry). The tagline is still *"Less Noise. More Signal."* The portrait of Arva is on the About page. Phone numbers (mobile +1 647 505-9487, office +1 226 336-8100) and a Titan Email booking link are surfaced on Contact.
 
-### Q1–Q2 2026 — WordPress iteration from "Liquid Glass v4" → `Version: 8.5.0`
+The complete contact / founder / language details from this era: mobile +1 (647) 505-9487, office +1 (226) 336-8100; **Arva Yusuf Ezzi**, MEd OISE U of T, prior roles at U of T and York U, fluent in English, Arabic, Hindi, Urdu, Gujarati. *(Earlier reconstructions had erroneously included French; that was wrong.)*
 
-Across the following months the WordPress theme continued to iterate. Inferred changes between Dec 28 and the current state include:
+### Q1–Q2 2026 — From "Liquid Glass v1.3.0" → `ezzi-clarity` Version 8.5.0
 
-- Typography swap: **Roboto → Plus Jakarta Sans**.
-- Palette pivot: **"Liquid Glass" translucency → Sky Blue + Warm Peach + Cream tokens**.
+Between Dec 28, 2025 and the static conversion, the project went through substantial change. Notable: the theme's text domain changed from `ezzi-clarity-liquid-glass-staging-v4` (v1.3.0) to `ezzi-clarity` (eventually v8.5.0) — **two distinct text-domain identities**. Whether the Liquid Glass theme was retired and a different production theme took over, or whether the staging theme was renamed and renumbered, isn't recoverable from the preserved sources.
+
+Inferred changes:
+
+- Typography swap: **Apple system fonts / Roboto → Plus Jakarta Sans**.
+- Palette pivot: **Light-mode glass with royal-blue accent → Sky Blue + Warm Peach + Cream tokens** (no backdrop-blur, no glass meniscus, no translucent radial gradients).
 - Tagline replacement: **"Less Noise. More Signal." → "Clear paths. Confident decisions."**
 - **Trilingual expansion** — French (translated slugs `a-propos`, `ressources`) and Arabic (RTL layout) added.
 - Founder credit relocated from header to About page only.
 - About page portrait removed.
 - Phone numbers and booking link no longer surfaced.
-- Theme `Version` field progressed from `staging-v4` to final `8.5.0`.
+- Container narrowed from 1120px.
+- Theme text-domain transitioned from `ezzi-clarity-liquid-glass-staging-v4` to `ezzi-clarity`; version reached `8.5.0`.
 
 ### Q2 2026 — WordPress-to-static migration
 

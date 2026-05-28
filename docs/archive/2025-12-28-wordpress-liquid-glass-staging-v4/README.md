@@ -6,11 +6,19 @@ This archive captures that v4 staging state.
 
 ## Theme metadata
 
-From `functions.php`:
+From the CSS header (in `style.css`, lines 28-34):
 
-- **Enqueue handle:** `ezzi-clarity-liquid-glass-staging-v4-style`
-- **Theme name (implied):** Ezzi Clarity Liquid Glass
-- **Stage:** staging v4 (at least four iterations had happened by this point)
+```
+Theme Name: Ezzi Clarity – Liquid Glass (Staging v4)
+Theme URI: https://ezziclarity.ca/
+Author: Ezzi Clarity
+Description: Liquid Glass staging theme packaged for WordPress.com compatibility.
+Version: 1.3.0
+Text Domain: ezzi-clarity-liquid-glass-staging-v4
+```
+
+So the actual theme `Version` is **`1.3.0`**. The "Staging v4" is a *branch label* in the theme name, not the version number. The text domain `ezzi-clarity-liquid-glass-staging-v4` is **different** from the `ezzi-clarity` text domain found in the legacy `style.css` header of the eventual static conversion — strong evidence that two text-domain identities existed in parallel (or sequentially). The eventual `Version: 8.5.0` recorded in the legacy static `style.css` came from the `ezzi-clarity` theme line, not from this `ezzi-clarity-liquid-glass-staging-v4` line.
+
 - **Platform:** WordPress.com (the `functions.php` docblock explicitly says "WordPress.com-safe", and the avoidance of file_get_contents, write operations, and external services confirms this)
 
 ## What's preserved here
@@ -26,10 +34,107 @@ From `functions.php`:
 | `page-services.php` | Services — three service tiers, four-step process, FAQ, CTA |
 | `page-resources.php` | Resources — Academic Transition (3 cards), Experiential Learning (3 cards), Early Career Development (3 cards), CTA |
 | `page-contact.php` | Contact — call-first card with mobile/office phone numbers, Titan Email booking link, advisor-student photo, Google Maps embed of Waterloo office |
+| `style.css` | The full theme stylesheet (~870 lines) — design tokens, light-mode glass card system, hero, sections, cards, CTA, contact polish, image system, responsive rules. This is the definitive "Liquid Glass" visual treatment. |
 
-**Not preserved (the user did not provide these):** the theme stylesheet (`style.css` — would have carried the "Liquid Glass" visual treatment in the form of translucency effects, dark accents, and aggressive backdrop-blur usage per the earlier ChatGPT collaboration log), and the theme's `/assets/images/` directory (`hero-ecosystem.png`, `services-{institution,student,employer}.png`, `arva-portrait.png`, `contact-advisor-student.png`, `section-feels-ezzi.png`, the `resources-{academic,experiential,earlycareer}-{1,2,3}.png` set, and `logo-ec.svg`). Most of these images were carried into subsequent eras and still exist in the current site's `assets/images/`.
+**Not preserved (the user did not provide these):** the theme's `/assets/images/` directory (`hero-ecosystem.png`, `services-{institution,student,employer}.png`, `arva-portrait.png`, `contact-advisor-student.png`, `section-feels-ezzi.png`, the `resources-{academic,experiential,earlycareer}-{1,2,3}.png` set, and `logo-ec.svg`). Most of these images were carried into subsequent eras and still exist in the current site's `assets/images/`.
 
-## What this era reveals
+## The Liquid Glass design language, decoded from the CSS
+
+With the stylesheet now preserved, the "Liquid Glass" direction is no longer a description in a collaboration log — it's a concrete design system you can read line by line. Key findings:
+
+### It was light-mode, not dark
+
+A common misconception (including in the original ChatGPT collaboration log) was that the Liquid Glass direction was a dark-mode experiment. **It wasn't.** The page background is `radial-gradient(circle at top left, #e5f0ff 0, #f3f4f6 40%, #e5e7eb 100%)` — a soft bluish white. All surfaces are light. The "glass" effect comes from translucency over light, not darkness.
+
+### Backdrop blur is the defining technique
+
+`backdrop-filter: blur(...)` appears on:
+
+- The site header (`blur(20px)`)
+- Every nav pill (`blur(14px)`)
+- The hero card and hero visual (`blur(14-16px)`)
+- All cards — `.card`, `.quote-card`, `.service-card`, `.contact-form`, `.timeline-item`, `.faq` (`blur(18px)`)
+- The CTA section inner panel (`blur(18px)`)
+
+Combined with semi-transparent radial-gradient backgrounds (`rgba(255, 255, 255, 0.96)` to `rgba(241, 245, 249, 0.96)`), the effect is materials that look like frosted glass with subtle bluish tinting.
+
+### Effective typography was Apple system fonts, not Roboto
+
+The CSS opens with a Roboto declaration (lines 1-22), but is **overridden later** by:
+
+```css
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+               "Helvetica Neue", Arial, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+               "Helvetica Neue", Arial, sans-serif;
+}
+```
+
+Because CSS cascades and the later rule wins for same specificity, **the effective typography on Apple devices was SF Pro Text / SF Pro Display** — Apple's system fonts. Roboto was loaded via `header.php` and stood as a fallback on non-Apple platforms (or when the Apple system fonts were missing).
+
+This explains the "Apple keynote compositional influence" the ChatGPT log mentioned — it wasn't just visual; the typography was literally Apple's system fonts. The Roboto-at-top declaration appears to be a leftover from an earlier Roboto-first iteration that wasn't fully removed when the SF Pro stack was introduced.
+
+### Color palette: blue-on-light
+
+Distinct from both the Dec early stand-in (sky→indigo gradient) and the current site (Sky+Peach+Cream):
+
+| Token | Hex | Use |
+|---|---|---|
+| `--accent` | `#2563eb` | Primary blue — links, nav-cta, button-primary background |
+| `--accent-strong` | `#1d4ed8` | Eyebrow / kicker text |
+| `--accent-soft` | `#dbeafe` | Focus outlines, soft backgrounds |
+| `--bg-page` | `#f3f4f6` | Page background base |
+| `--bg-surface` | `#ffffff` | Card surfaces |
+| `--text-main` | `#111827` | Body text (near-black ink) |
+| Heading color | `#020617` | Even darker than text-main; almost true black |
+
+The button-primary uses a linear-gradient from `#4f46e5` (indigo) to `#2563eb` (blue) — a touch of the earlier Dec era's indigo lingers, but only as a gradient endpoint on CTAs.
+
+### The "glass meniscus" detail
+
+Every card has a `::before` pseudo-element with:
+
+```css
+background: linear-gradient(to bottom, rgba(255, 255, 255, 0.55), transparent 40%);
+```
+
+This creates a subtle highlight along the top edge of every card, mimicking how light reflects off the top of a piece of glass. Combined with the backdrop-blur, soft shadows, and rounded corners (`--radius-md: 18px`), the result is unmistakably glass-like.
+
+### Hover micro-animations everywhere
+
+- Cards lift on hover: `transform: translateY(-4px)`, with shifted shadows
+- Nav pills lift: `transform: translateY(-1px)`
+- Buttons lift on hover, with `filter: brightness(1.03)`
+- Images lift and gain saturation: `transform: translateY(-2px) scale(1.01)`, `filter: saturate(1.06) contrast(1.05)`
+
+The design rewarded mouse interaction with subtle physical response — another deliberate "feels like a real material" choice.
+
+### Container is 1120px (wider than the others)
+
+`--container-width: 1120px`. The Dec early stand-in was 980px; the current production site uses 800px in the awonderfullife sibling (different project, but for reference). The Liquid Glass theme used the widest container of any era, taking advantage of laptop / desktop viewports.
+
+### Bug-fix comments at the bottom of the CSS
+
+The last ~80 lines have explicit fix-comments calling out specific issues:
+
+```css
+/* Home page: "What Working With Us Feels Like" image should NOT look cropped. */
+.section-visual.section-visual--feels { padding: 18px 16px 14px; }
+
+/* Resources page: reduce the "squished" feel ... */
+.page-resources .service-illustration { ... }
+
+/* CONTACT PAGE POLISH (v3) */
+.contact-layout { ... }
+```
+
+This is real iteration. The polish work was documented in code, not just in commit messages — comments that read like "we hit this problem and here's how we fixed it without affecting other pages."
+
+## What this era reveals (compared to neighbors)
 
 Several details that contradict or correct the prior history reconstruction:
 
@@ -41,7 +146,7 @@ Several details that contradict or correct the prior history reconstruction:
 | **Tagline** | "Less Noise. More Signal." (same) | "Less Noise. More Signal." |
 | **Audiences** | Students / Parents & Families / Adult Learners (B2C) | **Students / Institutions / Employers (B2B + B2C)** |
 | **Service tiers** | Clarity Session / Pathway Planning / Application Support / Workshops (family-services) | Institutional Services / Student Services / Employer Services (consultancy) |
-| **Typography** | Inter (body) + Playfair Display (headings) | **Roboto** (single family) |
+| **Typography** | Inter (body) + Playfair Display (headings) | **Apple system fonts (SF Pro)** — Roboto loaded as fallback only |
 | **Founder presence** | Implicit ("a small, hands-on education advisory") | **Explicit** — Arva Yusuf Ezzi named in header, with portrait + bio on About page |
 | **Pages** | 5 flat HTML files at root | 5 PHP page templates + header/footer/index/functions |
 | **Resources content** | FAQ + planning prompts | 9 themed resource cards across Academic / Experiential / Early Career |
@@ -56,8 +161,8 @@ Several details that contradict or correct the prior history reconstruction:
 |---|---|---|
 | **Tagline** | "Less Noise. More Signal." | "Clear paths. Confident decisions." |
 | **Audiences** | Students / Institutions / Employers (same) | Same |
-| **Typography** | Roboto | **Plus Jakarta Sans** |
-| **Palette** | "Liquid Glass" direction (translucency / dark / backdrop-blur per ChatGPT log) | **Sky Blue + Warm Peach + Cream tokens** (warm, light, structured) |
+| **Typography** | Apple system fonts (SF Pro) | **Plus Jakarta Sans** |
+| **Palette** | Light-mode glass: bluish-white surfaces with backdrop-blur, royal blue accent (`#2563eb`) | **Sky Blue + Warm Peach + Cream tokens** (warm, light, structured, no backdrop-blur) |
 | **Languages** | English only | **English + French + Arabic** |
 | **Founder portrait on About** | Yes — `arva-portrait.png` displayed in a quote-card | **Removed** (the PNG survives unreferenced in `assets/images/`) |
 | **Phone numbers visible** | Yes — mobile + office numbers, Titan booking link | **Not surfaced** on the current static site |
