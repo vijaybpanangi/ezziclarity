@@ -1,0 +1,1 @@
+<?php get_header(); ?><main class="container" style="padding:2rem 0;"><h1>Ezzi Clarity</h1><p>Please assign a page template (EN/FR/AR) to display the correct page.</p></main><?php get_footer(); ?>

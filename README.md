@@ -72,6 +72,7 @@ Anything more substantial than copy edits should go through a brainstorm → spe
 
 | Date | Area | What changed |
 |---|---|---|
+| 2026-05-28 | Archive | **April 6, 2026 WordPress `Ezzi Clarity v3.0.0` theme** preserved at [`docs/archive/2026-04-06-wordpress-v3-0-0/`](docs/archive/2026-04-06-wordpress-v3-0-0/) (26 files: 25 PHP templates + `style.css`); Wiki Project History revised (fifth pass) — closes the previously-≈approximate Jan–Apr 2026 gap with a direct snapshot showing Plus Jakarta Sans, Sky/Peach/Cream palette, and trilingual EN/FR/AR all in place by April 6, while tagline was still *"Less Noise. More Signal."* |
 | 2026-05-28 | Archive | Liquid Glass theme [`style.css`](docs/archive/2025-12-28-wordpress-liquid-glass-staging-v4/style.css) (~870 lines) added to the Dec 28 archive; Wiki Project History revised (fourth pass) — confirms light-mode glass, Apple system fonts (SF Pro) effective typography, theme `Version: 1.3.0`, royal-blue palette |
 | 2026-05-28 | Archive | Dec 28, 2025 WordPress "Liquid Glass" staging-v4 theme PHP files preserved at [`docs/archive/2025-12-28-wordpress-liquid-glass-staging-v4/`](docs/archive/2025-12-28-wordpress-liquid-glass-staging-v4/); Wiki Project History revised (third pass) with the corrected pre-May-2026 three-era timeline |
 | 2026-05-28 | Archive | Early-Dec 2025 stand-in source preserved at [`docs/archive/2025-12-static-standin/`](docs/archive/2025-12-static-standin/); Wiki Project History revised (second pass) |

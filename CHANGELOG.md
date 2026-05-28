@@ -73,21 +73,35 @@ The audience pivot is already complete at this point: Students / Institutions / 
 
 The complete contact / founder / language details from this era: mobile +1 (647) 505-9487, office +1 (226) 336-8100; **Arva Yusuf Ezzi**, MEd OISE U of T, prior roles at U of T and York U, fluent in English, Arabic, Hindi, Urdu, Gujarati. *(Earlier reconstructions had erroneously included French; that was wrong.)*
 
-### Q1–Q2 2026 — From "Liquid Glass v1.3.0" → `ezzi-clarity` Version 8.5.0
+### Jan – early April 2026 — Liquid Glass v1.3.0 retired, theme renamed to `ezzi-clarity`
 
-Between Dec 28, 2025 and the static conversion, the project went through substantial change. Notable: the theme's text domain changed from `ezzi-clarity-liquid-glass-staging-v4` (v1.3.0) to `ezzi-clarity` (eventually v8.5.0) — **two distinct text-domain identities**. Whether the Liquid Glass theme was retired and a different production theme took over, or whether the staging theme was renamed and renumbered, isn't recoverable from the preserved sources.
+The text-domain transition: from `ezzi-clarity-liquid-glass-staging-v4` (v1.3.0) to `ezzi-clarity` (v3.0.0). The staging-era nomenclature is gone by April 6. Whether the staging theme was renamed and renumbered, or whether a separate `ezzi-clarity` theme line replaced it, isn't recoverable from the preserved sources.
 
-Inferred changes:
+### April 6, 2026 — WordPress theme `Ezzi Clarity v3.0.0` published
 
-- Typography swap: **Apple system fonts / Roboto → Plus Jakarta Sans**.
-- Palette pivot: **Light-mode glass with royal-blue accent → Sky Blue + Warm Peach + Cream tokens** (no backdrop-blur, no glass meniscus, no translucent radial gradients).
+[`docs/archive/2026-04-06-wordpress-v3-0-0/`](docs/archive/2026-04-06-wordpress-v3-0-0/) — preserved verbatim, 26 files (25 PHP templates + the ~870-line `style.css`).
+
+A clean post-Liquid-Glass production theme. The version progression from `1.3.0` to `3.0.0` spans the Jan–early-Apr 2026 window during which the design language was substantially overhauled. By the time this snapshot was taken, **most of what the current static site looks like was already in place**:
+
+- 🟢 **Plus Jakarta Sans typography** — loaded via Google Fonts `@import`, used throughout.
+- 🟢 **Sky + Peach + Cream palette** — `--sky: #5B8FA8`, `--peach: #E8835A`, `--cream: #F7F4EE`. Same exact tokens as current.
+- 🟢 **Liquid Glass aesthetic largely retired** — `backdrop-filter: blur(...)` survives only on the sticky header (16px blur). No card-level backdrop-blur, no glass meniscus highlights, no translucent radial gradients on surfaces.
+- 🟢 **Trilingual structure** — EN, FR, AR all present as full page trees. French uses translated slugs (`a-propos`, `ressources`). Arabic uses `<html lang="ar" dir="rtl">`.
+- 🟢 **Founder portrait removed** from About page (`arva-portrait.png` no longer referenced).
+- 🟢 **Three-tier framing locked in** — Students / Institutions / Employers.
+- 🟢 **Container 1140px** — same as current static site.
+
+But the tagline was still *"Less Noise. More Signal."* and the Contact page still surfaced phone numbers and the Titan Email booking link prominently. Those changes happened in the v3.0.0 → v8.5.0 window (April 6 → ~late May 2026).
+
+### April 6 – ~late May 2026 (≈) — From v3.0.0 to v8.5.0
+
+The theme version bumped from `3.0.0` to `8.5.0` over ~7 weeks. The most visible changes in this window were copy-level rather than design-level:
+
 - Tagline replacement: **"Less Noise. More Signal." → "Clear paths. Confident decisions."**
-- **Trilingual expansion** — French (translated slugs `a-propos`, `ressources`) and Arabic (RTL layout) added.
-- Founder credit relocated from header to About page only.
-- About page portrait removed.
-- Phone numbers and booking link no longer surfaced.
-- Container narrowed from 1120px.
-- Theme text-domain transitioned from `ezzi-clarity-liquid-glass-staging-v4` to `ezzi-clarity`; version reached `8.5.0`.
+- Phone numbers and Titan Email booking link no longer prominently surfaced on the Contact page.
+- Theme version reached `8.5.0`.
+
+Container width (1140px), typography (Plus Jakarta Sans), palette (Sky/Peach/Cream), trilingual structure, and component vocabulary remained stable from v3.0.0 through v8.5.0 — confirmed by direct diff between the April 6 archive and the current static site.
 
 ### Q2 2026 — WordPress-to-static migration
 
