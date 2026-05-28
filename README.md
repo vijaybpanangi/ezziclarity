@@ -70,9 +70,14 @@ Anything more substantial than copy edits should go through a brainstorm → spe
 
 ## Recent updates
 
-- **2026-05-28** — WordPress theme leftovers scrubbed (`style.css` header, vestigial `static-site` body class, orphan `.page-*-services` selectors, `README_STATIC.txt`); `www.ezziclarity.ca` added as a Custom Domain on Cloudflare Pages (was returning 522); project documentation added (this README, `CLAUDE.md`, `docs/superpowers/` scaffold, `.gitignore`); GitHub About panel filled in with description, website, and topics.
+| Date | Area | What changed |
+|---|---|---|
+| 2026-05-28 | Documentation | `ROADMAP.md` added; README/CLAUDE updated to cross-link it |
+| 2026-05-28 | Cleanup | WordPress remnants scrubbed — `style.css` theme header, `static-site` body class on 14 pages, orphan `.page-*-services` selectors, `README_STATIC.txt` |
+| 2026-05-28 | Infrastructure | `www.ezziclarity.ca` added as a second Custom Domain on Cloudflare Pages (was returning 522) |
+| 2026-05-28 | Documentation | `README.md`, `CLAUDE.md`, `CHANGELOG.md`, `docs/superpowers/` scaffold, `.gitignore`; GitHub About panel filled in (description, website, topics) |
 
-Full chronological log: [`CHANGELOG.md`](CHANGELOG.md).
+Full chronological log lives in [`CHANGELOG.md`](CHANGELOG.md); planned work lives in [`ROADMAP.md`](ROADMAP.md).
 
 ## Styling notes
 
