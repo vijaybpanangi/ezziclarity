@@ -47,33 +47,47 @@ The apex DNS still has `SPF` and `DMARC` TXT records referencing `_spf.wpcloud.c
 
 ## Earlier (Q4 2025 – Q2 2026)
 
-The project began in **Q4 2025** with the incorporation of **Ezzi Clarity Educational Consulting Services Inc.** under the laws of British Columbia (Ontario Corporation Number 1001423284; head office Vancouver, principal place of business Waterloo).
+The project began in **Q4 2025** with the incorporation of **Ezzi Clarity Educational Consulting Services Inc.** under the laws of British Columbia (Ontario Corporation Number 1001423284; head office Vancouver, principal place of business Waterloo). Founded by **Arva Yusuf Ezzi**, MEd from OISE (University of Toronto), with prior institutional roles at the University of Toronto and York University.
 
-### December 2025 — The static stand-in (`docs/archive/2025-12-static-standin/`)
+### Early December 2025 — The static stand-in
 
-The first production version of `ezziclarity.ca` went live in December 2025 as an explicitly transitional **single-language English-only** static site. Every page carried a yellow banner reading *"This is a temporary stand in site while our full Ezzi Clarity website is being built."*
+[`docs/archive/2025-12-static-standin/`](docs/archive/2025-12-static-standin/) — preserved verbatim.
 
-The Dec 2025 site is preserved verbatim in [`docs/archive/2025-12-static-standin/`](docs/archive/2025-12-static-standin/) — all five HTML pages, the stylesheet, the EC monogram SVG, the robots.txt, plus a README explaining the differences from the current site. Notable for being substantially different in framing from what runs today:
+The first production version of `ezziclarity.ca` was an explicitly transitional **single-language English-only** static site with a B2C family-services framing (Students / Parents & Families / Adult Learners). Inter + Playfair Display typography, sky→indigo gradient palette, full dark-mode support. Banner on every page read *"This is a temporary stand in site while our full Ezzi Clarity website is being built."*
 
-- **Tagline:** *"Less Noise. More Signal."* (the current site uses *"Clear paths. Confident decisions."*)
-- **Audiences:** Students / Parents & Families / Adult Learners — a **B2C family-services framing**, not the current Students / Institutions / Employers triangle.
-- **Typography:** Inter (body) + Playfair Display (headings) — replaced later by Plus Jakarta Sans.
-- **Palette:** Sky → Indigo gradient (`#0ea5e9 → #6366f1`) — replaced later by the warmer Sky / Peach / Cream tokens.
-- **Dark mode** via `prefers-color-scheme: dark` — not carried forward to the current site.
+### Late December 2025 — WordPress "Liquid Glass" theme (staging v4)
 
-### Q1–Q2 2026 — WordPress theme build (in parallel)
+[`docs/archive/2025-12-28-wordpress-liquid-glass-staging-v4/`](docs/archive/2025-12-28-wordpress-liquid-glass-staging-v4/) — preserved verbatim (PHP templates only; theme stylesheet not preserved).
 
-While the Dec 2025 stand-in was live, a separate **WordPress theme** build was underway (theme name `Ezzi Clarity`, text domain `ezzi-clarity`, eventually reaching `Version: 8.5.0`). Across ~6 months and many iterations, the brand and design system shifted substantially:
+Within ~3 weeks of the stand-in's launch, a substantial WordPress theme on WordPress.com had already reached staging v4 (theme handle `ezzi-clarity-liquid-glass-staging-v4-style`). This iteration shows:
 
-- Audience pivot **from B2C to B2B + B2C** (the Students/Institutions/Employers triangle is a WordPress-era invention, not original).
-- Typography swapped to **Plus Jakarta Sans** site-wide.
-- Palette evolved to **Sky Blue + Warm Peach + Cream**.
-- Tagline reframed from *"Less Noise. More Signal."* to *"Clear paths. Confident decisions."*
-- **Trilingual expansion** added French and Arabic with the trilingual URL conventions and RTL handling that exist today.
-- Compliance language hardened to the explicit *"No immigration or visa advice provided."*
-- About page acquired (and later lost) a portrait of the founder — two byte-identical orphan PNGs survive in `assets/images/`.
+- The **audience pivot to B2B+B2C is complete** — Students / Institutions / Employers, three service tiers, the framing the site has carried ever since.
+- **Compliance disclaimer is hardened** — *"No immigration or visa consulting is provided"* appears in the footer and as a dedicated FAQ entry.
+- **Tagline is still** *"Less Noise. More Signal."* — the swap to *"Clear paths. Confident decisions."* happens later.
+- **Typography is Roboto** — not the current Plus Jakarta Sans.
+- **"Liquid Glass"** is a real, named, multi-iteration design direction (translucency / dark accents per ChatGPT log).
+- **Portrait of Arva** is displayed on the About page (later removed; orphan PNGs survive in `assets/images/`).
+- **Phone numbers and a Titan Email booking link** are visible on the Contact page (not surfaced on the current site).
+- **Founder credit in the header** on every page (later moved to About-only).
 
-The WordPress build eventually **replaced** the Dec 2025 stand-in (rather than evolving from it). The static conversion happened in Q2 2026, and the result was committed to this repo as `Initial upload`.
+The complete contact / founder / language details were captured in this era: mobile +1 (647) 505-9487, office +1 (226) 336-8100, fluent in English, Arabic, Hindi, Urdu, Gujarati. *(Earlier reconstructions had erroneously included French; that was wrong.)*
+
+### Q1–Q2 2026 — WordPress iteration from "Liquid Glass v4" → `Version: 8.5.0`
+
+Across the following months the WordPress theme continued to iterate. Inferred changes between Dec 28 and the current state include:
+
+- Typography swap: **Roboto → Plus Jakarta Sans**.
+- Palette pivot: **"Liquid Glass" translucency → Sky Blue + Warm Peach + Cream tokens**.
+- Tagline replacement: **"Less Noise. More Signal." → "Clear paths. Confident decisions."**
+- **Trilingual expansion** — French (translated slugs `a-propos`, `ressources`) and Arabic (RTL layout) added.
+- Founder credit relocated from header to About page only.
+- About page portrait removed.
+- Phone numbers and booking link no longer surfaced.
+- Theme `Version` field progressed from `staging-v4` to final `8.5.0`.
+
+### Q2 2026 — WordPress-to-static migration
+
+The final WordPress theme (`Version: 8.5.0`) was converted to plain static HTML and committed to this git repo as `Initial upload`. The conversion preserved the design system, typography, multilingual structure, CSS class vocabulary, and imagery; it discarded the PHP runtime, plugin dependencies, and database coupling.
 
 ### DNS provenance
 
