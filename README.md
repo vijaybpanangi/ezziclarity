@@ -72,6 +72,7 @@ Anything more substantial than copy edits should go through a brainstorm → spe
 
 | Date | Area | What changed |
 |---|---|---|
+| 2026-05-28 | Documentation | GitHub [Wiki](https://github.com/vijaybpanangi/ezziclarity/wiki) populated with nine pages plus sidebar — long-form companion to the in-repo docs |
 | 2026-05-28 | Documentation | `ROADMAP.md` added; README/CLAUDE updated to cross-link it |
 | 2026-05-28 | Cleanup | WordPress remnants scrubbed — `style.css` theme header, `static-site` body class on 14 pages, orphan `.page-*-services` selectors, `README_STATIC.txt` |
 | 2026-05-28 | Infrastructure | `www.ezziclarity.ca` added as a second Custom Domain on Cloudflare Pages (was returning 522) |
