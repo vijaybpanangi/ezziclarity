@@ -66,6 +66,7 @@ Anything more substantial than copy edits should go through a brainstorm → spe
 - **`docs/superpowers/specs/`** — design specs for non-trivial changes (`YYYY-MM-DD-<topic>-design.md`).
 - **`docs/superpowers/plans/`** — implementation plans matched to specs (`YYYY-MM-DD-<topic>.md`).
 - **`CHANGELOG.md`** — curated trail of notable changes (infrastructure, documentation, deployment).
+- **`ROADMAP.md`** — future updates and deferred items (email migration to iCloud+ Custom Domain, canonical-URL redirect).
 
 ## Recent updates
 
