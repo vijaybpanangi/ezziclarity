@@ -33,7 +33,7 @@ A small language-gateway page at `/index.html` lets first-time visitors choose. 
 /sitemap.xml            Static sitemap
 ```
 
-No frameworks, no build system, no JavaScript bundle. Each page is a hand-written HTML file with a small inline `<script>` for the mobile-nav drawer. Originally a WordPress theme; converted to static HTML so it can run on any static host.
+No frameworks, no build system, no JavaScript bundle. Each page is a hand-written HTML file with a small inline `<script>` for the mobile-nav drawer.
 
 ## Working with the site
 
@@ -66,11 +66,10 @@ Anything more substantial than copy edits should go through a brainstorm → spe
 - **`docs/superpowers/specs/`** — design specs for non-trivial changes (`YYYY-MM-DD-<topic>-design.md`).
 - **`docs/superpowers/plans/`** — implementation plans matched to specs (`YYYY-MM-DD-<topic>.md`).
 - **`CHANGELOG.md`** — curated trail of notable changes (infrastructure, documentation, deployment).
-- **`README_STATIC.txt`** — original conversion note from the WordPress export. Kept for provenance.
 
 ## Recent updates
 
-- **2026-05-28** — `www.ezziclarity.ca` added as a Custom Domain on Cloudflare Pages (was returning 522); project documentation added (this README, `CLAUDE.md`, `docs/superpowers/` scaffold, `.gitignore`); GitHub About panel filled in with description, website, and topics.
+- **2026-05-28** — WordPress theme leftovers scrubbed (`style.css` header, vestigial `static-site` body class, orphan `.page-*-services` selectors, `README_STATIC.txt`); `www.ezziclarity.ca` added as a Custom Domain on Cloudflare Pages (was returning 522); project documentation added (this README, `CLAUDE.md`, `docs/superpowers/` scaffold, `.gitignore`); GitHub About panel filled in with description, website, and topics.
 
 Full chronological log: [`CHANGELOG.md`](CHANGELOG.md).
 

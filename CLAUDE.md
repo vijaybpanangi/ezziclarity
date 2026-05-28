@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Static marketing site for **Ezzi Clarity**, an educational consulting business based in Southern Ontario. Fully localized into three languages: English (`/en/`), French (`/fr/`), Arabic (`/ar/`). Five pages per language: home, about, services, resources, contact. A root `/index.html` is a language gateway.
 
-Originally a WordPress theme (visible in `style.css` header: `Theme Name: Ezzi Clarity, Version: 8.5.0`). PHP and the WP runtime are gone — this is plain HTML, one stylesheet, static assets, and a small inline mobile-nav script duplicated on each page.
+The codebase was originally produced as a WordPress theme and then converted to plain HTML + CSS — that origin is now history (no PHP, no WP runtime, no leftover theme metadata in the stylesheet, no `static-site` body class marker). What's left is the structure: plain HTML, one stylesheet, static assets, and a small inline mobile-nav script duplicated on each page.
 
 ## Build, run, deploy
 
@@ -74,7 +74,7 @@ Each page contains its own inline `<script>` that toggles the `.mobile-nav` draw
 - **No string-extraction system.** Translations live inline in the HTML. Editing a sentence means finding it in all three language trees.
 - **`sitemap.xml` and `_redirects` are hand-maintained.** They enumerate every URL; update them when adding/removing/renaming pages.
 - **Compliance disclaimer recurs across pages:** *"Academic and career focused only. No immigration or visa advice provided."* (also rendered translated in `fr/` and `ar/`). Keep wording consistent — it's there for a reason.
-- **The CSS header still carries WordPress theme metadata** (`Theme Name`, `Version: 8.5.0`, `Text Domain`). Harmless leftover; don't remove unless asked.
+- **WordPress provenance.** Pre-2026-05-28 the codebase carried leftover artifacts from its WP theme origin: a `Theme Name` / `Version` / `Text Domain` block at the top of `style.css`, a vestigial `class="static-site"` body marker on most HTML files, and a few orphaned `.page-en-services` / `.page-fr-services` / `.page-ar-services` CSS selectors. All were removed during cleanup; the codebase is now WP-free at the file level. The apex DNS still has SPF and DMARC TXT records that reference `_spf.wpcloud.com` — those live in Cloudflare DNS, not the repo, and have not been touched.
 - **Accessibility scaffolding is in place** — `skip-link`, `aria-label`, `aria-expanded`, `aria-hidden`, `aria-current`. Preserve them on edits; `<img alt="">` is intentionally empty on decorative images and descriptive on content-bearing ones.
 
 ## Project documentation conventions

@@ -1,8 +1,6 @@
-/*
-Theme Name: Ezzi Clarity
-Version: 8.5.0
-Text Domain: ezzi-clarity
-*/
+/* =============================================
+   Ezzi Clarity — site stylesheet
+   ============================================= */
 
 /* =============================================
    GOOGLE FONTS — Plus Jakarta Sans
@@ -1238,7 +1236,7 @@ html[dir="rtl"] a[href^="mailto:"] { direction: ltr; unicode-bidi: bidi-override
 
 /* Optical balance tuning for specific placements */
 .page-resources .service-card { min-height: 100%; }
-.page-resources .service-card-body, .page-en-services .service-card-body, .page-fr-services .service-card-body, .page-ar-services .service-card-body { min-height: 250px; }
+.page-resources .service-card-body { min-height: 250px; }
 .card-inst .service-card-img img { object-position: center 42%; }
 .card-stud .service-card-img img { object-position: center 46%; }
 .card-empl .service-card-img img { object-position: center 38%; }
