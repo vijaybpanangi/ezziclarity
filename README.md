@@ -2,6 +2,8 @@
 
 > *Clear paths. Confident decisions.*
 
+**Live:** <https://ezziclarity.ca>
+
 Static marketing site for **Ezzi Clarity**, an educational consulting practice based in Southern Ontario. The site introduces the practice, names the audiences served, lays out the core service areas, and provides a way to book an intro call.
 
 The practice itself focuses on student success and experiential learning — helping **students**, **institutions**, and **employers** navigate Canadian academic systems with clarity, structure, and practical insight. Founded and led by Arva (MEd, OISE — University of Toronto).

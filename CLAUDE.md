@@ -12,9 +12,9 @@ Originally a WordPress theme (visible in `style.css` header: `Theme Name: Ezzi C
 
 There is no build system. No `package.json`, no bundler, no test framework. Edits are made directly to HTML/CSS files.
 
+- **Live site:** <https://ezziclarity.ca> — Cloudflare Pages auto-deploys from `main` on every push. The `_redirects` file (Netlify / Cloudflare Pages syntax) handles short paths like `/about → /en/about/`.
 - **Preview locally:** `python3 -m http.server 8000` from the repo root, open `http://localhost:8000/`.
-- **Deploy:** upload the entire repo to a static host. The `_redirects` file uses Netlify/Cloudflare-Pages syntax (e.g. `/about /en/about/ 301`) — the deploy target is one of those platforms.
-- **Verification:** visual, in a browser. There are no automated tests.
+- **Verify a deploy:** after pushing, the Cloudflare Pages dashboard shows the build, and the live site updates within ~30s. There are no automated tests; verification is visual.
 
 ## The single thing to internalize: triplicate maintenance
 
