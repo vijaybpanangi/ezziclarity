@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="استشارات Ezzi Clarity للطلاب — توجيه في الانتقال الأكاديمي والمهني، والتواصل الاحترافي، واستراتيجيات الدراسة في الحياة الأكاديمية الكندية.">
+  <meta property="og:title" content="الاستشارات — Ezzi Clarity Educational Consulting">
+  <meta property="og:description" content="دعم عملي ومباشر، فردي وفي مجموعات صغيرة، للطلاب الذين يتكيّفون مع الحياة الأكاديمية الكندية.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="index.html">
+  <link rel="stylesheet" href="../../style.css">
+
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta property="og:image" content="../../assets/images/og-ezzi-clarity.png">
+  <title>الاستشارات — إيزي كلاريتي</title>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">الانتقال إلى المحتوى الرئيسي</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a href="../index.html" class="brand" aria-label="إيزي كلاريتي — الرئيسية">
+      <img class="brand-logo" src="../../assets/images/logo-ec.svg" alt="">
+      <div class="brand-text">
+        <span class="brand-name">إيزي كلاريتي</span>
+      </div>
+    </a>
+
+    <!-- Keep nav LTR for visual stability -->
+    <nav class="main-nav" dir="ltr" aria-label="التنقل الرئيسي">
+      <a href="../index.html"              class="nav-link ">الرئيسية</a>
+      <a href="../about/index.html"        class="nav-link ">من نحن</a>
+      <a href="index.html"                 class="nav-link nav-active">الاستشارات</a>
+      <a href="../books/index.html"        class="nav-link ">الكتب</a>
+      <a href="../resources/index.html"    class="nav-link ">الموارد</a>
+      <a href="../contact/index.html"      class="nav-link ">تواصل معنا</a>
+    </nav>
+
+    <div class="lang-switch" dir="ltr" aria-label="اللغة">
+      <a class="nav-link" href="../../en/consulting/index.html">EN</a>
+      <a class="nav-link" href="../../fr/conseil/index.html">FR</a>
+      <a class="nav-link nav-cta" href="index.html" aria-current="true">AR</a>
+    </div>
+
+    <a href="../contact/index.html" class="header-cta">احجز مكالمة</a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="فتح القائمة">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <nav class="mobile-nav-links" dir="rtl" aria-label="التنقل على الجوال">
+    <a href="../index.html"              class="">الرئيسية</a>
+    <a href="../about/index.html"        class="">من نحن</a>
+    <a href="index.html"                 class="nav-active">الاستشارات</a>
+    <a href="../books/index.html"        class="">الكتب</a>
+    <a href="../resources/index.html"    class="">الموارد</a>
+    <a href="../contact/index.html"      class="">تواصل معنا</a>
+  </nav>
+  <div class="mobile-lang" dir="ltr">
+    <a href="../../en/consulting/index.html">EN</a>
+    <a href="../../fr/conseil/index.html">FR</a>
+    <a class="nav-cta" href="index.html">AR</a>
+  </div>
+  <a href="../contact/index.html" class="mobile-cta">احجز مكالمة تعريفية</a>
+</div>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var drawer = document.getElementById('mobile-nav');
+  if(!btn || !drawer) return;
+  btn.addEventListener('click', function(){
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    drawer.classList.toggle('is-open', !open);
+    drawer.setAttribute('aria-hidden', String(open));
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && drawer.classList.contains('is-open')){
+      btn.setAttribute('aria-expanded','false');
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden','true');
+      btn.focus();
+    }
+  });
+})();
+</script>
+
+<main id="main-content">
+
+  <!-- ── رأس الصفحة ──────────────────────────── -->
+  <section class="page-header">
+    <div class="container">
+      <p class="eyebrow">الاستشارات</p>
+      <h1>دعم عملي.<br>اتجاه واضح.</h1>
+      <p>نعمل فرديًا وفي مجموعات صغيرة مع الطلاب الذين يتكيّفون مع الحياة الأكاديمية الكندية. نساعدك على فهم ما هو متوقع منك، وبناء مهارات ستستخدمها فعلاً، وأخذ قرارات تشعر بالرضا عنها.</p>
+    </div>
+  </section>
+
+  <!-- ── بطاقات الخدمات الثلاث ──────────────────── -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">ما نقدّمه</p>
+        <h2>دعم مركّز للطلاب</h2>
+        <p>وضع كل طالب مختلف، لذا نصمّم الدعم حول ما تحتاجه فعلاً لا وفق باقة جاهزة. ثلاثة مجالات ترتكز عليها طبيعة عملنا.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card card--accent">
+          <p class="card-tag">التوجيه</p>
+          <h3>توجيه الانتقال الأكاديمي والمهني</h3>
+          <p>إرشاد فردي لفهم التوقعات، وتقييم الخيارات، واختيار الخطوات التالية بواقعية وطموح في آنٍ واحد.</p>
+        </article>
+        <article class="card card--accent">
+          <p class="card-tag">الورش</p>
+          <h3>التواصل الاحترافي</h3>
+          <p>ورش عملية حول أساليب التواصل المطلوبة في البيئات الأكاديمية والمهنية الكندية: البريد الإلكتروني، والمقابلات، والمشاركة الصفية وغيرها.</p>
+        </article>
+        <article class="card card--accent">
+          <p class="card-tag">المهارات</p>
+          <h3>استراتيجيات الدراسة ومهارات التعلّم</h3>
+          <p>استراتيجيات ملموسة لإدارة المقررات الدراسية، والدراسة بفاعلية، وبناء عادات تصمد تحت الضغط.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── كيف نعمل ───────────────────────────── -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">كيف نعمل</p>
+        <h2>عملية مبنية على الاستماع أولاً</h2>
+        <p>كل تعاون يبدأ بمحادثة حقيقية. نحتاج أن نفهم وضعك قبل أن نقترح أي شيء مفيد. لا تستلزم كل مسألة تعاونًا موسّعًا؛ أحيانًا يكفي حوار واضح يحدّد المشكلة ويضيء الخطوة الأنسب.</p>
+      </div>
+      <div class="process process-two-column">
+        <div class="process-step">
+          <div class="process-number">١</div>
+          <div>
+            <h3>الاستماع وفهم السياق</h3>
+            <p>نبدأ بمحادثة منظّمة لفهم سياقك ومساراتك الحالية وقيودك والنتائج التي تهمك أكثر.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">٢</div>
+          <div>
+            <h3>توضيح الأهداف والنطاق</h3>
+            <p>نحدد معًا أهدافًا واقعية ونطاقًا واضحًا يتناسب مع الموارد المتاحة وأهدافك وظروفك.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">٣</div>
+          <div>
+            <h3>تصميم خطوات عملية</h3>
+            <p>نضع خطوات يمكن تنفيذها فعليًا، مع التركيز على الوضوح والبساطة وتجربة الطالب المعاشة.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">٤</div>
+          <div>
+            <h3>دعم التنفيذ والتأمل</h3>
+            <p>عند الاقتضاء، نبقى متاحين لدعم المراحل الأولى من التنفيذ والتأمل بصدق فيما ينجح وما يحتاج تعديلاً.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── أسئلة شائعة ──────────────────────────────────── -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">أسئلة شائعة</p>
+        <h2>ما يُسألنا كثيرًا</h2>
+      </div>
+      <div style="display:grid; gap:1rem; max-width:800px;">
+        <div class="faq">
+          <p class="faq-q">مع من تعملون؟</p>
+          <p class="faq-a">نركّز على الطلاب، المحليين والدوليين، الذين يتكيّفون مع البيئات الأكاديمية والمهنية الكندية. يكون دعمنا فرديًا أو في مجموعات صغيرة.</p>
+        </div>
+        <div class="faq">
+          <p class="faq-q">هل تقدّمون خدمات في مجال الهجرة أو التأشيرات؟</p>
+          <p class="faq-a">لا. لا تقدّم Ezzi Clarity أي استشارات في الهجرة أو التأشيرات. نحن نركّز حصريًا على الانتقال الأكاديمي ونجاح الطلاب والتعلّم التجريبي.</p>
+        </div>
+        <div class="faq">
+          <p class="faq-q">هل تقدّمون دعمًا فرديًا للطلاب؟</p>
+          <p class="faq-a">نعم. نقدّم توجيهًا في الانتقال الأكاديمي والمهني وورشًا مختارة مصمّمة للطلاب الذين يرغبون في إرشاد منظّم أثناء تكيّفهم مع البيئات الأكاديمية والمهنية الكندية.</p>
+        </div>
+        <div class="faq">
+          <p class="faq-q">كم يستغرق التعاون النموذجي؟</p>
+          <p class="faq-a">يعتمد كليًا على النطاق. بعض التعاونات تقتصر على ورشة واحدة أو استشارة. أخرى تتضمن عملًا استشاريًا مستمرًا على مدار فصل دراسي أو سنة أكاديمية. نتفق دائمًا على النطاق قبل البدء.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── دعوة للتواصل ──────────────────────────────────── -->
+  <section class="section-cta">
+    <div class="container section-cta-inner">
+      <div>
+        <p class="eyebrow">هل أنت مستعد للخطوة الأولى؟</p>
+        <h2>لنكتشف إن كنا الخيار المناسب لك.</h2>
+        <p>مكالمة تعريفية قصيرة هي أفضل نقطة بداية. بلا التزام. مجرد حوار صادق ومركّز حول وضعك، والدعم الذي قد يفيدك، ومدى التوافق بيننا.</p>
+      </div>
+      <div>
+        <a href="../contact/index.html" class="btn-primary btn-lg">احجز مكالمة مجانية</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" dir="rtl">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <img class="footer-logo" src="../../assets/images/logo-ec.svg" alt="شعار إيزي كلاريتي">
+        <span class="footer-name">إيزي كلاريتي للاستشارات التعليمية</span>
+        <p class="footer-desc">استشارات تعليمية للطلاب، إلى جانب كتب للأطفال وأدلة قيد الإعداد. نساعد الطلاب على إيجاد طريقهم في الحياة الأكاديمية الكندية، ونكتب للقراء الصغار القادمين إلى بلد جديد. تأسست على يد أروى عزّي، ماجستير في التربية (OISE، جامعة تورونتو).</p>
+        <p class="footer-desc" style="margin-top:0.25rem; font-style:italic;">جميع خدماتنا أكاديمية ومهنية. لا نقدم أي استشارات في مجال الهجرة أو التأشيرات.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>التنقل</h4>
+        <ul>
+          <li><a href="../index.html">الرئيسية</a></li>
+          <li><a href="../about/index.html">من نحن</a></li>
+          <li><a href="index.html">الاستشارات</a></li>
+          <li><a href="../books/index.html">الكتب</a></li>
+          <li><a href="../resources/index.html">الموارد</a></li>
+          <li><a href="../contact/index.html">تواصل معنا</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col" dir="ltr">
+        <h4 dir="rtl">تواصل معنا</h4>
+        <ul>
+          <li><a href="tel:+16475059487">+1 (647) 505-9487</a></li>
+          <li><a href="tel:+12263368100">+1 (226) 336-8100</a></li>
+          <li><a href="mailto:info@ezziclarity.ca">info@ezziclarity.ca</a></li>
+          <li style="color:rgba(255,255,255,0.45); font-size:0.8rem; margin-top:0.5rem; direction:rtl;">منطقة واترلو، أونتاريو</li>
+          <li><a href="https://book.titan.email/ezziclarity/intro" target="_blank" rel="noopener">احجز مكالمة ←</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom" dir="ltr">
+      <p>© 2026 إيزي كلاريتي للاستشارات التعليمية</p>
+      <div class="footer-lang">
+        <a href="../../en/index.html">EN</a>
+        <a href="../../fr/index.html">FR</a>
+        <a class="active" href="../index.html">AR</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -4,6 +4,21 @@ Notable changes to the website, deployment configuration, and project documentat
 
 Releases on this project use semver-style tags (`v1.0.0`, `v1.1.0`, etc.) cut as deliberate milestones, not per-commit. See [GitHub Releases](https://github.com/vijaybpanangi/ezziclarity/releases) for the formal release notes.
 
+## 2026-06-08
+
+### Two-pillar restructure — Consulting + Books, student-only focus
+
+The site grew from a single consulting pillar into two pillars under the same brand (no rebrand), unified by a "transition and belonging" theme. Done on branch `restructure/two-pillar-consulting-books` (heading to a PR). Design spec and implementation plan live in `docs/superpowers/specs/` and `docs/superpowers/plans/`.
+
+- **Navigation** is now `Home · About · Consulting · Books · Resources · Contact` across all 18 pages (desktop, mobile drawer, footer) in EN/FR/AR.
+- **Services → Consulting rename.** `/en/services/ → /en/consulting/`, `/fr/services/ → /fr/conseil/`, `/ar/services/ → /ar/consulting/`, with 301 redirects in `_redirects`, updated `sitemap.xml`, canonicals, and every cross-language `lang-switch` link.
+- **B2B dropped entirely.** The Institutions and Employers offerings were removed; Consulting is now student-only. The home, Resources, and Contact pages were reframed to a student focus, and the footer brand copy and meta descriptions were rewritten to drop the student–institution–employer trio. (`services-institution.png` / `services-employer.png` are now unreferenced but kept on disk.)
+- **New Books pillar** (`/en/books/`, `/fr/livres/`, `/ar/books/`) — a passion-first page led by the children's-book series for immigrant families, with an Educational Guides section. Honest "in development / coming soon" states; no placeholder covers.
+- **Home reframed** into "two chapters": *We advise* (student consulting) and *We write* (books), under the transition-and-belonging theme.
+- **About** now notes Arva as a long-time educator and author and links to Books; the principles were lightly reframed away from B2B positioning.
+- **Copy humanized** across all new and changed content, with unnecessary em dashes removed.
+- **Arabic** strings on the restructured pages await native-speaker review (`docs/superpowers/specs/arabic-review-checklist.md`) before deploy.
+
 ## 2026-05-28
 
 ### 🏷 Release: `v1.0.0` — Trilingual marketing site live

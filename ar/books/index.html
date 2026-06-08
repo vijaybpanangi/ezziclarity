@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="كتب إيزي كلاريتي — قصص تساعد أطفال المهاجرين على الشعور بالانتماء، وأدلة عملية للطلاب الذين يتعاملون مع البيئات الأكاديمية الكندية.">
+  <meta property="og:title" content="الكتب — إيزي كلاريتي للاستشارات التعليمية">
+  <meta property="og:description" content="كتب إيزي كلاريتي — قصص تساعد أطفال المهاجرين على الشعور بالانتماء، وأدلة عملية للطلاب الذين يتعاملون مع البيئات الأكاديمية الكندية.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="index.html">
+  <link rel="stylesheet" href="../../style.css">
+
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta property="og:image" content="../../assets/images/og-ezzi-clarity.png">
+  <title>الكتب — إيزي كلاريتي</title>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">الانتقال إلى المحتوى الرئيسي</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a href="../index.html" class="brand" aria-label="إيزي كلاريتي — الرئيسية">
+      <img class="brand-logo" src="../../assets/images/logo-ec.svg" alt="">
+      <div class="brand-text">
+        <span class="brand-name">إيزي كلاريتي</span>
+      </div>
+    </a>
+
+    <!-- Keep nav LTR for visual stability -->
+    <nav class="main-nav" dir="ltr" aria-label="التنقل الرئيسي">
+      <a href="../index.html"              class="nav-link ">الرئيسية</a>
+      <a href="../about/index.html"        class="nav-link ">من نحن</a>
+      <a href="../consulting/index.html"   class="nav-link ">الاستشارات</a>
+      <a href="index.html"                 class="nav-link nav-active">الكتب</a>
+      <a href="../resources/index.html"    class="nav-link ">الموارد</a>
+      <a href="../contact/index.html"      class="nav-link ">تواصل معنا</a>
+    </nav>
+
+    <div class="lang-switch" dir="ltr" aria-label="اللغة">
+      <a class="nav-link" href="../../en/books/index.html">EN</a>
+      <a class="nav-link" href="../../fr/livres/index.html">FR</a>
+      <a class="nav-link nav-cta" href="index.html" aria-current="true">AR</a>
+    </div>
+
+    <a href="../contact/index.html" class="header-cta">احجز مكالمة</a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="فتح القائمة">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- Mobile nav drawer -->
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <nav class="mobile-nav-links" dir="rtl" aria-label="التنقل على الجوال">
+    <a href="../index.html"              class="">الرئيسية</a>
+    <a href="../about/index.html"        class="">من نحن</a>
+    <a href="../consulting/index.html"   class="">الاستشارات</a>
+    <a href="index.html"                 class="nav-active">الكتب</a>
+    <a href="../resources/index.html"    class="">الموارد</a>
+    <a href="../contact/index.html"      class="">تواصل معنا</a>
+  </nav>
+  <div class="mobile-lang" dir="ltr">
+    <a href="../../en/books/index.html">EN</a>
+    <a href="../../fr/livres/index.html">FR</a>
+    <a class="nav-cta" href="index.html">AR</a>
+  </div>
+  <a href="../contact/index.html" class="mobile-cta">احجز مكالمة تعريفية</a>
+</div>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var drawer = document.getElementById('mobile-nav');
+  if(!btn || !drawer) return;
+  btn.addEventListener('click', function(){
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    drawer.classList.toggle('is-open', !open);
+    drawer.setAttribute('aria-hidden', String(open));
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && drawer.classList.contains('is-open')){
+      btn.setAttribute('aria-expanded','false');
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden','true');
+      btn.focus();
+    }
+  });
+})();
+</script>
+
+<main id="main-content">
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <p class="eyebrow">الكتب</p>
+      <h1>قصص وأدلة<br>لإيجاد طريقك.</h1>
+      <p>بدأت إيزي كلاريتي تكتب إلى جانب ما تقدمه من استشارات. تحمل كتبنا الإيمان ذاته الذي يحمله عملنا الاستشاري: أن كل شخص يستحق مسارًا واضحًا وطيبًا نحو شيء جديد. طالب يصل إلى جامعة كندية، أو طفل يصل إلى بلد جديد. كلاهما يستحق ذلك.</p>
+      <p class="hero-footnote">خدمات أكاديمية ومهنية فقط. لا نقدم استشارات في الهجرة أو التأشيرات.</p>
+    </div>
+  </section>
+
+  <!-- FEATURE: the immigrant-family series story -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">مشروع من القلب</p>
+        <h2>سلسلة للأطفال الذين يجعلون من مكان جديد بيتًا لهم</h2>
+      </div>
+      <div style="max-width:760px;">
+        <p>عملنا الذي يصدر من القلب هو سلسلة كتب للأطفال عن صغار من عائلات مهاجرة يجدون موطئ قدم في بلد جديد وثقافة جديدة. يتعلمون لغة جديدة ومدرسة جديدة وأصدقاء جددًا، بينما يحتضنون برفق ذكريات البيت الذي تركوه وراءهم.</p>
+        <p>تستند هذه القصص إلى أكثر من عشر سنوات من تعليم الأطفال من مرحلة الروضة حتى المرحلة الإعدادية. وهذا يعني لغة مناسبة للعمر، والإيقاع والطول المناسبَين لكل قارئ، وصدقًا عاطفيًا يصل فعلاً إلى الطفل. هذه ليست كتبًا يضعها الأطفال جانبًا بعد قراءة واحدة.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHILDREN'S BOOKS category -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">كتب الأطفال</p>
+        <h2>قيد التطوير</h2>
+        <p>العناوين الأولى تأخذ شكلها الآن. نبدأ بصيغتين مناسبتين لأصغر قرائنا.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card card--accent">
+          <p class="card-tag">قريبًا</p>
+          <h3>كتاب مصوّر · ٣–٦ سنوات</h3>
+          <p>قصة لطيفة ومصوّرة لأصغر الوافدين الجدد. تُقرأ بصوت عالٍ قبل النوم، مبنية حول الانتماء واللحظات الصغيرة من الشجاعة.</p>
+        </article>
+        <article class="card card--accent">
+          <p class="card-tag">قريبًا</p>
+          <h3>قارئ مبتدئ · ٥–٨ سنوات</h3>
+          <p>جمل قصيرة وبسيطة للأطفال الذين بدأوا للتو في القراءة بمفردهم، تتابع شخصية شابة تستقر في منزل جديد ومدرسة جديدة.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATIONAL GUIDES category -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">الأدلة التعليمية</p>
+        <h2>أدلة عملية للطلاب</h2>
+        <p>إلى جانب كتب الأطفال، نطوّر أدلة واضحة وعملية مستمَدة من سنوات داخل البيئات التعليمية الكندية ما بعد الثانوية.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card card--accent">
+          <p class="card-tag">قيد التطوير</p>
+          <h3>الوصول والتأقلم: دليل الطالب الدولي</h3>
+          <p>دليل بلغة واضحة للتعامل مع التوقعات الأكاديمية الكندية وعادات الدراسة وخطوات بداية المسار المهني بثقة.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-cta">
+    <div class="container section-cta-inner">
+      <div>
+        <p class="eyebrow">هل تريد أن تعرف متى يصدر أول كتاب؟</p>
+        <h2>كن أول من يعلم.</h2>
+        <p>الكتب لم تصدر بعد. لكن إن كان هذا يلامس شيئًا فيك، أخبرنا. سنُعلمك في اللحظة التي يتوفر فيها العنوان الأول.</p>
+      </div>
+      <div>
+        <a href="../contact/index.html" class="btn-primary btn-lg">أخبرنا أن هذا يهمك</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" dir="rtl">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <img class="footer-logo" src="../../assets/images/logo-ec.svg" alt="شعار إيزي كلاريتي">
+        <span class="footer-name">إيزي كلاريتي للاستشارات التعليمية</span>
+        <p class="footer-desc">استشارات تعليمية للطلاب، إلى جانب كتب للأطفال وأدلة قيد الإعداد. نساعد الطلاب على إيجاد طريقهم في الحياة الأكاديمية الكندية، ونكتب للقراء الصغار القادمين إلى بلد جديد. تأسست على يد أروى عزّي، ماجستير في التربية (OISE، جامعة تورونتو).</p>
+        <p class="footer-desc" style="margin-top:0.25rem; font-style:italic;">جميع خدماتنا أكاديمية ومهنية. لا نقدم أي استشارات في مجال الهجرة أو التأشيرات.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>التنقل</h4>
+        <ul>
+          <li><a href="../index.html">الرئيسية</a></li>
+          <li><a href="../about/index.html">من نحن</a></li>
+          <li><a href="../consulting/index.html">الاستشارات</a></li>
+          <li><a href="index.html">الكتب</a></li>
+          <li><a href="../resources/index.html">الموارد</a></li>
+          <li><a href="../contact/index.html">تواصل معنا</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col" dir="ltr">
+        <h4 dir="rtl">تواصل معنا</h4>
+        <ul>
+          <li><a href="tel:+16475059487">+1 (647) 505-9487</a></li>
+          <li><a href="tel:+12263368100">+1 (226) 336-8100</a></li>
+          <li><a href="mailto:info@ezziclarity.ca">info@ezziclarity.ca</a></li>
+          <li style="color:rgba(255,255,255,0.45); font-size:0.8rem; margin-top:0.5rem; direction:rtl;">منطقة واترلو، أونتاريو</li>
+          <li><a href="https://book.titan.email/ezziclarity/intro" target="_blank" rel="noopener">احجز مكالمة ←</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom" dir="ltr">
+      <p>© 2026 إيزي كلاريتي للاستشارات التعليمية</p>
+      <div class="footer-lang">
+        <a href="../../en/index.html">EN</a>
+        <a href="../../fr/index.html">FR</a>
+        <a class="active" href="../index.html">AR</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
