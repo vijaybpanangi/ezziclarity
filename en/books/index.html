@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Children's books and educational guides from Ezzi Clarity — stories that help immigrant children feel at home, and practical guides for students navigating Canadian academic life.">
+  <meta property="og:title" content="Books — Ezzi Clarity Educational Consulting">
+  <meta property="og:description" content="Children's books and educational guides from Ezzi Clarity — stories that help immigrant children feel at home, and practical guides for students navigating Canadian academic life.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="index.html">
+  <link rel="stylesheet" href="../../style.css">
+  
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <meta property="og:image" content="../../assets/images/og-ezzi-clarity.png">
+  <title>Books — Ezzi Clarity</title>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a href="../index.html" class="brand" aria-label="Ezzi Clarity — Home">
+      <img class="brand-logo" src="../../assets/images/logo-ec.svg" alt="">
+      <div class="brand-text">
+        <span class="brand-name">Ezzi Clarity</span>
+      </div>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="../index.html"           class="nav-link ">Home</a>
+      <a href="../about/index.html"     class="nav-link ">About</a>
+      <a href="../consulting/index.html" class="nav-link ">Services</a>
+      <a href="../books/index.html"     class="nav-link nav-active">Books</a>
+      <a href="../resources/index.html" class="nav-link ">Resources</a>
+      <a href="../contact/index.html"   class="nav-link ">Contact</a>
+    </nav>
+
+    <div class="lang-switch" aria-label="Language">
+      <a class="nav-link nav-cta" href="index.html" aria-current="true">EN</a>
+      <a class="nav-link" href="../../fr/services/index.html">FR</a>
+      <a class="nav-link" href="../../ar/services/index.html">AR</a>
+    </div>
+
+    <a href="../contact/index.html" class="header-cta">Book a Call</a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<!-- Mobile nav drawer -->
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <nav class="mobile-nav-links" aria-label="Mobile navigation">
+    <a href="../index.html"           class="">Home</a>
+    <a href="../about/index.html"     class="">About</a>
+    <a href="../consulting/index.html" class="">Services</a>
+    <a href="../books/index.html"     class="nav-active">Books</a>
+    <a href="../resources/index.html" class="">Resources</a>
+    <a href="../contact/index.html"   class="">Contact</a>
+  </nav>
+  <div class="mobile-lang">
+    <a class="nav-cta" href="index.html">EN</a>
+    <a href="../../fr/services/index.html">FR</a>
+    <a href="../../ar/services/index.html">AR</a>
+  </div>
+  <a href="../contact/index.html" class="mobile-cta">Book an Intro Call</a>
+</div>
+
+<script>
+(function(){
+  var btn = document.querySelector('.nav-toggle');
+  var drawer = document.getElementById('mobile-nav');
+  if(!btn || !drawer) return;
+  btn.addEventListener('click', function(){
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    drawer.classList.toggle('is-open', !open);
+    drawer.setAttribute('aria-hidden', String(open));
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && drawer.classList.contains('is-open')){
+      btn.setAttribute('aria-expanded','false');
+      drawer.classList.remove('is-open');
+      drawer.setAttribute('aria-hidden','true');
+      btn.focus();
+    }
+  });
+})();
+</script>
+
+<main id="main-content">
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <p class="eyebrow">Books</p>
+      <h1>Stories and guides<br>for finding your way.</h1>
+      <p>Ezzi Clarity is beginning to write as well as advise. Our books carry the same belief as our consulting work: that everyone deserves a clear, kind path into something new — whether that's a student arriving at a Canadian university, or a child arriving in a new country.</p>
+      <p class="hero-footnote">Academic and career focused only. No immigration or visa advice provided.</p>
+    </div>
+  </section>
+
+  <!-- FEATURE: the immigrant-family series story -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Passion Project</p>
+        <h2>A series for children making a new place home</h2>
+      </div>
+      <div style="max-width:760px;">
+        <p>Our heart-led work is a series of children's books about little ones from immigrant families finding their footing in a new country and culture — learning a new language, a new school, new friends — while holding gently onto the memories and small nostalgias of the home they left behind.</p>
+        <p>The stories are grounded in more than ten years of teaching children from early years through middle school. That means age-appropriate language, the right rhythm and length for each reader, and emotional beats that genuinely land — the kind of care that separates a book children return to from one they put down.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHILDREN'S BOOKS category -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Children's Books</p>
+        <h2>In development</h2>
+        <p>The first titles are taking shape now. We're starting with two formats well-suited to our youngest readers.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card card--accent">
+          <p class="card-tag">Coming soon</p>
+          <h3>Picture book · ages 3–6</h3>
+          <p>A gentle, illustrated story for the very youngest new arrivals — read aloud at bedtime, built around belonging and small moments of courage.</p>
+        </article>
+        <article class="card card--accent">
+          <p class="card-tag">Coming soon</p>
+          <h3>Early reader · ages 5–8</h3>
+          <p>Short, simple sentences for children just beginning to read on their own, following a young character settling into a new home and school.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATIONAL GUIDES category -->
+  <section class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow">Educational Guides</p>
+        <h2>Practical guides for students</h2>
+        <p>Alongside the children's books, we're developing clear, practical guides drawn from years inside Canadian post-secondary environments.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card card--accent">
+          <p class="card-tag">In development</p>
+          <h3>Arriving &amp; adapting: the international student's guide</h3>
+          <p>A plain-language guide to navigating Canadian academic expectations, study habits, and early-career steps with confidence.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-cta">
+    <div class="container section-cta-inner">
+      <div>
+        <p class="eyebrow">Want to know when the first one is ready?</p>
+        <h2>Be the first to hear.</h2>
+        <p>The books aren't out yet — but if any of this resonates, tell us. We'll let you know the moment the first title is available.</p>
+      </div>
+      <div>
+        <a href="../contact/index.html" class="btn-primary btn-lg">Tell us you're interested</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <img class="footer-logo" src="../../assets/images/logo-ec.svg" alt="Ezzi Clarity logo">
+        <span class="footer-name">Ezzi Clarity Educational Consulting</span>
+        <p class="footer-desc">Student success and experiential learning advisory for students, institutions, and employers across Southern Ontario. Founded by Arva Ezzi, MEd (OISE, University of Toronto).</p>
+        <p class="footer-desc" style="margin-top:0.25rem; font-style:italic;">All services are academic and career focused. No immigration or visa consulting is provided.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about/index.html">About</a></li>
+          <li><a href="../consulting/index.html">Services</a></li>
+          <li><a href="../books/index.html">Books</a></li>
+          <li><a href="../resources/index.html">Resources</a></li>
+          <li><a href="../contact/index.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+16475059487">+1 (647) 505-9487 (Mobile)</a></li>
+          <li><a href="tel:+12263368100">+1 (226) 336-8100 (Office)</a></li>
+          <li><a href="mailto:info@ezziclarity.ca">info@ezziclarity.ca</a></li>
+          <li style="color:rgba(255,255,255,0.45); font-size:0.8rem; margin-top:0.5rem;">Waterloo Region, Ontario</li>
+          <li><a href="https://book.titan.email/ezziclarity/intro" target="_blank" rel="noopener">Book an Intro Call →</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Ezzi Clarity Educational Consulting Services Inc. All rights reserved.</p>
+      <div class="footer-lang">
+        <a class="active" href="../index.html">EN</a>
+        <a href="../../fr/index.html">FR</a>
+        <a href="../../ar/index.html">AR</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
