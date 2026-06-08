@@ -1,5 +1,12 @@
 /home /en/ 301
 /about /en/about/ 301
-/services /en/services/ 301
+/services /en/consulting/ 301
 /resources /en/resources/ 301
 /contact /en/contact/ 301
+
+/en/services/*  /en/consulting/:splat  301
+/fr/services/*  /fr/conseil/:splat     301
+/ar/services/*  /ar/consulting/:splat  301
+/en/services    /en/consulting/        301
+/fr/services    /fr/conseil/           301
+/ar/services    /ar/consulting/        301
