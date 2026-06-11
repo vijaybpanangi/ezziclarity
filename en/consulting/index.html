@@ -91,6 +91,19 @@
     }
   });
 })();
+
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.section > .container, .section-alt > .container, .section-cta-inner, .trust-bar-inner').forEach(function(el){
+    el.classList.add('reveal'); io.observe(el);
+  });
+});
 </script>
 
 <main id="main-content">
@@ -99,7 +112,7 @@
   <section class="page-header">
     <div class="container">
       <p class="eyebrow">Consulting</p>
-      <h1>Practical support.<br>Clear direction.</h1>
+      <h1>Practical support.<br><em>Clear direction.</em></h1>
       <p>We work one-on-one and in small groups with students navigating Canadian academic life. We help you make sense of what's expected, build the skills you'll actually use, and make choices you feel good about.</p>
     </div>
   </section>

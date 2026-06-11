@@ -91,6 +91,19 @@
     }
   });
 })();
+
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.section > .container, .section-alt > .container, .section-cta-inner, .trust-bar-inner').forEach(function(el){
+    el.classList.add('reveal'); io.observe(el);
+  });
+});
 </script>
 
 <main id="main-content">
@@ -101,7 +114,7 @@
 
       <div class="hero-copy">
         <p class="eyebrow">Educational consulting and publishing · Ontario</p>
-        <h1>Finding your footing in a new place.</h1>
+        <h1>Finding your footing in a <em>new place.</em></h1>
         <p>
           Ezzi Clarity helps people settle into something new. For students, that means finding their way through Canadian academic life with more confidence and less guesswork. For young children new to the country, it means stories that help them feel at home.
         </p>
@@ -178,35 +191,27 @@
     </div>
   </section>
 
-  <!-- ── CHAPTER ONE: WE ADVISE ───────────────── -->
+  <!-- ── CHAPTERS: WE ADVISE / WE WRITE ───────── -->
   <section class="section">
     <div class="container">
-      <div class="section-header">
-        <p class="eyebrow">Chapter one</p>
-        <h2>We advise</h2>
-        <p>Most of our consulting is one-on-one with students. We help you make sense of what's expected, build skills you'll actually use, and feel steadier about the decisions in front of you.</p>
-      </div>
-      <ul class="checklist" style="max-width:640px;">
-        <li>Academic and career transition coaching</li>
-        <li>Professional communication workshops</li>
-        <li>Study strategy and learning skills</li>
-      </ul>
-      <div style="margin-top:2rem;">
-        <a href="consulting/index.html" class="btn-secondary">Explore consulting</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── CHAPTER TWO: WE WRITE ──────────────────── -->
-  <section class="section-alt">
-    <div class="container">
-      <div class="section-header">
-        <p class="eyebrow">Chapter two</p>
-        <h2>We write</h2>
-        <p>We're also writing books. The first is a series of children's picture books and early readers about kids from immigrant families settling into a new country, drawn from more than ten years of teaching that age group. Alongside them, we're working on plain-language guides for students. The first titles are still in development.</p>
-      </div>
-      <div>
-        <a href="books/index.html" class="btn-secondary">Visit the Books page</a>
+      <div class="chapter-pair">
+        <div class="chapter-card">
+          <p class="eyebrow chapter-label">Chapter one</p>
+          <h2>We advise</h2>
+          <p>Most of our consulting is one-on-one with students. We help you make sense of what's expected, build skills you'll actually use, and feel steadier about the decisions in front of you.</p>
+          <ul class="checklist">
+            <li>Academic and career transition coaching</li>
+            <li>Professional communication workshops</li>
+            <li>Study strategy and learning skills</li>
+          </ul>
+          <a href="consulting/index.html" class="btn-secondary">Explore consulting</a>
+        </div>
+        <div class="chapter-card">
+          <p class="eyebrow chapter-label">Chapter two</p>
+          <h2>We write</h2>
+          <p>We're also writing books. The first is a series of children's picture books and early readers about kids from immigrant families settling into a new country, drawn from more than ten years of teaching that age group. Alongside them, we're working on plain-language guides for students. The first titles are still in development.</p>
+          <a href="books/index.html" class="btn-secondary">Visit the Books page</a>
+        </div>
       </div>
     </div>
   </section>

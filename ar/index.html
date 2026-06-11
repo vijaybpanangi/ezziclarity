@@ -91,6 +91,19 @@
     }
   });
 })();
+
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.section > .container, .section-alt > .container, .section-cta-inner, .trust-bar-inner').forEach(function(el){
+    el.classList.add('reveal'); io.observe(el);
+  });
+});
 </script>
 
 <main id="main-content">
@@ -101,7 +114,7 @@
 
       <div class="hero-copy">
         <p class="eyebrow">استشارات تعليمية ونشر · أونتاريو</p>
-        <h1>اكتشاف طريقك في مكان جديد.</h1>
+        <h1>اكتشاف طريقك في <em>مكان جديد.</em></h1>
         <p>
           تساعد إيزي كلاريتي الناس على الاستقرار في شيء جديد. بالنسبة للطلاب، يعني ذلك إيجاد طريقهم في الحياة الأكاديمية الكندية بثقة أكبر وتخمين أقل. وبالنسبة للأطفال الصغار القادمين إلى البلاد، يعني ذلك قصصًا تساعدهم على الشعور بالانتماء.
         </p>
@@ -178,35 +191,27 @@
     </div>
   </section>
 
-  <!-- ── الفصل الأول: ننصح ───────────────── -->
+  <!-- ── الفصلان: ننصح / نكتب ───────────────── -->
   <section class="section">
     <div class="container">
-      <div class="section-header">
-        <p class="eyebrow">الفصل الأول</p>
-        <h2>ننصح</h2>
-        <p>معظم استشاراتنا تكون فردية مع الطلاب. نساعدك على فهم ما هو متوقع منك، وبناء مهارات ستستخدمها فعلاً، والشعور بثبات أكبر أمام القرارات التي تواجهك.</p>
-      </div>
-      <ul class="checklist" style="max-width:640px;">
-        <li>توجيه الانتقال الأكاديمي والمهني</li>
-        <li>ورش التواصل الاحترافي</li>
-        <li>استراتيجيات الدراسة ومهارات التعلّم</li>
-      </ul>
-      <div style="margin-top:2rem;">
-        <a href="consulting/index.html" class="btn-secondary">اكتشف الاستشارات</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── الفصل الثاني: نكتب ──────────────────── -->
-  <section class="section-alt">
-    <div class="container">
-      <div class="section-header">
-        <p class="eyebrow">الفصل الثاني</p>
-        <h2>نكتب</h2>
-        <p>نحن نكتب كتبًا أيضًا. الأول سلسلة من كتب الصور والقراءات المبكّرة للأطفال عن صغار من عائلات مهاجرة يجدون موطئ قدم في بلد جديد، مستوحاة من أكثر من عشر سنوات من التدريس لتلك الفئة العمرية. إلى جانبها، نعمل على أدلة بلغة واضحة للطلاب. العناوين الأولى لا تزال قيد التطوير.</p>
-      </div>
-      <div>
-        <a href="books/index.html" class="btn-secondary">تصفّح صفحة الكتب</a>
+      <div class="chapter-pair">
+        <div class="chapter-card">
+          <p class="eyebrow chapter-label">الفصل الأول</p>
+          <h2>ننصح</h2>
+          <p>معظم استشاراتنا تكون فردية مع الطلاب. نساعدك على فهم ما هو متوقع منك، وبناء مهارات ستستخدمها فعلاً، والشعور بثبات أكبر أمام القرارات التي تواجهك.</p>
+          <ul class="checklist">
+            <li>توجيه الانتقال الأكاديمي والمهني</li>
+            <li>ورش التواصل الاحترافي</li>
+            <li>استراتيجيات الدراسة ومهارات التعلّم</li>
+          </ul>
+          <a href="consulting/index.html" class="btn-secondary">اكتشف الاستشارات</a>
+        </div>
+        <div class="chapter-card">
+          <p class="eyebrow chapter-label">الفصل الثاني</p>
+          <h2>نكتب</h2>
+          <p>نحن نكتب كتبًا أيضًا. الأول سلسلة من كتب الصور والقراءات المبكّرة للأطفال عن صغار من عائلات مهاجرة يجدون موطئ قدم في بلد جديد، مستوحاة من أكثر من عشر سنوات من التدريس لتلك الفئة العمرية. إلى جانبها، نعمل على أدلة بلغة واضحة للطلاب. العناوين الأولى لا تزال قيد التطوير.</p>
+          <a href="books/index.html" class="btn-secondary">تصفّح صفحة الكتب</a>
+        </div>
       </div>
     </div>
   </section>

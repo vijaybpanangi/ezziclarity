@@ -91,6 +91,19 @@
     }
   });
 })();
+
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.section > .container, .section-alt > .container, .section-cta-inner, .trust-bar-inner').forEach(function(el){
+    el.classList.add('reveal'); io.observe(el);
+  });
+});
 </script>
 
 <main id="main-content">
@@ -99,7 +112,7 @@
   <section class="page-header">
     <div class="container">
       <p class="eyebrow">أدوات ورؤى</p>
-      <h1>رؤى عملية من أجل<br>قرارات واقعية.</h1>
+      <h1>رؤى عملية من أجل<br><em>قرارات واقعية.</em></h1>
       <p>
         تعكس هذه المواضيع الأسئلة التي يطرحها علينا الطلاب أكثر من غيرها. كل موضوع مبني على تجربة عملية حقيقية لا على نظريات مجردة.
       </p>

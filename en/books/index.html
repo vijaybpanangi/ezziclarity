@@ -91,6 +91,19 @@
     }
   });
 })();
+
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.section > .container, .section-alt > .container, .section-cta-inner, .trust-bar-inner').forEach(function(el){
+    el.classList.add('reveal'); io.observe(el);
+  });
+});
 </script>
 
 <main id="main-content">
@@ -99,8 +112,8 @@
   <section class="page-header">
     <div class="container">
       <p class="eyebrow">Books</p>
-      <h1>Stories and guides<br>for finding your way.</h1>
-      <p>Ezzi Clarity is beginning to write as well as advise. Our books carry the same belief as our consulting work: that everyone deserves a clear, kind path into something new. A student arriving at a Canadian university. A child arriving in a new country. Both deserve that.</p>
+      <h1>Stories and guides<br>for <em>finding your way.</em></h1>
+      <p class="serif-lead">Ezzi Clarity is beginning to write as well as advise. Our books carry the same belief as our consulting work: that everyone deserves a clear, kind path into something new. A student arriving at a Canadian university. A child arriving in a new country. Both deserve that.</p>
       <p class="hero-footnote">Academic and career focused only. No immigration or visa advice provided.</p>
     </div>
   </section>

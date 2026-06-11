@@ -90,6 +90,19 @@
     }
   });
 })();
+
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.section > .container, .section-alt > .container, .section-cta-inner, .trust-bar-inner').forEach(function(el){
+    el.classList.add('reveal'); io.observe(el);
+  });
+});
 </script>
 
 <main id="main-content">
@@ -100,7 +113,7 @@
 
       <div class="hero-copy">
         <p class="eyebrow">Conseil éducatif et édition · Ontario</p>
-        <h1>Trouver ses repères dans un nouvel endroit.</h1>
+        <h1>Trouver ses repères dans un <em>nouvel endroit.</em></h1>
         <p>
           Ezzi Clarity accompagne les gens qui s'installent dans quelque chose de nouveau. Pour les étudiants, cela veut dire trouver leur chemin dans le milieu universitaire canadien avec plus de confiance et moins de doutes. Pour les jeunes enfants qui arrivent au pays, cela veut dire des histoires qui leur donnent le sentiment d'être chez eux.
         </p>
@@ -177,35 +190,27 @@
     </div>
   </section>
 
-  <!-- ── CHAPITRE UN : NOUS ACCOMPAGNONS ──────────── -->
+  <!-- ── CHAPITRES ─────────────────────────────── -->
   <section class="section">
     <div class="container">
-      <div class="section-header">
-        <p class="eyebrow">Chapitre un</p>
-        <h2>Nous accompagnons</h2>
-        <p>La grande majorité de notre travail de conseil se fait en individuel avec des étudiants. Nous vous aidons à comprendre ce qu'on attend de vous, à développer des compétences que vous utiliserez vraiment, et à vous sentir plus solide face aux décisions qui s'offrent à vous.</p>
-      </div>
-      <ul class="checklist" style="max-width:640px;">
-        <li>Coaching de transition académique et professionnelle</li>
-        <li>Ateliers de communication professionnelle</li>
-        <li>Stratégies d'étude et compétences d'apprentissage</li>
-      </ul>
-      <div style="margin-top:2rem;">
-        <a href="conseil/index.html" class="btn-secondary">Explorer le conseil</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── CHAPITRE DEUX : NOUS ÉCRIVONS ────────────── -->
-  <section class="section-alt">
-    <div class="container">
-      <div class="section-header">
-        <p class="eyebrow">Chapitre deux</p>
-        <h2>Nous écrivons</h2>
-        <p>Nous écrivons aussi des livres. Le premier volet est une série d'albums illustrés et de premières lectures sur des enfants de familles immigrantes qui s'installent dans un nouveau pays, inspirée de plus de dix ans d'enseignement auprès de ce groupe d'âge. En parallèle, nous travaillons sur des guides en langage simple pour les étudiants. Les premiers titres sont encore en développement.</p>
-      </div>
-      <div>
-        <a href="livres/index.html" class="btn-secondary">Voir la page Livres</a>
+      <div class="chapter-pair">
+        <div class="chapter-card">
+          <p class="eyebrow chapter-label">Chapitre un</p>
+          <h2>Nous accompagnons</h2>
+          <p>La grande majorité de notre travail de conseil se fait en individuel avec des étudiants. Nous vous aidons à comprendre ce qu'on attend de vous, à développer des compétences que vous utiliserez vraiment, et à vous sentir plus solide face aux décisions qui s'offrent à vous.</p>
+          <ul class="checklist">
+            <li>Coaching de transition académique et professionnelle</li>
+            <li>Ateliers de communication professionnelle</li>
+            <li>Stratégies d'étude et compétences d'apprentissage</li>
+          </ul>
+          <a href="conseil/index.html" class="btn-secondary">Explorer le conseil</a>
+        </div>
+        <div class="chapter-card">
+          <p class="eyebrow chapter-label">Chapitre deux</p>
+          <h2>Nous écrivons</h2>
+          <p>Nous écrivons aussi des livres. Le premier volet est une série d'albums illustrés et de premières lectures sur des enfants de familles immigrantes qui s'installent dans un nouveau pays, inspirée de plus de dix ans d'enseignement auprès de ce groupe d'âge. En parallèle, nous travaillons sur des guides en langage simple pour les étudiants. Les premiers titres sont encore en développement.</p>
+          <a href="livres/index.html" class="btn-secondary">Voir la page Livres</a>
+        </div>
       </div>
     </div>
   </section>

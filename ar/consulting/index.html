@@ -91,6 +91,19 @@
     }
   });
 })();
+
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.section > .container, .section-alt > .container, .section-cta-inner, .trust-bar-inner').forEach(function(el){
+    el.classList.add('reveal'); io.observe(el);
+  });
+});
 </script>
 
 <main id="main-content">
@@ -99,7 +112,7 @@
   <section class="page-header">
     <div class="container">
       <p class="eyebrow">الاستشارات</p>
-      <h1>دعم عملي.<br>اتجاه واضح.</h1>
+      <h1>دعم عملي.<br><em>اتجاه واضح.</em></h1>
       <p>نعمل فرديًا وفي مجموعات صغيرة مع الطلاب الذين يتكيّفون مع الحياة الأكاديمية الكندية. نساعدك على فهم ما هو متوقع منك، وبناء مهارات ستستخدمها فعلاً، وأخذ قرارات تشعر بالرضا عنها.</p>
     </div>
   </section>

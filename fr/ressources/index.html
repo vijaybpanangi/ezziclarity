@@ -90,6 +90,19 @@
     }
   });
 })();
+
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.section > .container, .section-alt > .container, .section-cta-inner, .trust-bar-inner').forEach(function(el){
+    el.classList.add('reveal'); io.observe(el);
+  });
+});
 </script>
 
 <main id="main-content">
@@ -98,7 +111,7 @@
   <section class="page-header">
     <div class="container">
       <p class="eyebrow">Outils et repères</p>
-      <h1>Des perspectives concrètes pour<br>des décisions éclairées.</h1>
+      <h1>Des perspectives concrètes pour<br><em>des décisions éclairées.</em></h1>
       <p>
         Ces sujets reflètent les questions que les étudiants nous posent le plus souvent. Chacun est ancré dans l'expérience concrète, pas dans la théorie abstraite.
       </p>

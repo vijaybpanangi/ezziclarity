@@ -24,9 +24,9 @@ A small language-gateway page at `/index.html` lets first-time visitors choose. 
 
 ```
 /                       Language gateway
-/en/  /fr/  /ar/        Localized site trees, 5 pages each
-                        (home, about, services, resources, contact)
-/style.css              All styling, one file (Plus Jakarta Sans)
+/en/  /fr/  /ar/        Localized site trees, 6 pages each
+                        (home, about, consulting, books, resources, contact)
+/style.css              All styling, one file (~1734 lines)
 /assets/images/         Shared image assets
 /404.html               Static 404 page
 /_redirects             Host-level path redirects
@@ -72,6 +72,7 @@ Anything more substantial than copy edits should go through a brainstorm → spe
 
 | Date | Area | What changed |
 |---|---|---|
+| 2026-06-11 | Design | Soft Modern redesign — glass surfaces, gradient wash, floating pill header, Fraunces serif accents, chapter-pair home layout; copy unchanged; spec + plan in docs/superpowers/ |
 | 2026-06-08 | Restructure | **Two-pillar restructure (Consulting + Books).** Services renamed to Consulting (with redirects); B2B (institutions/employers) dropped to a student-only focus; new trilingual **Books** pillar led by a children's-book passion project; home reframed into "two chapters" (advise / write); copy humanized. On branch `restructure/two-pillar-consulting-books`. Arabic awaits native review ([checklist](docs/superpowers/specs/arabic-review-checklist.md)). |
 | 2026-05-28 | Archive | **April 6, 2026 WordPress `Ezzi Clarity v3.0.0` theme** preserved at [`docs/archive/2026-04-06-wordpress-v3-0-0/`](docs/archive/2026-04-06-wordpress-v3-0-0/) (26 files: 25 PHP templates + `style.css`); Wiki Project History revised (fifth pass) — closes the previously-≈approximate Jan–Apr 2026 gap with a direct snapshot showing Plus Jakarta Sans, Sky/Peach/Cream palette, and trilingual EN/FR/AR all in place by April 6, while tagline was still *"Less Noise. More Signal."* |
 | 2026-05-28 | Archive | Liquid Glass theme [`style.css`](docs/archive/2025-12-28-wordpress-liquid-glass-staging-v4/style.css) (~870 lines) added to the Dec 28 archive; Wiki Project History revised (fourth pass) — confirms light-mode glass, Apple system fonts (SF Pro) effective typography, theme `Version: 1.3.0`, royal-blue palette |
@@ -88,12 +89,18 @@ Full chronological log lives in [`CHANGELOG.md`](CHANGELOG.md); planned work liv
 
 ## Styling notes
 
-`style.css` defines the design system as CSS custom properties in `:root`:
+`style.css` (~1734 lines) defines the design system as CSS custom properties in `:root`:
 
 - Sky Blue primary (`--sky*`)
 - Warm Peach accent (`--peach*`)
 - Cream neutrals (`--cream*`)
 - Ink text scale (`--ink*`)
-- Plus Jakarta Sans throughout (loaded via Google Fonts `@import`)
+- Glass surfaces (`--glass`, `--glass-border`, `--shadow-glass-*`)
+- Gradient page wash (`--wash`)
+
+Three font families, all loaded via `@import` at the top of the file (valid placement):
+- **Plus Jakarta Sans** — workhorse body and UI text
+- **Fraunces** — italic serif accents on Latin pages (EN/FR H1s and chapter labels)
+- **IBM Plex Sans Arabic** — Arabic headings and buttons
 
 Section banner comments (`/* ============= */`) inside the file group related rules — search for the banner of the area you're editing rather than scrolling.
