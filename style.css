@@ -196,21 +196,32 @@ a:hover { text-decoration: underline; }
    ============================================= */
 .site-header {
   position: sticky;
-  top: 0;
+  top: 0.9rem;
   z-index: 100;
-  height: var(--header-h);
-  background: rgba(247,244,238,0.97);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 1px 0 rgba(30,28,24,0.04);
+  height: auto;
+  background: transparent;
+  border-bottom: none;
+  box-shadow: none;
+  padding: 0 1rem;
 }
 
 .header-inner {
   display: flex;
   align-items: center;
-  height: var(--header-h);
-  gap: 1.25rem;
+  height: 60px;
+  gap: 1rem;
+  background: rgba(255,255,255,0.78);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  backdrop-filter: blur(14px) saturate(1.4);
+  border: 1px solid rgba(91,143,168,0.16);
+  border-radius: var(--r-pill);
+  box-shadow: 0 8px 28px -14px rgba(58,100,120,0.28);
+  padding: 0 0.6rem 0 1.2rem;
+}
+
+/* Solid fallback when backdrop-filter is unsupported */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .header-inner { background: rgba(255,255,255,0.96); }
 }
 
 /* Brand */
@@ -310,7 +321,7 @@ a:hover { text-decoration: underline; }
   align-items: center;
   justify-content: center;
   padding: 0.5rem 1.15rem;
-  border-radius: var(--r-md);
+  border-radius: var(--r-pill);
   background: var(--sky);
   color: #fff;
   font-size: 0.85rem;
@@ -370,6 +381,8 @@ a:hover { text-decoration: underline; }
   padding: 1rem 1.5rem 1.5rem;
   z-index: 99;
   box-shadow: var(--shadow-lg);
+  border-radius: 0 0 var(--r-lg) var(--r-lg);
+  margin: 0 0.75rem;
 }
 .mobile-nav.is-open { display: block; }
 
