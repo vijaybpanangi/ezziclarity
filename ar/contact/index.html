@@ -91,6 +91,19 @@
     }
   });
 })();
+
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.section > .container, .section-alt > .container, .section-cta-inner, .trust-bar-inner').forEach(function(el){
+    el.classList.add('reveal'); io.observe(el);
+  });
+});
 </script>
 
 <main id="main-content">
@@ -98,7 +111,7 @@
   <section class="page-header">
     <div class="container">
       <p class="eyebrow">يسعدنا أن نسمع منك</p>
-      <h1>ابدأ بـ<br>محادثة واضحة.</h1>
+      <h1>ابدأ بـ<br><em>محادثة واضحة.</em></h1>
       <p>أفضل خطوة أولى هي مكالمة تعريفية قصيرة. هي حوار عملي ومركّز مصمَّم لفهم وضعك وكيف يمكننا مساعدتك.</p>
       <p>سواء كنت طالبًا يقيّم خياراته أو أحد الوالدين لديه سؤال، فإن الهدف من هذه المحادثة الأولى بسيط: فهم سياقك، وتوضيح ما تحتاجه، وتحديد ما إذا كانت هناك خطوة تالية منطقية.</p>
       <div class="hero-actions" dir="ltr" style="justify-content:flex-end;">

@@ -92,6 +92,19 @@
     }
   });
 })();
+
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.section > .container, .section-alt > .container, .section-cta-inner, .trust-bar-inner').forEach(function(el){
+    el.classList.add('reveal'); io.observe(el);
+  });
+});
 </script>
 
 <main id="main-content">
@@ -100,8 +113,8 @@
   <section class="page-header">
     <div class="container">
       <p class="eyebrow">الكتب</p>
-      <h1>قصص وأدلة<br>لإيجاد طريقك.</h1>
-      <p>بدأت إيزي كلاريتي تكتب إلى جانب ما تقدمه من استشارات. تحمل كتبنا الإيمان ذاته الذي يحمله عملنا الاستشاري: أن كل شخص يستحق مسارًا واضحًا وطيبًا نحو شيء جديد. طالب يصل إلى جامعة كندية، أو طفل يصل إلى بلد جديد. كلاهما يستحق ذلك.</p>
+      <h1>قصص وأدلة<br><em>لإيجاد طريقك.</em></h1>
+      <p class="serif-lead">بدأت إيزي كلاريتي تكتب إلى جانب ما تقدمه من استشارات. تحمل كتبنا الإيمان ذاته الذي يحمله عملنا الاستشاري: أن كل شخص يستحق مسارًا واضحًا وطيبًا نحو شيء جديد. طالب يصل إلى جامعة كندية، أو طفل يصل إلى بلد جديد. كلاهما يستحق ذلك.</p>
       <p class="hero-footnote">خدمات أكاديمية ومهنية فقط. لا نقدم استشارات في الهجرة أو التأشيرات.</p>
     </div>
   </section>
