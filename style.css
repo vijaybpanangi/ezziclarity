@@ -92,10 +92,13 @@ html, body {
   font-size: 16px;
   line-height: 1.65;
   color: var(--ink);
-  background-color: #FFFFFF;
-  background: var(--wash);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #FFFFFF;
+  background: var(--wash);
 }
 
 p, li {
@@ -151,6 +154,7 @@ a:hover { text-decoration: underline; }
   text-transform: none;
   letter-spacing: 0;
   color: var(--peach-mid);
+  margin-bottom: 0.65rem;
 }
 
 /* Serif lead paragraph (Books page intro) */
@@ -514,7 +518,6 @@ a:hover { text-decoration: underline; }
 .hero-copy { flex: 1.1; max-width: 580px; }
 
 .hero-copy h1 { margin-bottom: 1.1rem; }
-.hero-copy h1 em { color: var(--sky); }
 
 .hero-copy > p {
   font-size: 1.05rem;
