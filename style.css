@@ -63,14 +63,25 @@ img { max-width: 100%; display: block; }
 
   /* Layout */
   --container:    1140px;
-  --header-h:     68px;
+  --header-h:     88px;
 
   /* Radii */
   --r-sm:  6px;
   --r-md:  10px;
   --r-lg:  16px;
-  --r-xl:  22px;
+  --r-xl:  24px;
   --r-pill: 999px;
+
+  /* Soft Modern additions (2026-06 redesign) */
+  --font-serif:      'Fraunces', Georgia, serif;
+  --font-arabic:     'IBM Plex Sans Arabic', 'Plus Jakarta Sans', sans-serif;
+  --glass:           rgba(255,255,255,0.85);
+  --glass-strong:    rgba(255,255,255,0.92);
+  --glass-border:    rgba(227,221,208,0.8);
+  --shadow-glass:    0 14px 34px -18px rgba(58,100,120,0.30);
+  --shadow-glass-lg: 0 24px 56px -24px rgba(58,100,120,0.35);
+  --r-xxl:           28px;
+  --wash: linear-gradient(165deg, #FFFFFF 0%, var(--sky-xpale) 38%, #FFFFFF 68%, var(--peach-xpale) 100%);
 }
 
 /* =============================================
@@ -78,10 +89,11 @@ img { max-width: 100%; display: block; }
    ============================================= */
 html, body {
   font-family: var(--font-main);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.65;
   color: var(--ink);
-  background: var(--cream);
+  background-color: #FFFFFF;
+  background: var(--wash);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -108,8 +120,14 @@ h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
 h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: -0.02em; }
 h4 { font-size: 1rem; font-weight: 700; }
 
-/* Accent colour on italic spans inside headings */
-h1 em, h2 em { font-style: normal; color: var(--sky); }
+/* Serif literary accent on italic spans inside headings */
+h1 em, h2 em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 600;
+  color: var(--sky-dark);
+  letter-spacing: -0.01em;
+}
 
 a { color: var(--sky); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -122,6 +140,26 @@ a:hover { text-decoration: underline; }
   color: var(--peach);
   margin-bottom: 0.65rem;
   display: block;
+}
+
+/* Serif chapter label — replaces uppercase eyebrow styling when paired */
+.eyebrow.chapter-label {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.05rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--peach-mid);
+}
+
+/* Serif lead paragraph (Books page intro) */
+.serif-lead {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--ink-mid);
 }
 
 .muted { color: var(--ink-muted); }
@@ -1276,10 +1314,10 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: clamp(2.4rem, 4.8vw, 3.35rem);
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
   letter-spacing: -0.045em;
-  line-height: 1.02;
-  max-width: 11ch;
+  line-height: 1.04;
+  max-width: 14ch;
 }
 
 h2 {
