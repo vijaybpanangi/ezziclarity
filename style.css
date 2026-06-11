@@ -216,8 +216,10 @@ a:hover { text-decoration: underline; }
   border: 1px solid rgba(91,143,168,0.16);
   border-radius: var(--r-pill);
   box-shadow: 0 8px 28px -14px rgba(58,100,120,0.28);
-  padding: 0 0.6rem 0 1.2rem;
 }
+
+/* Compound selector beats .container's padding regardless of file order */
+.container.header-inner { padding: 0 0.6rem 0 1.2rem; }
 
 /* Solid fallback when backdrop-filter is unsupported */
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
@@ -382,7 +384,7 @@ a:hover { text-decoration: underline; }
   z-index: 99;
   box-shadow: var(--shadow-lg);
   border-radius: 0 0 var(--r-lg) var(--r-lg);
-  margin: 0 0.75rem;
+  margin: 0 1rem;
 }
 .mobile-nav.is-open { display: block; }
 
