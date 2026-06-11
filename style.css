@@ -1050,7 +1050,7 @@ main { padding-bottom: 0; }
   .process-step::after {
     content: '';
     position: absolute;
-    left: 2.5rem;
+    left: calc(1.35rem + 14px);
     top: 100%;
     height: 0.9rem;
     width: 2px;
@@ -1410,7 +1410,10 @@ html[lang="ar"] h1 em, html[lang="ar"] h2 em {
 html[lang="ar"] .eyebrow.chapter-label { font-family: inherit; font-style: normal; font-weight: 700; font-size: 0.95rem; }
 html[lang="ar"] .serif-lead { font-family: inherit; font-style: normal; }
 
-html[dir="rtl"] .process-step::after { left: auto; right: 2.5rem; }
+html[lang="ar"] .btn-primary, html[lang="ar"] .btn-secondary, html[lang="ar"] .btn,
+html[lang="ar"] .header-cta, html[lang="ar"] .mobile-cta { font-family: var(--font-arabic); }
+
+html[dir="rtl"] .process-step::after { left: auto; right: calc(1.35rem + 14px); }
 html[dir="rtl"] .chapter-card,
 html[dir="rtl"] .about-col { text-align: right; }
 
@@ -1443,7 +1446,6 @@ html[dir="rtl"] .about-col { text-align: right; }
   .section-cta { padding: 2.25rem 0; }
   .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
-  .process-two-column { grid-template-columns: 1fr; }
   .trust-bar-inner { gap: 1.25rem; }
 }
 /* Founder image on About page */
@@ -1656,7 +1658,6 @@ img {
 }
 
 .hero-card,
-.section-cta-inner,
 .contact-card {
   backdrop-filter: saturate(1.03);
 }
