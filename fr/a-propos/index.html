@@ -90,6 +90,19 @@
     }
   });
 })();
+
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.section > .container, .section-alt > .container, .section-cta-inner, .trust-bar-inner').forEach(function(el){
+    el.classList.add('reveal'); io.observe(el);
+  });
+});
 </script>
 
 <main id="main-content">
@@ -98,7 +111,7 @@
   <section class="page-header">
     <div class="container">
       <p class="eyebrow">À propos d'Ezzi Clarity</p>
-      <h1>Une approche claire et structurée pour aider les étudiants à réussir.</h1>
+      <h1>Une approche claire et structurée pour aider les étudiants à <em>réussir.</em></h1>
       <p>
         Ezzi Clarity est d'abord centré sur les étudiants. Notre objectif est simple : aider les étudiants à trouver leurs repères dans le milieu universitaire canadien, avec un accompagnement pratique et crédible qui prend au sérieux la complexité de ces systèmes.
       </p>
@@ -111,50 +124,54 @@
   <!-- ── NOTRE HISTOIRE ────────────────────────── -->
   <section class="section-alt about-founder-section">
     <div class="container">
-      <div class="about-founder-card">
-        <p class="eyebrow">Notre histoire</p>
-        <h2>Pourquoi Ezzi Clarity existe</h2>
-        <p>
-          Ezzi Clarity a été créé pour répondre à une réalité simple : l'écart entre ce que les établissements promettent et ce que les étudiants vivent réellement est souvent plus grand qu'il ne devrait l'être.
-        </p>
-        <p>
-          Après des années de travail dans les universités canadiennes, Arva Ezzi a vu comment cet écart crée des frictions pour les étudiants. Les programmes sont conçus avec de bonnes intentions, mais les attentes ne correspondent pas toujours à ce que les étudiants vivent concrètement.
-        </p>
-        <p>
-          Ezzi Clarity existe pour réduire cet écart, avec un accompagnement pratique et structuré qui respecte la complexité sans la rendre inutilement compliquée.
-        </p>
-        <p>
-          Au fond, Ezzi Clarity cherche à rendre des systèmes complexes plus faciles à comprendre et à naviguer. Le but n'est pas de simplifier à outrance ce à quoi les étudiants font face. C'est de leur donner assez de clarté pour que de meilleures décisions deviennent possibles.
-        </p>
-        <div class="about-founder-divider"></div>
-        <p class="eyebrow">Notre fondatrice</p>
-        <h2>Arva Ezzi, M.Éd.</h2>
-        <p>
-          Arva Ezzi détient une maîtrise en éducation de l'OISE, Université de Toronto, avec une spécialisation en réussite étudiante et en apprentissage expérientiel.
-        </p>
-        <p>
-          Son travail est façonné par une expérience directe au sein d'établissements postsecondaires canadiens, en appui aux étudiants, aux équipes professorales et aux responsables de programmes dans des contextes variés.
-        </p>
-        <p>
-          Elle apporte une approche concrète et structurée du conseil en éducation, ancrée dans les besoins réels des étudiants et dans ce que les établissements peuvent réellement mettre en œuvre.
-        </p>
-        <p>
-          Cette perspective teinte l'ensemble du travail d'Ezzi Clarity : réfléchi, direct, ancré dans la pratique, attentif à la fois à la dimension humaine et au fonctionnement réel de ces systèmes.
-        </p>
-        <p>
-          Arva enseigne aux enfants depuis plus de dix ans, des premières années jusqu'au premier cycle du secondaire. Ces derniers temps, elle écrit aussi : des albums illustrés et des premières lectures pour les enfants qui arrivent dans un nouveau pays, ainsi que des guides pratiques pour les étudiants. Vous trouverez ce travail sur notre <a href="../livres/index.html">page Livres</a>.
-        </p>
-        <div class="about-founder-divider"></div>
-        <p class="eyebrow">Capacités linguistiques</p>
-        <h2>Multilingue, avec une vraie maîtrise culturelle</h2>
-        <p>
-          Arva Ezzi est multilingue, avec une maîtrise native en anglais, hindi, gujarati et arabe, et une compétence fonctionnelle en français.
-        </p>
-        <p>
-          Cela lui permet de s'engager efficacement auprès d'étudiants et de milieux variés, et de naviguer les conversations avec conscience culturelle, empathie et clarté.
-        </p>
-        <div style="margin-top:1.25rem;">
-          <a href="../contact/index.html" class="btn-primary">Nous contacter</a>
+      <div class="about-story-grid">
+        <div class="about-col">
+          <p class="eyebrow">Notre histoire</p>
+          <h2>Pourquoi Ezzi Clarity existe</h2>
+          <p>
+            Ezzi Clarity a été créé pour répondre à une réalité simple : l'écart entre ce que les établissements promettent et ce que les étudiants vivent réellement est souvent plus grand qu'il ne devrait l'être.
+          </p>
+          <p>
+            Après des années de travail dans les universités canadiennes, Arva Ezzi a vu comment cet écart crée des frictions pour les étudiants. Les programmes sont conçus avec de bonnes intentions, mais les attentes ne correspondent pas toujours à ce que les étudiants vivent concrètement.
+          </p>
+          <p>
+            Ezzi Clarity existe pour réduire cet écart, avec un accompagnement pratique et structuré qui respecte la complexité sans la rendre inutilement compliquée.
+          </p>
+          <p>
+            Au fond, Ezzi Clarity cherche à rendre des systèmes complexes plus faciles à comprendre et à naviguer. Le but n'est pas de simplifier à outrance ce à quoi les étudiants font face. C'est de leur donner assez de clarté pour que de meilleures décisions deviennent possibles.
+          </p>
+        </div>
+        <div class="about-col">
+          <div class="founder-frame" aria-hidden="true"></div>
+          <p class="eyebrow">Notre fondatrice</p>
+          <h2>Arva Ezzi, M.Éd.</h2>
+          <p>
+            Arva Ezzi détient une maîtrise en éducation de l'OISE, Université de Toronto, avec une spécialisation en réussite étudiante et en apprentissage expérientiel.
+          </p>
+          <p>
+            Son travail est façonné par une expérience directe au sein d'établissements postsecondaires canadiens, en appui aux étudiants, aux équipes professorales et aux responsables de programmes dans des contextes variés.
+          </p>
+          <p>
+            Elle apporte une approche concrète et structurée du conseil en éducation, ancrée dans les besoins réels des étudiants et dans ce que les établissements peuvent réellement mettre en œuvre.
+          </p>
+          <p>
+            Cette perspective teinte l'ensemble du travail d'Ezzi Clarity : réfléchi, direct, ancré dans la pratique, attentif à la fois à la dimension humaine et au fonctionnement réel de ces systèmes.
+          </p>
+          <p>
+            Arva enseigne aux enfants depuis plus de dix ans, des premières années jusqu'au premier cycle du secondaire. Ces derniers temps, elle écrit aussi : des albums illustrés et des premières lectures pour les enfants qui arrivent dans un nouveau pays, ainsi que des guides pratiques pour les étudiants. Vous trouverez ce travail sur notre <a href="../livres/index.html">page Livres</a>.
+          </p>
+          <div class="about-founder-divider"></div>
+          <p class="eyebrow">Capacités linguistiques</p>
+          <h2>Multilingue, avec une vraie maîtrise culturelle</h2>
+          <p>
+            Arva Ezzi est multilingue, avec une maîtrise native en anglais, hindi, gujarati et arabe, et une compétence fonctionnelle en français.
+          </p>
+          <p>
+            Cela lui permet de s'engager efficacement auprès d'étudiants et de milieux variés, et de naviguer les conversations avec conscience culturelle, empathie et clarté.
+          </p>
+          <div style="margin-top:1.25rem;">
+            <a href="../contact/index.html" class="btn-primary">Nous contacter</a>
+          </div>
         </div>
       </div>
     </div>

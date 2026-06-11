@@ -90,6 +90,19 @@
     }
   });
 })();
+
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.section > .container, .section-alt > .container, .section-cta-inner, .trust-bar-inner').forEach(function(el){
+    el.classList.add('reveal'); io.observe(el);
+  });
+});
 </script>
 
 <main id="main-content">
@@ -97,7 +110,7 @@
   <section class="page-header">
     <div class="container">
       <p class="eyebrow">Nous sommes là pour vous</p>
-      <h1>Commencez par une<br>conversation claire.</h1>
+      <h1>Commencez par une<br><em>conversation claire.</em></h1>
       <p>La meilleure première étape est un court appel d'introduction. Sans engagement : juste une conversation centrée sur votre situation et sur comment nous pourrions vous aider.</p>
       <p>Que vous soyez un étudiant qui pèse une décision ou un parent avec une question, la première conversation est simple : comprendre votre contexte, clarifier ce dont vous avez besoin, et voir s'il y a une suite qui a du sens.</p>
       <div class="hero-actions">

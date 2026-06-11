@@ -91,6 +91,19 @@
     }
   });
 })();
+
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.section > .container, .section-alt > .container, .section-cta-inner, .trust-bar-inner').forEach(function(el){
+    el.classList.add('reveal'); io.observe(el);
+  });
+});
 </script>
 
 <main id="main-content">
@@ -99,8 +112,8 @@
   <section class="page-header">
     <div class="container">
       <p class="eyebrow">Livres</p>
-      <h1>Des histoires et des guides<br>pour trouver votre voie.</h1>
-      <p>Ezzi Clarity commence à écrire, en plus de conseiller. Nos livres portent la même conviction que notre travail de conseil : que chacun mérite un chemin clair et bienveillant vers quelque chose de nouveau. Un étudiant qui arrive dans une université canadienne. Un enfant qui arrive dans un nouveau pays. Les deux le méritent.</p>
+      <h1>Des histoires et des guides<br>pour <em>trouver votre voie.</em></h1>
+      <p class="serif-lead">Ezzi Clarity commence à écrire, en plus de conseiller. Nos livres portent la même conviction que notre travail de conseil : que chacun mérite un chemin clair et bienveillant vers quelque chose de nouveau. Un étudiant qui arrive dans une université canadienne. Un enfant qui arrive dans un nouveau pays. Les deux le méritent.</p>
       <p class="hero-footnote">Services axés sur l'académique et la carrière uniquement. Aucun conseil en immigration ou en visa.</p>
     </div>
   </section>
