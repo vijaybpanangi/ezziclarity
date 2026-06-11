@@ -59,6 +59,17 @@ Polish, not a fix.
 
 ---
 
+## Design follow-ups (post Soft Modern redesign, 2026-06-11)
+
+Deferred consciously during the redesign (spec: `docs/superpowers/specs/2026-06-11-soft-modern-redesign-design.md`):
+
+- **Founder portrait opt-in.** The About pages' `.founder-frame` ships as a gradient placeholder. `assets/images/arva-portrait.png` already exists in the repo; dropping it in is a one-line edit per language (an `<img>` inside the frame — `.founder-frame img` styling is already in place). Waiting on Vijay's call.
+- **Books cover art.** The Books pages' "Coming soon / In development" cards are designed to take real cover images (`.service-card-img` + tint-overlay pattern) without redesign, once artwork exists.
+- **Resources reveal stagger.** The design spec mentioned a gentle stagger on the nine resources cards; reveals currently fire per section container. A small `transition-delay` ladder would close it. Cosmetic.
+- **Real-device visual pass.** The redesign was verified by automated sweep + desktop browser; a quick pass on a real phone/tablet (especially the AR pages) would be good diligence.
+
+---
+
 ## Done
 
-See [`CHANGELOG.md`](CHANGELOG.md) for items that have shipped (the redesign, the www custom domain, the WordPress cleanup, the project documentation).
+See [`CHANGELOG.md`](CHANGELOG.md) for items that have shipped (the Soft Modern redesign, the two-pillar Consulting + Books restructure, the www custom domain, the WordPress cleanup, the project documentation).
