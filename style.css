@@ -563,6 +563,7 @@ a:hover { text-decoration: underline; }
   gap: 1.1rem;
   align-items: stretch;
   position: relative;
+  isolation: isolate;
 }
 
 .hero-panel::before {
@@ -1244,12 +1245,22 @@ img:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .hero-visual, .section-visual, .service-card-img,
 .contact-photo-card, .founder-photo-card { position: relative; }
 
-.hero-visual::after, .section-visual::after, .service-card-img::after,
-.contact-photo-card::after, .founder-photo-card::after {
+.hero-visual::after, .section-visual::after, .service-card-img::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
+  background: linear-gradient(140deg, rgba(91,143,168,0.16), rgba(232,131,90,0.09));
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* Padded photo frames: tint the photo, not the frame */
+.contact-photo-card::after, .founder-photo-card::after {
+  content: '';
+  position: absolute;
+  inset: 0.5rem;
+  border-radius: calc(var(--r-lg) - 0.2rem);
   background: linear-gradient(140deg, rgba(91,143,168,0.16), rgba(232,131,90,0.09));
   mix-blend-mode: multiply;
   pointer-events: none;
