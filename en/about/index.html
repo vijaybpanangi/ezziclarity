@@ -91,6 +91,19 @@
     }
   });
 })();
+
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.section > .container, .section-alt > .container, .section-cta-inner, .trust-bar-inner').forEach(function(el){
+    el.classList.add('reveal'); io.observe(el);
+  });
+});
 </script>
 
 <main id="main-content">
@@ -99,7 +112,7 @@
   <section class="page-header">
     <div class="container">
       <p class="eyebrow">About Ezzi Clarity</p>
-      <h1>A clear, structured approach to student success and experiential learning.</h1>
+      <h1>A clear, structured approach to student success and <em>experiential learning.</em></h1>
       <p>
         Ezzi Clarity is focused on students first. Our goal is simple: help students find their footing in Canadian academic life with practical, credible guidance that takes the complexity of these systems seriously.
       </p>
@@ -112,50 +125,54 @@
   <!-- ── OUR STORY ────────────────────────────── -->
   <section class="section-alt about-founder-section">
     <div class="container">
-      <div class="about-founder-card">
-        <p class="eyebrow">Our Story</p>
-        <h2>Why Ezzi Clarity Exists</h2>
-        <p>
-          Ezzi Clarity was created to address a simple reality: the gap between what institutions promise and what students actually experience is often wider than it should be.
-        </p>
-        <p>
-          After years working inside Canadian universities, Arva Ezzi saw how this gap creates real friction for students. Programs are designed with strong intent, but expectations aren't always aligned with what students actually experience.
-        </p>
-        <p>
-          Ezzi Clarity exists to close that gap, with practical, structured guidance that respects complexity without overcomplicating it.
-        </p>
-        <p>
-          At its core, Ezzi Clarity is about making complex systems easier to understand and easier to work within. The goal isn't to oversimplify what students are up against. It's to give enough clarity that better decisions become possible.
-        </p>
-        <div class="about-founder-divider"></div>
-        <p class="eyebrow">Our Founder</p>
-        <h2>Arva Ezzi, MEd</h2>
-        <p>
-          Arva Ezzi holds a Master of Education from OISE, University of Toronto, with a focus on student success and experiential learning.
-        </p>
-        <p>
-          Her work is shaped by direct experience within Canadian post-secondary institutions, supporting students, faculty, and program teams across diverse academic contexts.
-        </p>
-        <p>
-          She brings a practical, structured approach to educational consulting, grounded in what students actually need to succeed and what institutions can realistically deliver.
-        </p>
-        <p>
-          That perspective shapes the work of Ezzi Clarity as a whole: thoughtful, direct, professionally grounded, and attentive to both the human side and how these systems really work.
-        </p>
-        <p>
-          Arva has spent more than ten years teaching children, from the early years through middle school. Lately she's been writing too: picture books and early readers for kids who are new to the country, and practical guides for students. You can find that work on our <a href="../books/index.html">Books page</a>.
-        </p>
-        <div class="about-founder-divider"></div>
-        <p class="eyebrow">Language Capability</p>
-        <h2>Multilingual, with depth and cultural fluency</h2>
-        <p>
-          Arva Ezzi is multilingual, with native proficiency in English, Hindi, Gujarati, and Arabic, and working proficiency in French.
-        </p>
-        <p>
-          This allows her to engage effectively across diverse student and institutional contexts, and to navigate conversations with cultural awareness, empathy, and clarity.
-        </p>
-        <div style="margin-top:1.25rem;">
-          <a href="../contact/index.html" class="btn-primary">Get in Touch</a>
+      <div class="about-story-grid">
+        <div class="about-col">
+          <p class="eyebrow">Our Story</p>
+          <h2>Why Ezzi Clarity Exists</h2>
+          <p>
+            Ezzi Clarity was created to address a simple reality: the gap between what institutions promise and what students actually experience is often wider than it should be.
+          </p>
+          <p>
+            After years working inside Canadian universities, Arva Ezzi saw how this gap creates real friction for students. Programs are designed with strong intent, but expectations aren't always aligned with what students actually experience.
+          </p>
+          <p>
+            Ezzi Clarity exists to close that gap, with practical, structured guidance that respects complexity without overcomplicating it.
+          </p>
+          <p>
+            At its core, Ezzi Clarity is about making complex systems easier to understand and easier to work within. The goal isn't to oversimplify what students are up against. It's to give enough clarity that better decisions become possible.
+          </p>
+        </div>
+        <div class="about-col">
+          <div class="founder-frame" aria-hidden="true"></div>
+          <p class="eyebrow">Our Founder</p>
+          <h2>Arva Ezzi, MEd</h2>
+          <p>
+            Arva Ezzi holds a Master of Education from OISE, University of Toronto, with a focus on student success and experiential learning.
+          </p>
+          <p>
+            Her work is shaped by direct experience within Canadian post-secondary institutions, supporting students, faculty, and program teams across diverse academic contexts.
+          </p>
+          <p>
+            She brings a practical, structured approach to educational consulting, grounded in what students actually need to succeed and what institutions can realistically deliver.
+          </p>
+          <p>
+            That perspective shapes the work of Ezzi Clarity as a whole: thoughtful, direct, professionally grounded, and attentive to both the human side and how these systems really work.
+          </p>
+          <p>
+            Arva has spent more than ten years teaching children, from the early years through middle school. Lately she's been writing too: picture books and early readers for kids who are new to the country, and practical guides for students. You can find that work on our <a href="../books/index.html">Books page</a>.
+          </p>
+          <div class="about-founder-divider"></div>
+          <p class="eyebrow">Language Capability</p>
+          <h2>Multilingual, with depth and cultural fluency</h2>
+          <p>
+            Arva Ezzi is multilingual, with native proficiency in English, Hindi, Gujarati, and Arabic, and working proficiency in French.
+          </p>
+          <p>
+            This allows her to engage effectively across diverse student and institutional contexts, and to navigate conversations with cultural awareness, empathy, and clarity.
+          </p>
+          <div style="margin-top:1.25rem;">
+            <a href="../contact/index.html" class="btn-primary">Get in Touch</a>
+          </div>
         </div>
       </div>
     </div>
