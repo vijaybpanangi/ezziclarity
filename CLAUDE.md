@@ -73,7 +73,7 @@ Sections are delimited by banner comments (`/* ============= */`). The file incl
 
 ## Mobile navigation
 
-Each page contains its own inline `<script>` that toggles the `.mobile-nav` drawer (hamburger click, Escape closes). The script is duplicated rather than externalized — when behavior changes, change it in every file. Each page's inline script also contains the scroll-reveal IntersectionObserver block (adds `.visible` to elements with `.reveal` as they enter the viewport, gated behind `prefers-reduced-motion`); it is duplicated per page by the same convention.
+Each page contains its own inline `<script>` that toggles the `.mobile-nav` drawer (hamburger click, Escape closes). The script is duplicated rather than externalized — when behavior changes, change it in every file. Each page's inline script also contains the scroll-reveal IntersectionObserver block (adds `.is-visible` to elements with `.reveal` as they enter the viewport, gated behind `prefers-reduced-motion`); it is duplicated per page by the same convention.
 
 ## Maintenance notes grounded in this repo
 

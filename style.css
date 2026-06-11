@@ -99,6 +99,8 @@ html, body {
 body {
   background-color: #FFFFFF;
   background: var(--wash);
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 p, li {
