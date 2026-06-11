@@ -1397,6 +1397,23 @@ html[dir="rtl"] img { transform: none; }
 html[dir="rtl"] a[href^="tel:"],
 html[dir="rtl"] a[href^="mailto:"] { direction: ltr; unicode-bidi: bidi-override; }
 
+/* 2026-06 Soft Modern additions */
+html[lang="ar"] body { font-family: var(--font-arabic); }
+html[lang="ar"] h1, html[lang="ar"] h2,
+html[lang="ar"] h3, html[lang="ar"] h4 { letter-spacing: 0; font-family: var(--font-arabic); }
+html[lang="ar"] h1 { max-width: none; }
+
+/* Arabic has no italic-serif equivalent — accent via colour only */
+html[lang="ar"] h1 em, html[lang="ar"] h2 em {
+  font-family: inherit; font-style: normal; font-weight: 800; color: var(--sky-dark);
+}
+html[lang="ar"] .eyebrow.chapter-label { font-family: inherit; font-style: normal; font-weight: 700; font-size: 0.95rem; }
+html[lang="ar"] .serif-lead { font-family: inherit; font-style: normal; }
+
+html[dir="rtl"] .process-step::after { left: auto; right: 2.5rem; }
+html[dir="rtl"] .chapter-card,
+html[dir="rtl"] .about-col { text-align: right; }
+
 /* =============================================
    RESPONSIVE
    ============================================= */
@@ -1682,4 +1699,24 @@ img {
   .footer-col a::after {
     display: none;
   }
+}
+
+/* =============================================
+   MOTION — scroll reveals (JS adds .reveal)
+   ============================================= */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.65s var(--ease-smooth), transform 0.65s var(--ease-smooth);
+  }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .card:hover, .service-card:hover, .quote-card:hover,
+  .process-step:hover, .faq:hover, .chapter-card:hover,
+  .btn-primary:hover, .btn-secondary:hover, .header-cta:hover,
+  .mobile-cta:hover, .nav-link:hover { transform: none; }
 }
