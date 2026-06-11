@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Static marketing site for **Ezzi Clarity**, an educational consulting business based in Southern Ontario. Fully localized into three languages: English (`/en/`), French (`/fr/`), Arabic (`/ar/`). Five pages per language: home, about, services, resources, contact. A root `/index.html` is a language gateway.
+Static marketing site for **Ezzi Clarity**, an educational consulting business based in Southern Ontario. Fully localized into three languages: English (`/en/`), French (`/fr/`), Arabic (`/ar/`). Six pages per language: home, about, consulting, books, resources, contact. A root `/index.html` is a language gateway.
 
 The codebase was originally produced as a WordPress theme and then converted to plain HTML + CSS — that origin is now history (no PHP, no WP runtime, no leftover theme metadata in the stylesheet, no `static-site` body class marker). What's left is the structure: plain HTML, one stylesheet, static assets, and a small inline mobile-nav script duplicated on each page.
 
@@ -24,15 +24,16 @@ The same page exists in three language trees, and any markup change usually need
 /index.html                <- language gateway (3 buttons)
 /en/index.html             /fr/index.html               /ar/index.html
 /en/about/                 /fr/a-propos/                /ar/about/
-/en/services/              /fr/services/                /ar/services/
+/en/consulting/            /fr/conseil/                 /ar/consulting/
+/en/books/                 /fr/livres/                  /ar/books/
 /en/resources/             /fr/ressources/              /ar/resources/
 /en/contact/               /fr/contact/                 /ar/contact/
 ```
 
 ### Per-language URL slugs
 
-- **English and Arabic** use English directory names (`about`, `resources`).
-- **French** uses translated slugs: `a-propos` (not `about`), `ressources` (not `resources`). `services` and `contact` happen to be identical.
+- **English and Arabic** use English directory names (`about`, `consulting`, `books`, `resources`).
+- **French** uses translated slugs: `a-propos` (not `about`), `conseil` (not `consulting`), `livres` (not `books`), `ressources` (not `resources`). `contact` is identical across all three.
 - The `.lang-switch` block in every page hard-codes cross-language hrefs — when adding or renaming a page, every cross-language link in every parallel page needs updating.
 
 ### Per-language HTML attributes
@@ -51,7 +52,7 @@ One global `style.css` and one shared `assets/images/` directory at the repo roo
 
 When moving a page or creating a new subpage, recompute every `href`/`src`.
 
-## Stylesheet (`style.css`, ~1650 lines)
+## Stylesheet (`style.css`, ~1734 lines)
 
 Single source of styling. Defines a token palette in `:root`:
 
@@ -60,14 +61,19 @@ Single source of styling. Defines a token palette in `:root`:
 - Neutrals — Cream: `--cream`, `--cream-mid`, `--cream-dark`, `--white`
 - Ink scale: `--ink`, `--ink-mid`, `--ink-soft`, `--ink-muted`, `--ink-pale`
 - Borders + shadow tokens
+- Glass surfaces: `--glass`, `--glass-border`, `--shadow-glass-*`
+- Gradient page wash: `--wash`
 
-Typeface: **Plus Jakarta Sans** (Google Fonts, loaded by `@import` at the top of `style.css`).
+Three font families, all loaded via `@import` at the very top of the file (valid placement — mid-file `@import` is ignored by browsers):
+- **Plus Jakarta Sans** — workhorse body and UI text
+- **Fraunces** — italic serif accents on Latin pages (EN/FR H1s and chapter labels; not applied on AR)
+- **IBM Plex Sans Arabic** — Arabic headings and buttons
 
-Sections are delimited by banner comments (`/* ============= */`). Search for the banner of the area you're editing rather than scrolling.
+Sections are delimited by banner comments (`/* ============= */`). The file includes a `/* MOTION */` section that houses the `@media (prefers-reduced-motion: reduce)` overrides. Search for the banner of the area you're editing rather than scrolling.
 
 ## Mobile navigation
 
-Each page contains its own inline `<script>` that toggles the `.mobile-nav` drawer (hamburger click, Escape closes). The script is duplicated rather than externalized — when behavior changes, change it in every file.
+Each page contains its own inline `<script>` that toggles the `.mobile-nav` drawer (hamburger click, Escape closes). The script is duplicated rather than externalized — when behavior changes, change it in every file. Each page's inline script also contains the scroll-reveal IntersectionObserver block (adds `.visible` to elements with `.reveal` as they enter the viewport, gated behind `prefers-reduced-motion`); it is duplicated per page by the same convention.
 
 ## Maintenance notes grounded in this repo
 

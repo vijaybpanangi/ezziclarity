@@ -4,6 +4,32 @@ Notable changes to the website, deployment configuration, and project documentat
 
 Releases on this project use semver-style tags (`v1.0.0`, `v1.1.0`, etc.) cut as deliberate milestones, not per-commit. See [GitHub Releases](https://github.com/vijaybpanangi/ezziclarity/releases) for the formal release notes.
 
+## 2026-06-11
+
+### Soft Modern redesign (visual refresh + layout rework)
+
+The visual direction was chosen through a structured visual-companion brainstorm — "Soft Modern" beat out the other candidates — with Fraunces italic serif accents added as a signature detail on Latin pages (EN/FR). Copy, pages, and URLs are completely unchanged; this is a pure design-layer change applied across all 18 language pages, the gateway, and the 404 in a single pass (EN/FR/AR done together). Shipped via PR from branch `redesign/soft-modern`.
+
+- **V8.5 override layer removed.** The stale `/* V8.5 REVAMP OVERRIDES */` CSS block (navy/teal/coral palette) was carrying an `@import` for Sora font in the middle of the file — an invalid placement that browsers silently ignore, meaning Sora never actually loaded. The entire block was removed; the valid top-of-file `@import` declarations now govern all font loading.
+- **Fonts / typography.** Three font families, all loaded via valid top-of-file `@import`: **Plus Jakarta Sans** (workhorse body/UI), **Fraunces** (italic serif accents on Latin H1s and chapter labels; not applied on AR pages where it would be jarring), **IBM Plex Sans Arabic** (Arabic headings and buttons — previously missing, so AR buttons were falling back to the Latin font).
+- **Design system additions.** 16px base size; glass surface tokens (`--glass`, `--glass-border`, `--shadow-glass-*`); gradient page wash (`--wash`); new radius steps `--r-xl` (24px) and `--r-xxl` (28px).
+- **Floating frosted pill header.** The sticky header became a floating frosted pill with `backdrop-filter: blur(…)`. A `@supports` fallback provides a solid surface on browsers without backdrop-filter support. Mobile drawer alignment was corrected while applying the new header shape.
+- **Glass cards and buttons.** All primary cards and CTA buttons now use the glass-surface tokens.
+- **Trust bar → floating chips.** The horizontal trust bar was replaced with a floating-chip layout.
+- **Hero blob + chip eyebrows.** A soft ambient blob was added behind the hero, and section eyebrows are now rendered as chips rather than plain text.
+- **Palette-tint overlays.** All framed imagery now carries a palette-tint color overlay.
+- **Inset gradient CTA panel.** The bottom-of-page call-to-action area is now an inset panel with a gradient fill.
+- **Home chapter pair (`.chapter-pair` / `.chapter-card`).** The "We advise / We write" home sections are composed as a side-by-side pair at wider viewports.
+- **About columns (`.about-story-grid` / `.about-col` / `.founder-frame`).** The About page splits into story and founder columns; the founder column contains a gradient placeholder frame (empty for now; `arva-portrait.png` can be dropped in as an opt-in later).
+- **Consulting process → vertical timeline.** The process / how-it-works block on Consulting was redesigned as a stepped vertical timeline.
+- **Scroll reveals + reduced-motion gating.** An IntersectionObserver scroll-reveal snippet was added to every page's inline script, fully gated behind `prefers-reduced-motion: reduce` so users who prefer no motion get a static experience.
+- **RTL / Arabic improvements.** All new components have RTL extension rules. Arabic typography fixes: `letter-spacing: 0` (Latin letter-spacing is wrong on Arabic text), IBM Plex Sans Arabic applied to headings and buttons (previously missing).
+- **`.serif-lead` component.** A serif lead paragraph style for the Books intro.
+- **Verification sweep.** Automated 20-page sweep confirmed: HTTP 200 on all pages, structural element greps, CSS brace balance, and all new class names defined before use — all green.
+
+**Spec:** `docs/superpowers/specs/2026-06-11-soft-modern-redesign-design.md`
+**Plan:** `docs/superpowers/plans/2026-06-11-soft-modern-redesign.md`
+
 ## 2026-06-08
 
 ### Two-pillar restructure — Consulting + Books, student-only focus
