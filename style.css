@@ -870,8 +870,17 @@ main { padding-bottom: 0; }
   gap: 1.5rem;
   align-items: start;
 }
-.founder-card h3 { font-size: 1.35rem; margin-bottom: 0.1rem; }
-.founder-card .founder-frame { margin-bottom: 1.25rem; }
+/* Founder identity: a SMALL avatar-sized portrait beside the name, sitting
+   inside the founder card — not an image scaled to the whole column. */
+.founder-id { display: flex; align-items: center; gap: 1.1rem; margin-bottom: 1.4rem; }
+.founder-id .founder-frame {
+  flex: 0 0 100px; width: 100px; max-width: 100px;
+  aspect-ratio: 1; margin: 0;
+  box-shadow: 0 4px 16px rgba(242, 168, 130, 0.24);  /* gentler glow at avatar scale */
+}
+.founder-id .founder-text { min-width: 0; }
+.founder-id h3 { font-size: 1.2rem; margin-bottom: 0.15rem; }
+.founder-id .founder-role { margin: 0; }
 .founder-role { color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 1.15rem; }
 .lang-label {
   font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em;
@@ -934,8 +943,6 @@ main { padding-bottom: 0; }
 @media (max-width: 900px) {
   .about-hero { grid-template-columns: 1fr; gap: 2rem; }
   .about-founder-grid { grid-template-columns: 1fr; }
-  /* keep the portrait a modest accent when the founder card goes full width */
-  .founder-card .founder-frame { max-width: 340px; }
 }
 
 /* =============================================
