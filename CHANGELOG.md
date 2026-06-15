@@ -6,6 +6,10 @@ Releases on this project use semver-style tags (`v1.0.0`, `v1.1.0`, etc.) cut as
 
 ## 2026-06-15
 
+### Liquid Glass — site-wide frosted-glass ramp-up
+
+Turned the site's mostly-faux glass (85%-opaque white panels with no blur) into genuine Liquid Glass, site-wide. `--glass` dropped to ~55% white; a new `--glass-blur` (`blur(20px) saturate(1.6)`) and `--glass-highlight` (specular top edge + inner 1px light ring) are now applied to every glass surface — `.card`, `.quote-card`, `.service-card`, `.contact-form`, `.timeline-item`, `.faq`, `.chapter-card`, `.about-col`, `.hero-card`, `.process-step` — so the panels actually frost and refract. The page background gained soft sky/peach colour pools (radial gradients over `--wash`, `background-attachment: fixed`) to give the frost something to bend. Header blur bumped to `blur(18px) saturate(1.5)` for cohesion. The `@supports not (backdrop-filter)` fallback now makes those surfaces near-opaque so they stay legible without blur. CSS-only; applies across all pages and all three languages.
+
 ### About page — hero "at a glance" card + tightened founder layout
 
 Follow-up to the symmetry pass, informed by a three-designer review. The About header's empty right side now carries a small glass **"At a glance"** card (reusing the home page's `.hero-card` + bullet pattern) with three credibility facts — deliberately **not** a founder photo: the site's imagery language is illustrative, the value proposition should lead, and a hero portrait would push against the founder's intentionally low public profile. The founder portrait is now a small **~100px avatar beside the founder's name** (`.founder-id`) inside the founder card — no longer an image scaled to the full column width, which read as oversized. The founder grid also switched from `align-items: stretch` to `align-items: start` so the shorter identity card no longer stretches into dead whitespace beside the longer bio. EN/FR/AR; reuses existing components, no new assets.
