@@ -844,22 +844,34 @@ main { padding-bottom: 0; }
 /* =============================================
    ABOUT — story / founder columns
    ============================================= */
-/* About — company-story narrative as its own block (matches the page-header
-   intro measure: left-aligned, constrained for readability). */
+/* About — hero: intro text beside a small "at a glance" glass card (no face).
+   Fills the header's right side while the value proposition still leads. */
+.about-hero {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 3rem;
+  align-items: center;
+}
+.about-hero-text { min-width: 0; }
+.about-hero-text p { font-size: 1.05rem; max-width: 600px; margin-bottom: 0.9rem; }
+.about-hero-text p:last-child { margin-bottom: 0; }
+
+/* About — company-story narrative block (constrained, readable measure). */
 .about-narrative { max-width: 760px; }
 .about-narrative p { margin-bottom: 1rem; }
 .about-narrative p:last-child { margin-bottom: 0; }
 
-/* About — balanced "Meet the Founder" split: a compact identity card beside
-   the bio, forced to equal height so the two sides read symmetrically. */
+/* About — founder: asymmetric identity card (narrow) + bio (wide).
+   align-items:start so the shorter identity card sizes to its own content
+   instead of stretching into dead whitespace beside the longer bio. */
 .about-founder-grid {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: 1.5rem;
-  align-items: stretch;
+  align-items: start;
 }
-.founder-card { display: flex; flex-direction: column; justify-content: center; }
 .founder-card h3 { font-size: 1.35rem; margin-bottom: 0.1rem; }
+.founder-card .founder-frame { margin-bottom: 1.25rem; }
 .founder-role { color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 1.15rem; }
 .lang-label {
   font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em;
@@ -920,7 +932,10 @@ main { padding-bottom: 0; }
 }
 
 @media (max-width: 900px) {
+  .about-hero { grid-template-columns: 1fr; gap: 2rem; }
   .about-founder-grid { grid-template-columns: 1fr; }
+  /* keep the portrait a modest accent when the founder card goes full width */
+  .founder-card .founder-frame { max-width: 340px; }
 }
 
 /* =============================================
