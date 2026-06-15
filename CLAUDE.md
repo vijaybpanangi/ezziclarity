@@ -63,6 +63,7 @@ Single source of styling. Defines a token palette in `:root`:
 - Borders + shadow tokens
 - Glass surfaces: `--glass`, `--glass-border`, `--shadow-glass-*`
 - Gradient page wash: `--wash`
+- **Liquid Glass (`v3.4.0`):** the glass is now genuinely frosted, not faux. `--glass` is ~55% white; `--glass-blur` (`blur(20px) saturate(1.6)`) + `--glass-highlight` (specular top edge + inner 1px ring) are applied to every glass surface (`.card`, `.quote-card`, `.service-card`, `.contact-form`, `.timeline-item`, `.faq`, `.chapter-card`, `.about-col`, `.hero-card`, `.process-step`) via a consolidated rule placed after the base card rules. The `<body>` background layers soft sky/peach colour pools over `--wash` (with `background-attachment: fixed`) so the frost refracts colour. An `@supports not (backdrop-filter)` block keeps those surfaces near-opaque where unsupported.
 
 Three font families, all loaded via `@import` at the very top of the file (valid placement — mid-file `@import` is ignored by browsers):
 - **Plus Jakarta Sans** — workhorse body and UI text
@@ -88,4 +89,5 @@ Each page contains its own inline `<script>` that toggles the `.mobile-nav` draw
 - `docs/superpowers/specs/` holds design specs (the *what* and *why*) — `YYYY-MM-DD-<topic>-design.md`.
 - `docs/superpowers/plans/` holds implementation plans (the *how*) — `YYYY-MM-DD-<topic>.md`.
 - `ROADMAP.md` at the root tracks **future** work and deferred items; `CHANGELOG.md` tracks **past** changes. Always check both before proposing work — the answer to "is this on the radar?" is in one or the other.
+- **Releases & versioning.** Every release gets a semver git tag on its merge commit — **major** = redesign / identity shift, **minor** = new feature or notable enhancement, **patch** = fix / content / docs. When you ship, add a versioned, timestamped `CHANGELOG.md` entry (`## vX.Y.Z — Title (YYYY-MM-DD HH:MM UTC)`, time from the merge commit) and create + push the matching tag (`git tag -a vX.Y.Z -m "…" && git push origin vX.Y.Z`). Latest: `v3.4.1`.
 - See `docs/superpowers/README.md` for the brainstorm → spec → plan → execute workflow.
