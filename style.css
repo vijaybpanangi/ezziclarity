@@ -75,11 +75,14 @@ img { max-width: 100%; display: block; }
   /* Soft Modern additions (2026-06 redesign) */
   --font-serif:      'Fraunces', Georgia, serif;
   --font-arabic:     'IBM Plex Sans Arabic', 'Plus Jakarta Sans', sans-serif;
-  --glass:           rgba(255,255,255,0.85);
-  --glass-strong:    rgba(255,255,255,0.92);
+  --glass:           rgba(255,255,255,0.55);
+  --glass-strong:    rgba(255,255,255,0.70);
   --glass-border:    rgba(227,221,208,0.8);
   --shadow-glass:    0 14px 34px -18px rgba(58,100,120,0.30);
   --shadow-glass-lg: 0 24px 56px -24px rgba(58,100,120,0.35);
+  /* Liquid Glass (bold) — real frosting + specular rim/glow */
+  --glass-blur:      blur(20px) saturate(1.6);
+  --glass-highlight: inset 0 1px 0 rgba(255,255,255,0.8), inset 0 0 0 1px rgba(255,255,255,0.16);
   --r-xxl:           28px;
   --wash: linear-gradient(165deg, #FFFFFF 0%, var(--sky-xpale) 38%, #FFFFFF 68%, var(--peach-xpale) 100%);
 }
@@ -98,7 +101,14 @@ html, body {
 
 body {
   background-color: #FFFFFF;
-  background: var(--wash);
+  /* Richer wash: soft sky/peach colour pools give the frosted glass something
+     to refract, so the Liquid Glass surfaces pick up gentle tints. */
+  background:
+    radial-gradient(38rem 30rem at 8% 4%, rgba(91,143,168,0.20), transparent 60%),
+    radial-gradient(34rem 26rem at 94% 18%, rgba(232,131,90,0.16), transparent 58%),
+    radial-gradient(42rem 32rem at 74% 98%, rgba(91,143,168,0.16), transparent 60%),
+    var(--wash);
+  background-attachment: fixed;
   overflow-x: hidden;
   overflow-x: clip;
 }
@@ -216,8 +226,8 @@ a:hover { text-decoration: underline; }
   height: 60px;
   gap: 1rem;
   background: rgba(255,255,255,0.78);
-  -webkit-backdrop-filter: blur(14px) saturate(1.4);
-  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.5);
+  backdrop-filter: blur(18px) saturate(1.5);
   border: 1px solid rgba(91,143,168,0.16);
   border-radius: var(--r-pill);
   box-shadow: 0 8px 28px -14px rgba(58,100,120,0.28);
@@ -226,9 +236,13 @@ a:hover { text-decoration: underline; }
 /* Compound selector beats .container's padding regardless of file order */
 .container.header-inner { padding: 0 0.6rem 0 1.2rem; }
 
-/* Solid fallback when backdrop-filter is unsupported */
+/* Solid fallback when backdrop-filter is unsupported: glass surfaces would be
+   too see-through without the blur, so make them near-opaque instead. */
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .header-inner { background: rgba(255,255,255,0.96); }
+  .card, .quote-card, .service-card, .contact-form, .timeline-item, .faq,
+  .chapter-card, .about-col, .hero-card, .process-step,
+  .btn-secondary { background: rgba(255,255,255,0.93); }
 }
 
 /* Brand */
@@ -772,7 +786,7 @@ main { padding-bottom: 0; }
 .service-card:hover,
 .quote-card:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-glass-lg);
+  box-shadow: var(--shadow-glass-lg), var(--glass-highlight);
   border-color: var(--sky-light);
 }
 
@@ -904,6 +918,21 @@ main { padding-bottom: 0; }
   box-shadow: var(--shadow-glass);
   min-width: 0;
 }
+
+/* =============================================
+   LIQUID GLASS (bold) — frost every glass surface
+   Real backdrop blur + a specular top edge & inner
+   1px light ring so the panels read as lit glass.
+   Placed after the base glass rules so it composes
+   their box-shadow with the highlight.
+   ============================================= */
+.card, .quote-card, .service-card, .contact-form, .timeline-item, .faq,
+.chapter-card, .about-col, .hero-card, .process-step {
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--shadow-glass), var(--glass-highlight);
+}
+.process-step { box-shadow: var(--shadow-sm), var(--glass-highlight); }
 
 .founder-frame {
   aspect-ratio: 4 / 3;
