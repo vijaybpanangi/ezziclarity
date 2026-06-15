@@ -6,6 +6,10 @@ Releases on this project use semver-style tags (`v1.0.0`, `v1.1.0`, etc.) cut as
 
 ## 2026-06-15
 
+### Founder portrait added to the About pages (EN/FR/AR)
+
+The About founder column shipped since the Soft Modern redesign with an empty gradient placeholder (`.founder-frame`); it now shows a portrait of founder Arva Ezzi. Added `assets/images/arva-founder.jpg` — an optimized, EXIF-stripped 900×1200 / ~120 KB JPEG derived from the existing high-res `arva-portrait.png` (the 2 MB source is retained; its exact byte-duplicate `founder-arva.png` was removed). The `<img>` was placed inside `.founder-frame` on `en/about/`, `fr/a-propos/`, and `ar/about/` with a translated `alt` per language, `loading="lazy"`, and `object-position: center 25%` to keep the face framed in the 4:3 slot. The frame's `aria-hidden="true"` was removed so the portrait is exposed to assistive tech via its `alt`. No layout/CSS changes (the existing `.founder-frame img` rule styles it); other pages unaffected.
+
 ### Email housekeeping — SPF cleaned, DMARC reporting enabled
 
 The iCloud+ Custom Email Domain mailbox for `@ezziclarity.ca` (`info@` for Vijay, `arva@` for Arva Ezzi) was already live; this pass cleaned up the two TXT records the onboarding had left holding legacy values. DNS-only change, no repo/site impact.
