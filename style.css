@@ -862,11 +862,16 @@ main { padding-bottom: 0; }
 
 .founder-frame {
   aspect-ratio: 4 / 3;
-  border-radius: 18px;
+  border-radius: var(--r-xl);
   margin-bottom: 1.5rem;
+  padding: 8px;
+  /* Soft pale-brand mat: a thin perimeter drawn from the same pale hues as the
+     page --wash, so the portrait's edge blends into the site background.
+     (When the frame is empty it still reads as a gentle gradient placeholder.) */
   background:
-    radial-gradient(circle at 70% 25%, rgba(242,168,130,0.55), transparent 52%),
-    linear-gradient(140deg, var(--sky-light), var(--sky));
+    radial-gradient(circle at 70% 25%, var(--peach-pale), transparent 60%),
+    linear-gradient(140deg, var(--sky-pale), var(--cream));
+  box-shadow: inset 0 0 0 1px var(--glass-border);
   position: relative;
   overflow: hidden;
 }
@@ -874,8 +879,9 @@ main { padding-bottom: 0; }
 .founder-frame img {
   width: 100%; height: 100%;
   object-fit: cover;
-  border-radius: inherit;
+  border-radius: 16px;
   box-shadow: none;
+  display: block;
 }
 
 .about-founder-divider {
