@@ -68,28 +68,30 @@ Anything more substantial than copy edits should go through a brainstorm → spe
 - **`CHANGELOG.md`** — curated trail of notable changes (infrastructure, documentation, deployment).
 - **`ROADMAP.md`** — future updates and deferred items (email migration to iCloud+ Custom Domain, canonical-URL redirect).
 
-## Recent updates
+## Release history
 
-| Date | Area | What changed |
-|---|---|---|
-| 2026-06-15 | 🏷 v3.4.0 | Liquid Glass — site-wide genuine frosting (blur + saturate) + specular rim on all glass surfaces |
-| 2026-06-15 | 🏷 v3.3.0 | Founder portrait on the About pages (EN/FR/AR), iterated to a small avatar + symmetry/hero-card layout (`v3.3.1`–`v3.3.3`) |
-| 2026-06-15 | 🏷 v3.2.0 | Email housekeeping (clean SPF, DMARC `rua`) + `v3.2.1`: `info@` in JSON-LD, `arva@` surfaced on the founder bio |
-| 2026-06-15 | 🏷 v3.1.0 | Technical SEO foundation — canonical, hreflang (EN/FR/AR), JSON-LD, og:locale, sitemap, robots |
-| 2026-06-11 | 🏷 v3.0.0 | Soft Modern redesign — glass surfaces, gradient wash, floating pill header, Fraunces serif accents, chapter-pair home layout; copy unchanged; spec + plan in docs/superpowers/ |
-| 2026-06-08 | 🏷 v2.0.0 | **Two-pillar restructure (Consulting + Books).** Services renamed to Consulting (with redirects); B2B (institutions/employers) dropped to a student-only focus; new trilingual **Books** pillar led by a children's-book passion project; home reframed into "two chapters" (advise / write); copy humanized. On branch `restructure/two-pillar-consulting-books`. Arabic awaits native review ([checklist](docs/superpowers/specs/arabic-review-checklist.md)). |
-| 2026-05-28 | Archive | **April 6, 2026 WordPress `Ezzi Clarity v3.0.0` theme** preserved at [`docs/archive/2026-04-06-wordpress-v3-0-0/`](docs/archive/2026-04-06-wordpress-v3-0-0/) (26 files: 25 PHP templates + `style.css`); Wiki Project History revised (fifth pass) — closes the previously-≈approximate Jan–Apr 2026 gap with a direct snapshot showing Plus Jakarta Sans, Sky/Peach/Cream palette, and trilingual EN/FR/AR all in place by April 6, while tagline was still *"Less Noise. More Signal."* |
-| 2026-05-28 | Archive | Liquid Glass theme [`style.css`](docs/archive/2025-12-28-wordpress-liquid-glass-staging-v4/style.css) (~870 lines) added to the Dec 28 archive; Wiki Project History revised (fourth pass) — confirms light-mode glass, Apple system fonts (SF Pro) effective typography, theme `Version: 1.3.0`, royal-blue palette |
-| 2026-05-28 | Archive | Dec 28, 2025 WordPress "Liquid Glass" staging-v4 theme PHP files preserved at [`docs/archive/2025-12-28-wordpress-liquid-glass-staging-v4/`](docs/archive/2025-12-28-wordpress-liquid-glass-staging-v4/); Wiki Project History revised (third pass) with the corrected pre-May-2026 three-era timeline |
-| 2026-05-28 | Archive | Early-Dec 2025 stand-in source preserved at [`docs/archive/2025-12-static-standin/`](docs/archive/2025-12-static-standin/); Wiki Project History revised (second pass) |
-| 2026-05-28 | 🏷 Release | [`v1.0.0` — Trilingual marketing site live](https://github.com/vijaybpanangi/ezziclarity/releases/tag/v1.0.0) cut as the first formal milestone |
-| 2026-05-28 | Documentation | GitHub [Wiki](https://github.com/vijaybpanangi/ezziclarity/wiki) populated with nine pages plus sidebar — long-form companion to the in-repo docs |
-| 2026-05-28 | Documentation | `ROADMAP.md` added; README/CLAUDE updated to cross-link it |
-| 2026-05-28 | Cleanup | WordPress remnants scrubbed — `style.css` theme header, `static-site` body class on 14 pages, orphan `.page-*-services` selectors, `README_STATIC.txt` |
-| 2026-05-28 | Infrastructure | `www.ezziclarity.ca` added as a second Custom Domain on Cloudflare Pages (was returning 522) |
-| 2026-05-28 | Documentation | `README.md`, `CLAUDE.md`, `CHANGELOG.md`, `docs/superpowers/` scaffold, `.gitignore`; GitHub About panel filled in (description, website, topics) |
+One row per release — every release is a semver git tag on its merge commit. Full notes in [`CHANGELOG.md`](CHANGELOG.md); all tags at [github.com/vijaybpanangi/ezziclarity/tags](https://github.com/vijaybpanangi/ezziclarity/tags). Newest first.
 
-Full chronological log lives in [`CHANGELOG.md`](CHANGELOG.md); planned work lives in [`ROADMAP.md`](ROADMAP.md).
+| Version | When (UTC) | PR | Summary |
+|---|---|---|---|
+| `v3.5.0` | 2026-06-15 18:59 | [#13](https://github.com/vijaybpanangi/ezziclarity/pull/13) | Maximal Liquid Glass — glassy nav/buttons + hover light-sweep |
+| `v3.4.1` | 2026-06-15 17:46 | [#12](https://github.com/vijaybpanangi/ezziclarity/pull/12) | Release governance — semver tags + versioned/timestamped CHANGELOG + doc currency |
+| `v3.4.0` | 2026-06-15 16:56 | [#11](https://github.com/vijaybpanangi/ezziclarity/pull/11) | Liquid Glass — site-wide frosted-glass ramp-up |
+| `v3.3.3` | 2026-06-15 16:37 | [#10](https://github.com/vijaybpanangi/ezziclarity/pull/10) | Founder portrait resized to a small avatar |
+| `v3.3.2` | 2026-06-15 16:30 | [#9](https://github.com/vijaybpanangi/ezziclarity/pull/9) | About hero "at a glance" card + tightened founder layout |
+| `v3.3.1` | 2026-06-15 16:10 | [#8](https://github.com/vijaybpanangi/ezziclarity/pull/8) | About symmetry pass + founder portrait halo |
+| `v3.3.0` | 2026-06-15 15:37 | [#7](https://github.com/vijaybpanangi/ezziclarity/pull/7) | Founder portrait added to About pages (EN/FR/AR) |
+| `v3.2.1` | 2026-06-15 15:07 | [#6](https://github.com/vijaybpanangi/ezziclarity/pull/6) | Contact emails surfaced (`info@` in JSON-LD, `arva@` on founder) |
+| `v3.2.0` | 2026-06-15 14:48 | [#5](https://github.com/vijaybpanangi/ezziclarity/pull/5) | Email housekeeping — clean SPF, DMARC `rua` |
+| `v3.1.1` | 2026-06-15 03:59 | [`2026c52`](https://github.com/vijaybpanangi/ezziclarity/commit/2026c52) | ROADMAP: Cloudflare-managed robots.txt note (direct) |
+| `v3.1.0` | 2026-06-15 03:54 | [`88f8800`](https://github.com/vijaybpanangi/ezziclarity/commit/88f8800) | Technical SEO foundation — canonical, hreflang, JSON-LD, og:locale, sitemap, robots (direct) |
+| `v3.0.1` | 2026-06-11 15:20 | [#4](https://github.com/vijaybpanangi/ezziclarity/pull/4) | ROADMAP follow-ups from the Soft Modern redesign |
+| `v3.0.0` | 2026-06-11 15:01 | [#3](https://github.com/vijaybpanangi/ezziclarity/pull/3) | Soft Modern redesign (glass, gradient wash, Fraunces accents) |
+| `v2.0.1` | 2026-06-08 17:36 | [#2](https://github.com/vijaybpanangi/ezziclarity/pull/2) | Reorder `_redirects` for Cloudflare perf hint |
+| `v2.0.0` | 2026-06-08 17:30 | [#1](https://github.com/vijaybpanangi/ezziclarity/pull/1) | Two-pillar restructure — Consulting + Books (student-only) |
+| `v1.0.0` | 2026-05-28 17:53 | [tag](https://github.com/vijaybpanangi/ezziclarity/releases/tag/v1.0.0) | Trilingual marketing site live |
+
+Pre-launch history (the WordPress-era archives in `docs/archive/`, the Wiki, and the initial docs/infra setup) is detailed in [`CHANGELOG.md`](CHANGELOG.md). Planned work lives in [`ROADMAP.md`](ROADMAP.md).
 
 ## Styling notes
 
