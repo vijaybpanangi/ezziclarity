@@ -2,19 +2,25 @@
 
 Notable changes to the website, deployment configuration, and project documentation. The detailed history lives in git; this file curates the highlights so a casual reader can scan what's happened over time without scrolling commit logs.
 
-Releases on this project use semver-style tags (`v1.0.0`, `v1.1.0`, etc.) cut as deliberate milestones, not per-commit. See [GitHub Releases](https://github.com/vijaybpanangi/ezziclarity/releases) for the formal release notes.
+Every release is versioned with a semver git tag (`MAJOR.MINOR.PATCH`) on its merge commit — **major** = redesign or identity/structural shift, **minor** = new feature or notable enhancement, **patch** = fix, content, or docs. Each entry is stamped with its release time (UTC, from the merge commit) and listed newest-first. See [GitHub Releases](https://github.com/vijaybpanangi/ezziclarity/releases) and `git tag` for the full list.
 
-## 2026-06-15
+## v3.4.1 — Release governance: semver tags + versioned/timestamped changelog + doc currency (2026-06-15 17:46 UTC)
 
-### Liquid Glass — site-wide frosted-glass ramp-up
+Documentation-only. Adopted explicit semver release numbering: created retroactive git tags for every release back to `v1.0.0` (each on its merge commit), reorganized this CHANGELOG so every entry carries its version **and UTC release timestamp**, and backfilled the releases that had shipped without an entry (`v3.2.1` contact emails surfaced; plus the small `v3.3.3`, `v3.1.1`, `v3.0.1`, `v2.0.1`). Refreshed `CLAUDE.md` (Liquid Glass design-system layer + a Releases & versioning note) and the README "Recent updates" table. No site or code change.
+
+## v3.4.0 — Liquid Glass: site-wide frosted-glass ramp-up (2026-06-15 16:56 UTC)
 
 Turned the site's mostly-faux glass (85%-opaque white panels with no blur) into genuine Liquid Glass, site-wide. `--glass` dropped to ~55% white; a new `--glass-blur` (`blur(20px) saturate(1.6)`) and `--glass-highlight` (specular top edge + inner 1px light ring) are now applied to every glass surface — `.card`, `.quote-card`, `.service-card`, `.contact-form`, `.timeline-item`, `.faq`, `.chapter-card`, `.about-col`, `.hero-card`, `.process-step` — so the panels actually frost and refract. The page background gained soft sky/peach colour pools (radial gradients over `--wash`, `background-attachment: fixed`) to give the frost something to bend. Header blur bumped to `blur(18px) saturate(1.5)` for cohesion. The `@supports not (backdrop-filter)` fallback now makes those surfaces near-opaque so they stay legible without blur. CSS-only; applies across all pages and all three languages.
 
-### About page — hero "at a glance" card + tightened founder layout
+## v3.3.3 — Founder portrait resized to a small avatar (2026-06-15 16:37 UTC)
 
-Follow-up to the symmetry pass, informed by a three-designer review. The About header's empty right side now carries a small glass **"At a glance"** card (reusing the home page's `.hero-card` + bullet pattern) with three credibility facts — deliberately **not** a founder photo: the site's imagery language is illustrative, the value proposition should lead, and a hero portrait would push against the founder's intentionally low public profile. The founder portrait is now a small **~100px avatar beside the founder's name** (`.founder-id`) inside the founder card — no longer an image scaled to the full column width, which read as oversized. The founder grid also switched from `align-items: stretch` to `align-items: start` so the shorter identity card no longer stretches into dead whitespace beside the longer bio. EN/FR/AR; reuses existing components, no new assets.
+The founder portrait had been filling the identity-card column (~380px), which read as oversized. Replaced with a compact `.founder-id` header — a ~100px avatar beside the founder's name and role, inside the founder card. EN/FR/AR; CSS + markup only, no new assets.
 
-### About page — symmetry pass + founder portrait halo
+## v3.3.2 — About hero "at a glance" card + tightened founder layout (2026-06-15 16:30 UTC)
+
+Follow-up to the symmetry pass, informed by a three-designer review. The About header's empty right side now carries a small glass **"At a glance"** card (reusing the home page's `.hero-card` + bullet pattern) with three credibility facts — deliberately **not** a founder photo: the site's imagery language is illustrative, the value proposition should lead, and a hero portrait would push against the founder's intentionally low public profile. The founder grid also switched from `align-items: stretch` to `align-items: start` so the shorter identity card no longer stretches into dead whitespace beside the longer bio. EN/FR/AR; reuses existing components, no new assets.
+
+## v3.3.1 — About symmetry pass + founder portrait halo (2026-06-15 16:10 UTC)
 
 Reworked the About page layout for visual balance (EN/FR/AR). The old "Our Story" block was a two-card grid where one card held only the company story while the other crammed the portrait + full founder bio + language section + contact + CTA — leaving the two columns badly mismatched in height. Now:
 
@@ -24,11 +30,15 @@ Reworked the About page layout for visual balance (EN/FR/AR). The old "Our Story
 
 CSS-only structure (`.about-narrative`, `.about-founder-grid`, `.founder-card`, `.lang-chip`); no new claims authored — existing copy was rearranged, with one minimal rephrase per language to re-thread the multilingual sentence now that languages render as chips.
 
-### Founder portrait added to the About pages (EN/FR/AR)
+## v3.3.0 — Founder portrait added to the About pages (EN/FR/AR) (2026-06-15 15:37 UTC)
 
 The About founder column shipped since the Soft Modern redesign with an empty gradient placeholder (`.founder-frame`); it now shows a portrait of founder Arva Ezzi. Added `assets/images/arva-founder.jpg` — an optimized, EXIF-stripped 900×1200 / ~120 KB JPEG derived from the existing high-res `arva-portrait.png` (the 2 MB source is retained; its exact byte-duplicate `founder-arva.png` was removed). The `<img>` was placed inside `.founder-frame` on `en/about/`, `fr/a-propos/`, and `ar/about/` with a translated `alt` per language, `loading="lazy"`, and `object-position: center 25%` to keep the face framed in the 4:3 slot. The frame's `aria-hidden="true"` was removed so the portrait is exposed to assistive tech via its `alt`. No layout/CSS changes (the existing `.founder-frame img` rule styles it); other pages unaffected.
 
-### Email housekeeping — SPF cleaned, DMARC reporting enabled
+## v3.2.1 — Contact emails surfaced (info@ in JSON-LD, arva@ on founder) (2026-06-15 15:07 UTC)
+
+Now that `info@ezziclarity.ca` is a live mailbox and `arva@ezziclarity.ca` exists, surfaced both. Added `"email": "info@ezziclarity.ca"` to the `ProfessionalService` `#organization` node and its `contactPoint` across all 19 pages (the structured data had deliberately shipped with no email), and added `arva@ezziclarity.ca` as a direct line to the founder in a quiet note at the end of the About founder bio (EN/FR/AR) — `info@` stays the general public face. Addresses wrapped in `<span class="ltr">` so they render LTR on the RTL Arabic page; the Arabic phrasing was kept gender-neutral.
+
+## v3.2.0 — Email housekeeping: clean SPF, DMARC reporting enabled (2026-06-15 14:48 UTC)
 
 The iCloud+ Custom Email Domain mailbox for `@ezziclarity.ca` (`info@` for Vijay, `arva@` for Arva Ezzi) was already live; this pass cleaned up the two TXT records the onboarding had left holding legacy values. DNS-only change, no repo/site impact.
 
@@ -37,7 +47,11 @@ The iCloud+ Custom Email Domain mailbox for `@ezziclarity.ca` (`info@` for Vijay
 
 **Verification.** `check-email-dns.sh ezziclarity.ca` (the helper in the awonderfullife repo, domain-arg form) confirmed MX → iCloud, the clean single SPF, the `sig1` iCloud DKIM CNAME, the `apple-domain` verification TXT, and the new DMARC `rua`; cross-checked against the Cloudflare 1.1.1.1 resolver to rule out resolver cache lag on the 1-hour-TTL SPF record. `~all` was retained deliberately (not `-all`).
 
-### Technical SEO foundation (no copy, design, or URL changes)
+## v3.1.1 — ROADMAP: Cloudflare-managed robots.txt note (2026-06-15 03:59 UTC)
+
+Documentation-only. Recorded in `ROADMAP.md` that Cloudflare's managed-robots / AI Crawl Control feature prepends a managed block ahead of the committed `robots.txt` on the live response — benign for search indexing (the `Allow:` and `Sitemap:` directives still serve). No site change.
+
+## v3.1.0 — Technical SEO foundation (no copy, design, or URL changes) (2026-06-15 03:54 UTC)
 
 A metadata-only pass across the language gateway and all 18 language pages, plus the sitemap and a new robots.txt. No visible copy, design, or URLs changed, and no new translated text was authored: the JSON-LD reuses each page's own existing title and meta description verbatim, so the Arabic pages stay byte-for-byte unchanged outside the injected markup (the only line removed from each Arabic file was its old relative canonical). Applied to all three trees (EN/FR/AR) in a single idempotent pass via a generator script that was run once and then deleted, so it is not committed and does not deploy.
 
@@ -50,9 +64,11 @@ A metadata-only pass across the language gateway and all 18 language pages, plus
 
 **Verification.** All 19 pages contain valid, parseable JSON-LD; zero relative canonical or hreflang hrefs (every one starts with https://); sitemap.xml is well-formed XML with 19 absolute locs; Arabic content is byte-for-byte unchanged outside the new markup; the generator is idempotent (a second run is a byte-identical no-op); and a local HTTP sweep returned 200 for all 19 pages plus /sitemap.xml, /robots.txt, and /404.html. Cross-checked by three independent validation passes (structured data, hreflang/canonical/locale reciprocity, and sitemap/robots/byte-integrity/idempotency), all green.
 
-## 2026-06-11
+## v3.0.1 — ROADMAP follow-ups from the Soft Modern redesign (2026-06-11 15:20 UTC)
 
-### Soft Modern redesign (visual refresh + layout rework)
+Documentation-only. Captured the consciously-deferred items from the Soft Modern redesign in `ROADMAP.md` — founder-portrait opt-in, Books cover art, resources reveal stagger, a real-device visual pass, the `www → apex` redirect, and deferred SEO. No site change.
+
+## v3.0.0 — Soft Modern redesign (visual refresh + layout rework) (2026-06-11 15:01 UTC)
 
 The visual direction was chosen through a structured visual-companion brainstorm — "Soft Modern" beat out the other candidates — with Fraunces italic serif accents added as a signature detail on Latin pages (EN/FR). Copy, pages, and URLs are completely unchanged; this is a pure design-layer change applied across all 18 language pages, the gateway, and the 404 in a single pass (EN/FR/AR done together). Shipped via PR from branch `redesign/soft-modern`.
 
@@ -76,9 +92,11 @@ The visual direction was chosen through a structured visual-companion brainstorm
 **Spec:** `docs/superpowers/specs/2026-06-11-soft-modern-redesign-design.md`
 **Plan:** `docs/superpowers/plans/2026-06-11-soft-modern-redesign.md`
 
-## 2026-06-08
+## v2.0.1 — Reorder _redirects for Cloudflare perf hint (2026-06-08 17:36 UTC)
 
-### Two-pillar restructure — Consulting + Books, student-only focus
+Reordered the `_redirects` rules so the most-specific / most-hit rules sit first — a minor Cloudflare Pages performance hint. No content change.
+
+## v2.0.0 — Two-pillar restructure: Consulting + Books, student-only focus (2026-06-08 17:30 UTC)
 
 The site grew from a single consulting pillar into two pillars under the same brand (no rebrand), unified by a "transition and belonging" theme. Done on branch `restructure/two-pillar-consulting-books` (heading to a PR). Design spec and implementation plan live in `docs/superpowers/specs/` and `docs/superpowers/plans/`.
 
@@ -91,9 +109,7 @@ The site grew from a single consulting pillar into two pillars under the same br
 - **Copy humanized** across all new and changed content, with unnecessary em dashes removed.
 - **Arabic** strings on the restructured pages await native-speaker review (`docs/superpowers/specs/arabic-review-checklist.md`) before deploy.
 
-## 2026-05-28
-
-### 🏷 Release: `v1.0.0` — Trilingual marketing site live
+## v1.0.0 — Trilingual marketing site live (2026-05-28 17:53 UTC)
 
 First formal release. Marks the current state of the project as a stable milestone after the WordPress-to-static cleanup, the www custom domain setup, and the full documentation surface (README, CLAUDE.md, CHANGELOG, ROADMAP, 9-page Wiki). Full release notes at <https://github.com/vijaybpanangi/ezziclarity/releases/tag/v1.0.0>.
 
