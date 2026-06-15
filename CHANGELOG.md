@@ -4,6 +4,14 @@ Notable changes to the website, deployment configuration, and project documentat
 
 Every release is versioned with a semver git tag (`MAJOR.MINOR.PATCH`) on its merge commit — **major** = redesign or identity/structural shift, **minor** = new feature or notable enhancement, **patch** = fix, content, or docs. Each entry is stamped with its release time (UTC, from the merge commit) and listed newest-first. See [GitHub Releases](https://github.com/vijaybpanangi/ezziclarity/releases) and `git tag` for the full list.
 
+## v3.5.1 — docs: PR-level release-history table + CHANGELOG for v3.5.0 (2026-06-15 19:21 UTC)
+
+Documentation-only. Rebuilt the README "Recent updates" into a PR-level **Release history** table (one row per release: version, UTC time, PR/commit link, summary), and added the `v3.5.0` entry below (its feature PR was built by a subagent and merged without docs). No site change.
+
+## v3.5.0 — Maximal Liquid Glass: glassy nav/buttons + hover light-sweep (2026-06-15 18:59 UTC)
+
+Pushed the Liquid Glass system to its "maximal" tier (CSS-only). `.nav-link` hover/active states become frosted glass pills; `.btn-primary` / `.btn-secondary` gain a glass-lit finish (translucent/gradient surface + specular top sheen + soft inner glow, contrast kept legible); and a soft diagonal **light-sweep** animates across glass cards and buttons on hover — driven only by transform/opacity and fully gated behind `prefers-reduced-motion: no-preference` (reduced-motion users get no animation), with an `html[dir="rtl"]` mirror so it sweeps correctly in Arabic. Existing `@supports not (backdrop-filter)` fallbacks preserved. Built via subagent in an isolated worktree (PR #13).
+
 ## v3.4.1 — Release governance: semver tags + versioned/timestamped changelog + doc currency (2026-06-15 17:46 UTC)
 
 Documentation-only. Adopted explicit semver release numbering: created retroactive git tags for every release back to `v1.0.0` (each on its merge commit), reorganized this CHANGELOG so every entry carries its version **and UTC release timestamp**, and backfilled the releases that had shipped without an entry (`v3.2.1` contact emails surfaced; plus the small `v3.3.3`, `v3.1.1`, `v3.0.1`, `v2.0.1`). Refreshed `CLAUDE.md` (Liquid Glass design-system layer + a Releases & versioning note) and the README "Recent updates" table. No site or code change.
