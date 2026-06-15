@@ -6,6 +6,16 @@ Releases on this project use semver-style tags (`v1.0.0`, `v1.1.0`, etc.) cut as
 
 ## 2026-06-15
 
+### About page — symmetry pass + founder portrait halo
+
+Reworked the About page layout for visual balance (EN/FR/AR). The old "Our Story" block was a two-card grid where one card held only the company story while the other crammed the portrait + full founder bio + language section + contact + CTA — leaving the two columns badly mismatched in height. Now:
+
+- **"Why Ezzi Clarity Exists"** is its own section with the company story in a constrained, left-aligned narrative measure (matching the page-header intro).
+- **"Meet Arva Ezzi"** is a balanced two-column split: a compact identity card (portrait, name, role, language chips, contact + CTA) beside the founder bio, forced to equal height (`align-items: stretch`) with the identity card's content vertically centred, so the two sides read symmetrically. Languages are now `.lang-chip` pills (native + a peach "working" chip for French) instead of a prose paragraph.
+- The founder portrait frame gained a **feathered warm halo** (peach glow + faint cool undertone) so its edge dissolves into the page wash instead of ending at a hard rectangle; the earlier inset hairline was removed.
+
+CSS-only structure (`.about-narrative`, `.about-founder-grid`, `.founder-card`, `.lang-chip`); no new claims authored — existing copy was rearranged, with one minimal rephrase per language to re-thread the multilingual sentence now that languages render as chips.
+
 ### Founder portrait added to the About pages (EN/FR/AR)
 
 The About founder column shipped since the Soft Modern redesign with an empty gradient placeholder (`.founder-frame`); it now shows a portrait of founder Arva Ezzi. Added `assets/images/arva-founder.jpg` — an optimized, EXIF-stripped 900×1200 / ~120 KB JPEG derived from the existing high-res `arva-portrait.png` (the 2 MB source is retained; its exact byte-duplicate `founder-arva.png` was removed). The `<img>` was placed inside `.founder-frame` on `en/about/`, `fr/a-propos/`, and `ar/about/` with a translated `alt` per language, `loading="lazy"`, and `object-position: center 25%` to keep the face framed in the 4:3 slot. The frame's `aria-hidden="true"` was removed so the portrait is exposed to assistive tech via its `alt`. No layout/CSS changes (the existing `.founder-frame img` rule styles it); other pages unaffected.
