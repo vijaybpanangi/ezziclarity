@@ -292,15 +292,28 @@ a:hover { text-decoration: underline; }
   white-space: nowrap;
 }
 
-.nav-link:hover {
+/* Glassy nav pill: frosted translucent fill + specular rim on hover/active */
+.nav-link:hover,
+.nav-link.nav-active {
   color: var(--ink);
-  background: var(--cream-mid);
+  background: linear-gradient(160deg, rgba(255,255,255,0.62), rgba(255,255,255,0.34));
+  -webkit-backdrop-filter: blur(10px) saturate(1.5);
+  backdrop-filter: blur(10px) saturate(1.5);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8),
+              inset 0 0 0 1px rgba(255,255,255,0.16),
+              0 4px 14px -8px rgba(58,100,120,0.32);
   text-decoration: none;
 }
 
 .nav-link.nav-active {
   color: var(--sky-dark);
   font-weight: 700;
+}
+
+/* Solid fallback for the frosted nav pill where backdrop-filter is unsupported */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .nav-link:hover,
+  .nav-link.nav-active { background: var(--cream-mid); }
 }
 
 /* Old nav-cta style — replaced by header-cta below */
@@ -481,31 +494,54 @@ a:hover { text-decoration: underline; }
   border: none;
   text-decoration: none;
   transition: transform 0.15s, filter 0.15s, box-shadow 0.15s, background 0.15s;
+  /* host for the glass specular highlight + hover light-sweep */
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
 }
 
+/* Glass-lit primary CTA: a saturated sky surface with a top specular sheen
+   and a soft inner glow. The gradient keeps the fill deep enough for white
+   text to stay AA-legible while reading as lit glass. */
 .btn-primary {
-  background: var(--sky);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.28), rgba(255,255,255,0) 46%),
+    linear-gradient(165deg, var(--sky-mid), var(--sky-dark));
   color: #fff;
-  box-shadow: var(--shadow-btn);
+  box-shadow:
+    var(--shadow-btn),
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    inset 0 0 18px -6px rgba(255,255,255,0.35);
 }
 .btn-primary:hover {
-  background: var(--sky-mid);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.34), rgba(255,255,255,0) 46%),
+    linear-gradient(165deg, var(--sky), var(--sky-mid));
   transform: translateY(-1px);
-  box-shadow: 0 6px 22px rgba(91,143,168,0.42);
+  box-shadow:
+    0 6px 22px rgba(91,143,168,0.42),
+    inset 0 1px 0 rgba(255,255,255,0.6),
+    inset 0 0 22px -6px rgba(255,255,255,0.45);
   text-decoration: none;
   color: #fff;
 }
 
+/* Glass-lit secondary: frosted translucent surface + specular top edge */
 .btn-secondary {
-  background: rgba(255,255,255,0.7);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.55));
   color: var(--ink);
   border: 1px solid var(--glass-border);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
-  box-shadow: var(--shadow-sm);
+  -webkit-backdrop-filter: blur(10px) saturate(1.4);
+  backdrop-filter: blur(10px) saturate(1.4);
+  box-shadow:
+    var(--shadow-sm),
+    inset 0 1px 0 rgba(255,255,255,0.85),
+    inset 0 0 0 1px rgba(255,255,255,0.16);
 }
 .btn-secondary:hover {
-  background: rgba(255,255,255,0.95);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.97), rgba(255,255,255,0.78));
   border-color: var(--border-mid);
   transform: translateY(-1px);
   text-decoration: none;
@@ -933,6 +969,77 @@ main { padding-bottom: 0; }
   box-shadow: var(--shadow-glass), var(--glass-highlight);
 }
 .process-step { box-shadow: var(--shadow-sm), var(--glass-highlight); }
+
+/* =============================================
+   LIQUID GLASS (maximal) — hover light-sweep
+   A soft diagonal sheen that glides across glass
+   cards & buttons on hover. GPU-cheap: a single
+   ::before gradient driven by transform + opacity,
+   clipped by the host's overflow:hidden. Logical
+   insets keep the start edge correct under RTL.
+   The motion lives entirely inside the
+   prefers-reduced-motion: no-preference guard, so
+   reduced-motion users get no sweep at all.
+   ============================================= */
+@media (prefers-reduced-motion: no-preference) {
+  .card, .quote-card, .service-card, .chapter-card, .hero-card,
+  .btn-primary, .btn-secondary {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before, .quote-card::before, .service-card::before,
+  .chapter-card::before, .hero-card::before,
+  .btn-primary::before, .btn-secondary::before {
+    content: '';
+    position: absolute;
+    inset-block: -60%;
+    inset-inline-start: -60%;
+    width: 55%;
+    pointer-events: none;
+    z-index: 1;
+    background: linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(255,255,255,0.42) 50%,
+      transparent 100%);
+    transform: translateX(-180%) rotate(8deg);
+    opacity: 0;
+    transition: transform 0.7s var(--ease-smooth), opacity 0.7s var(--ease-smooth);
+  }
+
+  /* RTL: mirror the sweep so it travels the other way */
+  html[dir="rtl"] .card::before, html[dir="rtl"] .quote-card::before,
+  html[dir="rtl"] .service-card::before, html[dir="rtl"] .chapter-card::before,
+  html[dir="rtl"] .hero-card::before,
+  html[dir="rtl"] .btn-primary::before, html[dir="rtl"] .btn-secondary::before {
+    transform: translateX(180%) rotate(-8deg);
+  }
+
+  /* Buttons: a gentler sheen (lower peak) so the label stays crisp as the
+     pass crosses it; any element child of the label sits above the sheen. */
+  .btn-primary::before, .btn-secondary::before {
+    background: linear-gradient(
+      105deg,
+      transparent 0%,
+      rgba(255,255,255,0.28) 50%,
+      transparent 100%);
+  }
+  .btn-primary > *, .btn-secondary > * { position: relative; z-index: 2; }
+
+  .card:hover::before, .quote-card:hover::before, .service-card:hover::before,
+  .chapter-card:hover::before, .hero-card:hover::before,
+  .btn-primary:hover::before, .btn-secondary:hover::before {
+    transform: translateX(320%) rotate(8deg);
+    opacity: 1;
+  }
+  html[dir="rtl"] .card:hover::before, html[dir="rtl"] .quote-card:hover::before,
+  html[dir="rtl"] .service-card:hover::before, html[dir="rtl"] .chapter-card:hover::before,
+  html[dir="rtl"] .hero-card:hover::before,
+  html[dir="rtl"] .btn-primary:hover::before, html[dir="rtl"] .btn-secondary:hover::before {
+    transform: translateX(-320%) rotate(-8deg);
+  }
+}
 
 .founder-frame {
   aspect-ratio: 4 / 3;
