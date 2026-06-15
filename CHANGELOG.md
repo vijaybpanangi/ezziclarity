@@ -6,6 +6,10 @@ Releases on this project use semver-style tags (`v1.0.0`, `v1.1.0`, etc.) cut as
 
 ## 2026-06-15
 
+### About page — hero "at a glance" card + tightened founder layout
+
+Follow-up to the symmetry pass, informed by a three-designer review. The About header's empty right side now carries a small glass **"At a glance"** card (reusing the home page's `.hero-card` + bullet pattern) with three credibility facts — deliberately **not** a founder photo: the site's imagery language is illustrative, the value proposition should lead, and a hero portrait would push against the founder's intentionally low public profile. The founder portrait stays a modest accent in the founder section. The founder grid switched from `align-items: stretch` to `align-items: start` so the shorter identity card no longer stretches into dead whitespace beside the longer bio, and the portrait is capped (`max-width: 340px`) when the card goes full-width on mobile. EN/FR/AR; reuses existing components, no new assets.
+
 ### About page — symmetry pass + founder portrait halo
 
 Reworked the About page layout for visual balance (EN/FR/AR). The old "Our Story" block was a two-card grid where one card held only the company story while the other crammed the portrait + full founder bio + language section + contact + CTA — leaving the two columns badly mismatched in height. Now:
