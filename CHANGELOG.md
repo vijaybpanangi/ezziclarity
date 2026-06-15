@@ -6,6 +6,15 @@ Releases on this project use semver-style tags (`v1.0.0`, `v1.1.0`, etc.) cut as
 
 ## 2026-06-15
 
+### Email housekeeping — SPF cleaned, DMARC reporting enabled
+
+The iCloud+ Custom Email Domain mailbox for `@ezziclarity.ca` (`info@` for Vijay, `arva@` for Arva Ezzi) was already live; this pass cleaned up the two TXT records the onboarding had left holding legacy values. DNS-only change, no repo/site impact.
+
+- **SPF** trimmed from `v=spf1 include:_spf.wpcloud.com include:spf.titan.email include:icloud.com ~all` to **`v=spf1 include:spf.titan.email include:icloud.com ~all`**. The WordPress.com-era `_spf.wpcloud.com` include was removed (the site has been fully on Cloudflare Pages for some time — nothing sends from WordPress.com). `spf.titan.email` was **kept on purpose**: Titan booking (`book.titan.email/ezziclarity/intro`) is still in active use, and Titan publishes its own live DKIM key at `titan1._domainkey.ezziclarity.ca`. Two legitimate senders, two DKIM selectors (`sig1` iCloud + `titan1` Titan), one SPF record.
+- **DMARC** upgraded from the inert `v=DMARC1;p=none;` to **`v=DMARC1; p=none; rua=mailto:info@ezziclarity.ca; fo=1`**, so aggregate reports now arrive at `info@` rather than going nowhere. Still monitor-only (`p=none`); the `none → quarantine → reject` ladder is deferred until ~1–2 weeks of clean reports (see [`ROADMAP.md`](ROADMAP.md)).
+
+**Verification.** `check-email-dns.sh ezziclarity.ca` (the helper in the awonderfullife repo, domain-arg form) confirmed MX → iCloud, the clean single SPF, the `sig1` iCloud DKIM CNAME, the `apple-domain` verification TXT, and the new DMARC `rua`; cross-checked against the Cloudflare 1.1.1.1 resolver to rule out resolver cache lag on the 1-hour-TTL SPF record. `~all` was retained deliberately (not `-all`).
+
 ### Technical SEO foundation (no copy, design, or URL changes)
 
 A metadata-only pass across the language gateway and all 18 language pages, plus the sitemap and a new robots.txt. No visible copy, design, or URLs changed, and no new translated text was authored: the JSON-LD reuses each page's own existing title and meta description verbatim, so the Arabic pages stay byte-for-byte unchanged outside the injected markup (the only line removed from each Arabic file was its old relative canonical). Applied to all three trees (EN/FR/AR) in a single idempotent pass via a generator script that was run once and then deleted, so it is not committed and does not deploy.

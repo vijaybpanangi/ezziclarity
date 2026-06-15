@@ -2,46 +2,22 @@
 
 Future updates and deferred items for ezziclarity.ca. Items here have no fixed timeline — they're surfaced so any future session (Vijay's, mine, or another Claude's) sees the gaps and can pick them up at the right moment. Once an item ships, it moves to [`CHANGELOG.md`](CHANGELOG.md).
 
-## Email setup for the domain
+## Email setup for the domain — DONE (2026-06-15)
 
-The site has moved from WordPress.com hosting → Cloudflare Pages, but the **email path for `@ezziclarity.ca` was never updated**. The current DNS still carries the original WordPress-era records:
+Live on **iCloud+ Custom Email Domain** (see [`CHANGELOG.md`](CHANGELOG.md)). Set up under Vijay's iCloud+ family subscription; addresses `info@ezziclarity.ca` (Vijay) and `arva@ezziclarity.ca` (Arva Ezzi, Family). Records: MX → `mx01`/`mx02.mail.icloud.com`; iCloud DKIM CNAME at `sig1._domainkey`; `apple-domain` verification TXT (keep permanently).
 
-```
-ezziclarity.ca       TXT   "v=spf1 include:_spf.wpcloud.com ~all"
-_dmarc.ezziclarity.ca TXT  "v=DMARC1;p=none;"
-```
+The 2026-06-15 housekeeping pass cleaned the two TXT records the iCloud onboarding had left mixed with legacy values:
 
-The SPF authorizes WordPress.com mail servers to send as `@ezziclarity.ca`; DMARC is in monitor-only mode (`p=none`). If WordPress.com no longer serves the domain's mail, the SPF is misleading and DMARC is doing nothing useful.
+- **SPF** trimmed to `v=spf1 include:spf.titan.email include:icloud.com ~all`. The WordPress.com-era `include:_spf.wpcloud.com` was removed (the site is fully on Cloudflare Pages now — nothing sends from WordPress.com). **Titan was deliberately kept** because Titan booking (`book.titan.email/ezziclarity/intro`, still linked on the contact pages in all three languages) is still in active use and Titan has its own live DKIM key published at `titan1._domainkey.ezziclarity.ca`. So there are two legitimate senders (iCloud mailbox + Titan booking) and two DKIM selectors (`sig1` iCloud, `titan1` Titan).
+- **DMARC** upgraded from the inert `v=DMARC1;p=none;` to `v=DMARC1; p=none; rua=mailto:info@ezziclarity.ca; fo=1`, so aggregate reports now actually arrive at `info@` (an address that exists and is read). Still monitor-only.
 
-### Plan
+Verified via `bash docs/superpowers/tools/check-email-dns.sh ezziclarity.ca` (the helper lives in the awonderfullife repo; it takes a domain arg) cross-checked against the Cloudflare 1.1.1.1 resolver.
 
-**Step 1 — Verify the current state.**
-Find out whether email is actually flowing right now:
-- Is there an existing mail server that receives `@ezziclarity.ca`? (Check MX records at `https://dash.cloudflare.com → ezziclarity.ca → DNS → Records`.)
-- Has anyone sent or received mail from the domain recently?
-- Are there forwarding rules pointing `@ezziclarity.ca` addresses anywhere?
+**Remaining:**
 
-If nothing is configured, the legacy SPF/DMARC TXT records can be removed without breaking anything. If something *is* flowing, capture what it points at before changing anything.
-
-**Step 2 — Migrate to iCloud+ Custom Email Domain.**
-Vijay has an existing **iCloud+ family subscription** (which includes Custom Email Domain support — up to 5 domains, 3 addresses per domain). Plan:
-
-1. In **Apple iCloud Settings → iCloud+ → Custom Email Domain**, add `ezziclarity.ca` and follow Apple's verification flow.
-2. Apple will provide the records to add at Cloudflare DNS:
-   - **MX** records pointing to `mx01.mail.icloud.com` and `mx02.mail.icloud.com`
-   - **TXT** verification record (a string Apple generates)
-   - **SPF** record (`v=spf1 include:icloud.com ~all`) — replaces the wpcloud entry
-   - **DKIM** TXT record (a `selector._domainkey.ezziclarity.ca` CNAME or TXT, per Apple's instructions)
-3. **Update DMARC** to something stricter once mail is flowing cleanly — `v=DMARC1; p=quarantine; rua=mailto:postmaster@ezziclarity.ca` is a reasonable next step (or stay at `p=none` until you've watched traffic for a week).
-4. Configure the per-address aliases inside iCloud Custom Email Domain (e.g., `arva@ezziclarity.ca`, `info@ezziclarity.ca`) and route them to the right family member's iCloud inbox.
-5. Test: send to `arva@ezziclarity.ca` from an external account; send from `arva@ezziclarity.ca` to an external account; confirm both work.
-
-### Risks / things to know
-
-- **iCloud Custom Email Domain has a 5-domain / 3-address-per-domain cap** on the family plan. Worth a quick check that there's headroom.
-- Apple's setup flow assumes you can edit DNS — since Cloudflare manages the apex DNS, that part is fine.
-- DKIM is required for good deliverability. Don't skip it.
-- DMARC at `p=reject` should be the eventual goal, but only after monitoring at `p=quarantine` for a week or two.
+- **DMARC ladder.** After ~1–2 weeks of clean `rua` reports at `info@`, tighten `p=none → quarantine → reject`. Keep `~all` (not `-all`) — the recipient-side Proofpoint relay on Vijay's work inbox softfails the relay hop, and DKIM (not SPF) carries DMARC through; `-all` would only add deliverability risk.
+- **When Titan booking is retired** (the booking feature is still in use as of 2026-06-15; a better-fit replacement is still TBD), drop **both** `include:spf.titan.email` from the SPF **and** the `titan1._domainkey` TXT in the same change, leaving the apex SPF iCloud-only.
+- **Newsletter foresight.** If a bulk sender (e.g. Resend) is ever added, send from a subdomain (e.g. `send.ezziclarity.ca`) with its own SPF/DKIM/DMARC, keeping the apex SPF for the mailbox + booking senders only.
 
 ---
 
