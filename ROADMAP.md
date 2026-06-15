@@ -55,7 +55,20 @@ A Cloudflare Redirect Rule closes this in ~30 seconds:
 - Match: `Hostname equals www.ezziclarity.ca`
 - Then: Static target `https://ezziclarity.ca`, preserve path + query, status `301`
 
-Polish, not a fix.
+Polish, not a fix. As of 2026-06-15 the on-page canonicals, hreflang cluster, and sitemap all elect the bare apex (`https://ezziclarity.ca/`), so search engines already have an unambiguous preferred host. The redirect rule is now belt-and-suspenders: it stops `www` from serving a 200 at all, rather than relying on crawlers to honour the canonical signal.
+
+---
+
+## Deferred SEO (post technical-foundation, 2026-06-15)
+
+The technical SEO foundation shipped on 2026-06-15 (see [`CHANGELOG.md`](CHANGELOG.md)): absolute canonicals, a trilingual hreflang cluster, JSON-LD (`WebSite` / `ProfessionalService` / `Person` / `WebPage`), `og:locale`, an absolute `sitemap.xml`, and `robots.txt`. The following were consciously left for later:
+
+- **BreadcrumbList schema.** Add a `BreadcrumbList` node to inner pages (Home > Section) once the navigation hierarchy is worth surfacing as rich results. Low effort, deferred only because the site is shallow.
+- **`sameAs` links.** The `ProfessionalService` node has no `sameAs` yet because there are no real social or directory profiles to point at. Add them (LinkedIn, Instagram, Google Business Profile URL, etc.) once those accounts actually exist. Do not invent placeholder URLs.
+- **Per-page Open Graph images.** Every page currently shares the one `og-ezzi-clarity.png`. Per-page or per-section OG images would improve link previews; deferred until there is art worth differentiating (pairs naturally with the Books cover art item above).
+- **Off-site actions (manual, off-repo).** These cannot be done from the repo and need Vijay:
+  - **Google Business Profile.** Create and verify the business listing so the brand can appear in Maps and the local knowledge panel.
+  - **Search Console + Bing Webmaster Tools.** Verify domain ownership in both, then submit `https://ezziclarity.ca/sitemap.xml` so the new sitemap is picked up and indexing can be monitored.
 
 ---
 

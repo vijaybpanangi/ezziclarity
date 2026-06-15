@@ -4,6 +4,21 @@ Notable changes to the website, deployment configuration, and project documentat
 
 Releases on this project use semver-style tags (`v1.0.0`, `v1.1.0`, etc.) cut as deliberate milestones, not per-commit. See [GitHub Releases](https://github.com/vijaybpanangi/ezziclarity/releases) for the formal release notes.
 
+## 2026-06-15
+
+### Technical SEO foundation (no copy, design, or URL changes)
+
+A metadata-only pass across the language gateway and all 18 language pages, plus the sitemap and a new robots.txt. No visible copy, design, or URLs changed, and no new translated text was authored: the JSON-LD reuses each page's own existing title and meta description verbatim, so the Arabic pages stay byte-for-byte unchanged outside the injected markup (the only line removed from each Arabic file was its old relative canonical). Applied to all three trees (EN/FR/AR) in a single idempotent pass via a generator script that was run once and then deleted, so it is not committed and does not deploy.
+
+- **Absolute self-canonical.** Every language page carried `<link rel="canonical" href="index.html">`, which resolves ambiguously. Each now points to its own absolute apex URL (for example `https://ezziclarity.ca/fr/a-propos/`). The gateway, which had no canonical, now self-canonicals to `https://ezziclarity.ca/`.
+- **hreflang cluster.** Every page and the gateway now carry four `<link rel="alternate" hreflang>` entries (en, fr, ar, x-default). The three language alternates point to that page's equivalents across the trees; x-default points to the apex root. Reciprocity was verified: the three pages in each slot share an identical four-href cluster.
+- **JSON-LD structured data.** A `schema.org` `@graph` was injected before `</head>` on all 19 pages, with stable @ids: a WebSite (`#website`), a ProfessionalService organization (`#organization`, including legalName, telephone, areaServed, postal address, languages, and a contactPoint, with no invented email), a Person founder (`#founder`, Arva Ezzi, MEd from OISE), and a per-page WebPage node whose name and description are the page's own title and meta description verbatim. Serialized with non-ASCII preserved so Arabic survives intact.
+- **og:locale.** Each page now declares its primary `og:locale` (en_CA / fr_CA / ar) plus `og:locale:alternate` for the other two.
+- **sitemap.xml rewritten.** The old file used relative `<loc>` paths, which are invalid per the sitemaps protocol and effectively ignored. It now uses the sitemaps + xhtml namespaces, one `<url>` per page (gateway + 18), each with an absolute `<loc>`, a `<lastmod>` of 2026-06-15, and four `<xhtml:link rel="alternate" hreflang>` entries.
+- **robots.txt added.** Allows all crawlers and points to `https://ezziclarity.ca/sitemap.xml`.
+
+**Verification.** All 19 pages contain valid, parseable JSON-LD; zero relative canonical or hreflang hrefs (every one starts with https://); sitemap.xml is well-formed XML with 19 absolute locs; Arabic content is byte-for-byte unchanged outside the new markup; the generator is idempotent (a second run is a byte-identical no-op); and a local HTTP sweep returned 200 for all 19 pages plus /sitemap.xml, /robots.txt, and /404.html. Cross-checked by three independent validation passes (structured data, hreflang/canonical/locale reciprocity, and sitemap/robots/byte-integrity/idempotency), all green.
+
 ## 2026-06-11
 
 ### Soft Modern redesign (visual refresh + layout rework)

@@ -1,22 +1,156 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>/</loc></url>
-  <url><loc>/en/</loc></url>
-  <url><loc>/en/about/</loc></url>
-  <url><loc>/en/consulting/</loc></url>
-  <url><loc>/en/books/</loc></url>
-  <url><loc>/en/resources/</loc></url>
-  <url><loc>/en/contact/</loc></url>
-  <url><loc>/fr/</loc></url>
-  <url><loc>/fr/a-propos/</loc></url>
-  <url><loc>/fr/conseil/</loc></url>
-  <url><loc>/fr/livres/</loc></url>
-  <url><loc>/fr/ressources/</loc></url>
-  <url><loc>/fr/contact/</loc></url>
-  <url><loc>/ar/</loc></url>
-  <url><loc>/ar/about/</loc></url>
-  <url><loc>/ar/consulting/</loc></url>
-  <url><loc>/ar/books/</loc></url>
-  <url><loc>/ar/resources/</loc></url>
-  <url><loc>/ar/contact/</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://ezziclarity.ca/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ezziclarity.ca/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ezziclarity.ca/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ezziclarity.ca/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ezziclarity.ca/"/>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ezziclarity.ca/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ezziclarity.ca/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ezziclarity.ca/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ezziclarity.ca/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ezziclarity.ca/"/>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ezziclarity.ca/en/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ezziclarity.ca/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ezziclarity.ca/fr/a-propos/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ezziclarity.ca/ar/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ezziclarity.ca/"/>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ezziclarity.ca/en/consulting/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ezziclarity.ca/en/consulting/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ezziclarity.ca/fr/conseil/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ezziclarity.ca/ar/consulting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ezziclarity.ca/"/>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ezziclarity.ca/en/books/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ezziclarity.ca/en/books/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ezziclarity.ca/fr/livres/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ezziclarity.ca/ar/books/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ezziclarity.ca/"/>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ezziclarity.ca/en/resources/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ezziclarity.ca/en/resources/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ezziclarity.ca/fr/ressources/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ezziclarity.ca/ar/resources/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ezziclarity.ca/"/>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ezziclarity.ca/en/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ezziclarity.ca/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ezziclarity.ca/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ezziclarity.ca/ar/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ezziclarity.ca/"/>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ezziclarity.ca/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ezziclarity.ca/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ezziclarity.ca/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ezziclarity.ca/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ezziclarity.ca/"/>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ezziclarity.ca/fr/a-propos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ezziclarity.ca/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ezziclarity.ca/fr/a-propos/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ezziclarity.ca/ar/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ezziclarity.ca/"/>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ezziclarity.ca/fr/conseil/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ezziclarity.ca/en/consulting/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ezziclarity.ca/fr/conseil/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ezziclarity.ca/ar/consulting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ezziclarity.ca/"/>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ezziclarity.ca/fr/livres/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ezziclarity.ca/en/books/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ezziclarity.ca/fr/livres/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ezziclarity.ca/ar/books/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ezziclarity.ca/"/>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ezziclarity.ca/fr/ressources/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ezziclarity.ca/en/resources/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ezziclarity.ca/fr/ressources/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ezziclarity.ca/ar/resources/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ezziclarity.ca/"/>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ezziclarity.ca/fr/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ezziclarity.ca/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ezziclarity.ca/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ezziclarity.ca/ar/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ezziclarity.ca/"/>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ezziclarity.ca/ar/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ezziclarity.ca/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ezziclarity.ca/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ezziclarity.ca/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ezziclarity.ca/"/>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ezziclarity.ca/ar/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ezziclarity.ca/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ezziclarity.ca/fr/a-propos/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ezziclarity.ca/ar/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ezziclarity.ca/"/>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ezziclarity.ca/ar/consulting/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ezziclarity.ca/en/consulting/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ezziclarity.ca/fr/conseil/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ezziclarity.ca/ar/consulting/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ezziclarity.ca/"/>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ezziclarity.ca/ar/books/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ezziclarity.ca/en/books/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ezziclarity.ca/fr/livres/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ezziclarity.ca/ar/books/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ezziclarity.ca/"/>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ezziclarity.ca/ar/resources/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ezziclarity.ca/en/resources/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ezziclarity.ca/fr/ressources/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ezziclarity.ca/ar/resources/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ezziclarity.ca/"/>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ezziclarity.ca/ar/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ezziclarity.ca/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ezziclarity.ca/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ezziclarity.ca/ar/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ezziclarity.ca/"/>
+    <lastmod>2026-06-15</lastmod>
+  </url>
 </urlset>
