@@ -4,6 +4,19 @@ Notable changes to the website, deployment configuration, and project documentat
 
 Every release is versioned with a semver git tag (`MAJOR.MINOR.PATCH`) on its merge commit — **major** = redesign or identity/structural shift, **minor** = new feature or notable enhancement, **patch** = fix, content, or docs. Each entry is stamped with its release time (UTC, from the merge commit) and listed newest-first. See [GitHub Releases](https://github.com/vijaybpanangi/ezziclarity/releases) and `git tag` for the full list.
 
+## v3.6.0 — Character & charisma motion pass (2026-06-18 22:16 UTC)
+
+A CSS-only motion + micro-interaction layer that gives the site life without spending its calm — six elements, all in `style.css`, **zero HTML changes**, so they land on EN / FR / AR (incl. RTL Arabic) in one pass:
+
+- **Signature swash** — a warm-peach hand-drawn brush-stroke draws itself under the italic heading accents (`h1 em` / `h2 em`); on load for the hero, on scroll-reveal for sections, mirrored under RTL.
+- **Living background** — the sky/peach colour pools now drift and breathe on fixed `body::before` / `body::after` layers (~56s / 72s) instead of sitting still.
+- **Tactile cards & buttons** — cards lift a touch more with a faint peach edge-glow on hover; buttons get a springy press.
+- **Hero entrance** — the homepage hero assembles itself (eyebrow → headline → text → buttons → panel) in a staggered rise on load.
+- **Animated checklist ticks** — the list bullets became peach checkmarks that pop in; offsets moved to logical properties so they sit on the correct edge in Arabic.
+- **Logo touch** — the header mark settles in on load and tilts playfully on hover.
+
+All continuous motion is gated behind `prefers-reduced-motion: no-preference`, so reduced-motion **and** no-JS users get a fully static, fully visible site; directional motion is RTL-mirrored. Built, then hardened by an adversarial verification pass (5 lenses + a completeness critic) that caught and fixed reduced-motion leakage on the press/logo tilt, a no-JS hidden-tick footgun, an orphaned interior-page entrance beat, and a latent no-JS section-swash footgun. Spec: `docs/superpowers/specs/2026-06-18-character-charisma-design.md`; plan: `docs/superpowers/plans/2026-06-18-character-charisma-pass.md`. (PR #16)
+
 ## v3.5.1 — docs: PR-level release-history table + CHANGELOG for v3.5.0 (2026-06-15 19:21 UTC)
 
 Documentation-only. Rebuilt the README "Recent updates" into a PR-level **Release history** table (one row per release: version, UTC time, PR/commit link, summary), and added the `v3.5.0` entry below (its feature PR was built by a subagent and merged without docs). No site change.

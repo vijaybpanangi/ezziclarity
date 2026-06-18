@@ -101,13 +101,9 @@ html, body {
 
 body {
   background-color: #FFFFFF;
-  /* Richer wash: soft sky/peach colour pools give the frosted glass something
-     to refract, so the Liquid Glass surfaces pick up gentle tints. */
-  background:
-    radial-gradient(38rem 30rem at 8% 4%, rgba(91,143,168,0.20), transparent 60%),
-    radial-gradient(34rem 26rem at 94% 18%, rgba(232,131,90,0.16), transparent 58%),
-    radial-gradient(42rem 32rem at 74% 98%, rgba(91,143,168,0.16), transparent 60%),
-    var(--wash);
+  /* Base wash only — the sky/peach colour pools moved to fixed body::before/::after
+     layers (CHARACTER & CHARISMA section) so they can gently drift behind content. */
+  background: var(--wash);
   background-attachment: fixed;
   overflow-x: hidden;
   overflow-x: clip;
@@ -821,9 +817,10 @@ main { padding-bottom: 0; }
 .card:hover,
 .service-card:hover,
 .quote-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-glass-lg), var(--glass-highlight);
-  border-color: var(--sky-light);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glass-lg), var(--glass-highlight),
+              0 10px 34px -12px rgba(232,131,90,0.28);
+  border-color: var(--peach-light);
 }
 
 /* Card type tag */
@@ -881,7 +878,10 @@ main { padding-bottom: 0; }
   min-width: 0;
 }
 
-.chapter-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-glass-lg); }
+.chapter-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-glass-lg), 0 12px 36px -14px rgba(232,131,90,0.26);
+}
 
 .chapter-card h2 { font-size: clamp(1.5rem, 2.4vw, 1.9rem); margin-bottom: 0.5em; }
 .chapter-card .checklist { margin-bottom: 1.25rem; }
@@ -1151,7 +1151,7 @@ main { padding-bottom: 0; }
 .checklist { padding-left: 0; margin: 0.75rem 0 0; list-style: none; }
 
 .checklist li {
-  padding-left: 1.3rem;
+  padding-inline-start: 1.45rem;
   position: relative;
   margin-bottom: 0.35rem;
   font-size: 0.9rem;
@@ -1160,10 +1160,16 @@ main { padding-bottom: 0; }
 .checklist li::before {
   content: '';
   position: absolute;
-  left: 0; top: 0.55em;
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--sky-light);
+  inset-inline-start: 0.05rem;
+  top: 0.30em;
+  width: 0.40em;
+  height: 0.70em;
+  border: solid var(--peach);
+  border-width: 0 2.5px 2.5px 0;
+  border-radius: 1px;
+  transform: rotate(45deg);          /* checkmark; fully shown by default */
+  transform-origin: center;
+  background: none;                  /* override the old dot fill */
 }
 
 /* =============================================
@@ -1591,8 +1597,6 @@ html[dir="rtl"] .section { text-align: right; }
 html[dir="rtl"] ul,
 html[dir="rtl"] ol { padding-right: 1.25rem; padding-left: 0; }
 
-html[dir="rtl"] .checklist li { padding-left: 0; padding-right: 1.3rem; }
-html[dir="rtl"] .checklist li::before { left: auto; right: 0; }
 html[dir="rtl"] .hero-card li { padding-left: 0; padding-right: 1.2rem; }
 html[dir="rtl"] .hero-card li::before { left: auto; right: 0; }
 
@@ -1696,6 +1700,7 @@ html[dir="rtl"] .about-col { text-align: right; }
    ============================================= */
 :root {
   --ease-smooth: cubic-bezier(.22,.61,.36,1);
+  --ease-back:   cubic-bezier(.34,1.56,.64,1); /* gentle overshoot for playful pops */
 }
 
 html {
@@ -1927,3 +1932,126 @@ img {
   .btn-primary:hover, .btn-secondary:hover, .header-cta:hover,
   .mobile-cta:hover, .nav-link:hover { transform: none; }
 }
+
+/* =============================================
+   CHARACTER & CHARISMA (v3.6.0)
+   Ambient + entrance motion and micro-interactions.
+   Keyframes are defined here unconditionally; every
+   *application* of them is gated behind
+   prefers-reduced-motion: no-preference (below and in
+   the per-feature blocks), and neutralised in the
+   MOTION reduce block above. Default states are always
+   fully visible so reduced-motion users lose nothing.
+   ============================================= */
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes bgDrift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(-3%, 2%, 0) scale(1.08); }
+}
+@keyframes bgDriftAlt {
+  from { transform: translate3d(0, 0, 0) scale(1.06); opacity: 0.9; }
+  to   { transform: translate3d(2.5%, -2%, 0) scale(1); opacity: 1; }
+}
+@keyframes logoSettle {
+  from { opacity: 0; transform: translateY(-4px) rotate(-6deg) scale(0.92); }
+  to   { opacity: 1; transform: translateY(0) rotate(0) scale(1); }
+}
+@keyframes swashDraw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes tickPop   { from { transform: rotate(45deg) scale(0); } to { transform: rotate(45deg) scale(1); } }
+
+/* --- Living background: colour pools drift on fixed layers behind content --- */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+body::before {
+  background:
+    radial-gradient(38rem 30rem at 8% 4%,  rgba(91,143,168,0.20), transparent 60%),
+    radial-gradient(34rem 26rem at 94% 18%, rgba(232,131,90,0.16), transparent 58%);
+}
+body::after {
+  background:
+    radial-gradient(42rem 32rem at 74% 98%, rgba(91,143,168,0.16), transparent 60%);
+}
+@media (prefers-reduced-motion: no-preference) {
+  body::before { animation: bgDrift    56s var(--ease-smooth) infinite alternate; }
+  body::after  { animation: bgDriftAlt 72s var(--ease-smooth) infinite alternate; }
+}
+
+/* --- Signature swash under italic heading accents --- */
+h1 em, h2 em { position: relative; }
+h1 em::after, h2 em::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  bottom: -0.16em;
+  height: 0.36em;
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M4,9 C45,3 80,12 118,7 C150,3 178,10 196,6' fill='none' stroke='%23E8835A' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+  clip-path: inset(0 0 0 0); /* drawn by default → reduced-motion shows it */
+}
+html[dir="rtl"] h1 em::after, html[dir="rtl"] h2 em::after { transform: scaleX(-1); }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Hero accent draws on load, just after the headline settles. Under RTL the
+     scaleX(-1) above mirrors this same keyframe, so it draws from the start (right) edge. */
+  h1 em::after { animation: swashDraw .9s var(--ease-smooth) .55s both; }
+
+  /* Section accents: collapse ONLY once JS adds .reveal (so the no-JS path keeps the
+     base inset(0) fully-drawn swash), then draw when .is-visible lands. Same RTL story
+     as h1 — scaleX(-1) mirrors the single keyframe direction. */
+  .reveal h2 em::after     { clip-path: inset(0 100% 0 0); transition: clip-path .8s var(--ease-smooth); }
+  .is-visible h2 em::after { clip-path: inset(0 0 0 0); }
+}
+
+/* --- Hero entrance: staggered rise on load (homepage hero) --- */
+@media (prefers-reduced-motion: no-preference) {
+  .hero .eyebrow  { animation: heroRise .6s var(--ease-smooth) .05s both; }
+  .hero h1        { animation: heroRise .6s var(--ease-smooth) .15s both; }
+  .hero-copy > p     { animation: heroRise .6s var(--ease-smooth) .28s both; }
+  .hero .hero-actions  { animation: heroRise .6s var(--ease-smooth) .40s both; }
+  .hero .hero-footnote { animation: heroRise .6s var(--ease-smooth) .46s both; }
+  .hero-panel        { animation: heroRise .7s var(--ease-smooth) .35s both; }
+}
+
+/* --- Tactile buttons: springy press (motion only — gated so reduce gets none) --- */
+@media (prefers-reduced-motion: no-preference) {
+  .btn-primary:active,
+  .btn-secondary:active,
+  .header-cta:active { transform: translateY(0) scale(0.97); }
+}
+
+/* --- Checklist ticks: pop in. Collapse is scoped to a .reveal ancestor (added by
+   the same JS that later adds .is-visible), so no-JS users keep fully-shown ticks. --- */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal .checklist li::before {
+    transform: rotate(45deg) scale(0);
+    transition: transform .4s var(--ease-back);
+  }
+  .is-visible .checklist li:nth-child(1)::before { transition-delay: .05s; }
+  .is-visible .checklist li:nth-child(2)::before { transition-delay: .13s; }
+  .is-visible .checklist li:nth-child(3)::before { transition-delay: .21s; }
+  .is-visible .checklist li:nth-child(4)::before { transition-delay: .29s; }
+  .is-visible .checklist li::before { transform: rotate(45deg) scale(1); }
+
+  /* Hero card isn't in the reveal set → pop on load instead */
+  .hero-card .checklist li::before { animation: tickPop .4s var(--ease-back) both; }
+  .hero-card .checklist li:nth-child(1)::before { animation-delay: .55s; }
+  .hero-card .checklist li:nth-child(2)::before { animation-delay: .65s; }
+  .hero-card .checklist li:nth-child(3)::before { animation-delay: .75s; }
+}
+
+/* --- Logo touch: settle on load, playful tilt on hover (motion only — all gated) --- */
+@media (prefers-reduced-motion: no-preference) {
+  .brand-logo { transition: transform .35s var(--ease-smooth); animation: logoSettle .7s var(--ease-smooth) both; }
+  .brand-logo:hover                 { transform: rotate(-5deg) scale(1.06); }
+  html[dir="rtl"] .brand-logo:hover { transform: rotate(5deg)  scale(1.06); }
+}
+
