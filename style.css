@@ -1930,8 +1930,6 @@ img {
   .card:hover, .service-card:hover, .quote-card:hover,
   .process-step:hover, .faq:hover, .chapter-card:hover,
   .btn-primary:hover, .btn-secondary:hover, .header-cta:hover,
-  .btn-primary:active, .btn-secondary:active, .header-cta:active,
-  .brand-logo:hover,
   .mobile-cta:hover, .nav-link:hover { transform: none; }
 }
 
@@ -2017,20 +2015,23 @@ html[dir="rtl"] h1 em::after, html[dir="rtl"] h2 em::after { transform: scaleX(-
 @media (prefers-reduced-motion: no-preference) {
   .hero .eyebrow  { animation: heroRise .6s var(--ease-smooth) .05s both; }
   .hero h1        { animation: heroRise .6s var(--ease-smooth) .15s both; }
-  .hero-copy > p  { animation: heroRise .6s var(--ease-smooth) .28s both; }
-  .hero-actions   { animation: heroRise .6s var(--ease-smooth) .40s both; }
-  .hero-footnote  { animation: heroRise .6s var(--ease-smooth) .46s both; }
-  .hero-panel     { animation: heroRise .7s var(--ease-smooth) .35s both; }
+  .hero-copy > p     { animation: heroRise .6s var(--ease-smooth) .28s both; }
+  .hero .hero-actions  { animation: heroRise .6s var(--ease-smooth) .40s both; }
+  .hero .hero-footnote { animation: heroRise .6s var(--ease-smooth) .46s both; }
+  .hero-panel        { animation: heroRise .7s var(--ease-smooth) .35s both; }
 }
 
-/* --- Tactile buttons: springy press --- */
-.btn-primary:active,
-.btn-secondary:active,
-.header-cta:active { transform: translateY(0) scale(0.97); }
-
-/* --- Checklist ticks: pop in --- */
+/* --- Tactile buttons: springy press (motion only — gated so reduce gets none) --- */
 @media (prefers-reduced-motion: no-preference) {
-  .checklist li::before {
+  .btn-primary:active,
+  .btn-secondary:active,
+  .header-cta:active { transform: translateY(0) scale(0.97); }
+}
+
+/* --- Checklist ticks: pop in. Collapse is scoped to a .reveal ancestor (added by
+   the same JS that later adds .is-visible), so no-JS users keep fully-shown ticks. --- */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal .checklist li::before {
     transform: rotate(45deg) scale(0);
     transition: transform .4s var(--ease-back);
   }
@@ -2047,11 +2048,10 @@ html[dir="rtl"] h1 em::after, html[dir="rtl"] h2 em::after { transform: scaleX(-
   .hero-card .checklist li:nth-child(3)::before { animation-delay: .75s; }
 }
 
-/* --- Logo touch: settle on load, playful tilt on hover --- */
-.brand-logo { transition: transform .35s var(--ease-smooth); }
-.brand-logo:hover                 { transform: rotate(-5deg) scale(1.06); }
-html[dir="rtl"] .brand-logo:hover { transform: rotate(5deg)  scale(1.06); }
+/* --- Logo touch: settle on load, playful tilt on hover (motion only — all gated) --- */
 @media (prefers-reduced-motion: no-preference) {
-  .brand-logo { animation: logoSettle .7s var(--ease-smooth) both; }
+  .brand-logo { transition: transform .35s var(--ease-smooth); animation: logoSettle .7s var(--ease-smooth) both; }
+  .brand-logo:hover                 { transform: rotate(-5deg) scale(1.06); }
+  html[dir="rtl"] .brand-logo:hover { transform: rotate(5deg)  scale(1.06); }
 }
 
