@@ -1160,16 +1160,15 @@ main { padding-bottom: 0; }
 .checklist li::before {
   content: '';
   position: absolute;
-  inset-inline-start: 0.05rem;
-  top: 0.30em;
-  width: 0.40em;
-  height: 0.70em;
-  border: solid var(--peach);
-  border-width: 0 2.5px 2.5px 0;
-  border-radius: 1px;
-  transform: rotate(45deg);          /* checkmark; fully shown by default */
-  transform-origin: center;
-  background: none;                  /* override the old dot fill */
+  inset-inline-start: 0;
+  top: 0.32em;
+  width: 0.85em;
+  height: 0.62em;
+  border: none;                      /* neutralise any inherited dot border */
+  border-radius: 0;                  /* and its 50% radius (would clip the SVG) */
+  /* Peach checkmark as an SVG stroke, drawn left→right by a clip-path wipe (see MOTION). */
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 16'%3E%3Cpath d='M2,9 L8,14.5 L20,2' fill='none' stroke='%23E8835A' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / contain;
+  clip-path: inset(0 0 0 0);         /* fully drawn by default → reduced-motion / no-JS show it */
 }
 
 /* =============================================
@@ -1944,7 +1943,7 @@ img {
    fully visible so reduced-motion users lose nothing.
    ============================================= */
 @keyframes heroRise {
-  from { opacity: 0; transform: translateY(16px); }
+  from { opacity: 0; transform: translateY(26px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 @keyframes bgDrift {
@@ -1956,11 +1955,10 @@ img {
   to   { transform: translate3d(2.5%, -2%, 0) scale(1); opacity: 1; }
 }
 @keyframes logoSettle {
-  from { opacity: 0; transform: translateY(-4px) rotate(-6deg) scale(0.92); }
+  from { opacity: 0; transform: translateY(-10px) rotate(-12deg) scale(0.8); }
   to   { opacity: 1; transform: translateY(0) rotate(0) scale(1); }
 }
 @keyframes swashDraw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
-@keyframes tickPop   { from { transform: rotate(45deg) scale(0); } to { transform: rotate(45deg) scale(1); } }
 
 /* --- Living background: colour pools drift on fixed layers behind content --- */
 body::before,
@@ -2013,12 +2011,12 @@ html[dir="rtl"] h1 em::after, html[dir="rtl"] h2 em::after { transform: scaleX(-
 
 /* --- Hero entrance: staggered rise on load (homepage hero) --- */
 @media (prefers-reduced-motion: no-preference) {
-  .hero .eyebrow  { animation: heroRise .6s var(--ease-smooth) .05s both; }
-  .hero h1        { animation: heroRise .6s var(--ease-smooth) .15s both; }
-  .hero-copy > p     { animation: heroRise .6s var(--ease-smooth) .28s both; }
-  .hero .hero-actions  { animation: heroRise .6s var(--ease-smooth) .40s both; }
-  .hero .hero-footnote { animation: heroRise .6s var(--ease-smooth) .46s both; }
-  .hero-panel        { animation: heroRise .7s var(--ease-smooth) .35s both; }
+  .hero .eyebrow  { animation: heroRise .7s var(--ease-smooth) .06s both; }
+  .hero h1        { animation: heroRise .7s var(--ease-smooth) .18s both; }
+  .hero-copy > p     { animation: heroRise .7s var(--ease-smooth) .34s both; }
+  .hero .hero-actions  { animation: heroRise .7s var(--ease-smooth) .50s both; }
+  .hero .hero-footnote { animation: heroRise .7s var(--ease-smooth) .58s both; }
+  .hero-panel        { animation: heroRise .8s var(--ease-smooth) .44s both; }
 }
 
 /* --- Tactile buttons: springy press (motion only — gated so reduce gets none) --- */
@@ -2028,29 +2026,31 @@ html[dir="rtl"] h1 em::after, html[dir="rtl"] h2 em::after { transform: scaleX(-
   .header-cta:active { transform: translateY(0) scale(0.97); }
 }
 
-/* --- Checklist ticks: pop in. Collapse is scoped to a .reveal ancestor (added by
-   the same JS that later adds .is-visible), so no-JS users keep fully-shown ticks. --- */
+/* --- Checklist ticks: DRAW in — a clip-path wipe traces the checkmark stroke left→right
+   (a ✓'s x-coords increase monotonically along the stroke, so the wipe = the pen drawing it),
+   reusing the swash mechanism. Collapse is scoped to a .reveal ancestor (JS-added), so no-JS
+   users keep fully-drawn checkmarks. --- */
 @media (prefers-reduced-motion: no-preference) {
   .reveal .checklist li::before {
-    transform: rotate(45deg) scale(0);
-    transition: transform .4s var(--ease-back);
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path .55s var(--ease-smooth);
   }
-  .is-visible .checklist li:nth-child(1)::before { transition-delay: .05s; }
-  .is-visible .checklist li:nth-child(2)::before { transition-delay: .13s; }
-  .is-visible .checklist li:nth-child(3)::before { transition-delay: .21s; }
-  .is-visible .checklist li:nth-child(4)::before { transition-delay: .29s; }
-  .is-visible .checklist li::before { transform: rotate(45deg) scale(1); }
+  .is-visible .checklist li:nth-child(1)::before { transition-delay: .08s; }
+  .is-visible .checklist li:nth-child(2)::before { transition-delay: .22s; }
+  .is-visible .checklist li:nth-child(3)::before { transition-delay: .36s; }
+  .is-visible .checklist li:nth-child(4)::before { transition-delay: .50s; }
+  .is-visible .checklist li::before { clip-path: inset(0 0 0 0); }
 
-  /* Hero card isn't in the reveal set → pop on load instead */
-  .hero-card .checklist li::before { animation: tickPop .4s var(--ease-back) both; }
-  .hero-card .checklist li:nth-child(1)::before { animation-delay: .55s; }
-  .hero-card .checklist li:nth-child(2)::before { animation-delay: .65s; }
-  .hero-card .checklist li:nth-child(3)::before { animation-delay: .75s; }
+  /* Hero card isn't in the reveal set → draw on load instead (reuse swashDraw) */
+  .hero-card .checklist li::before { animation: swashDraw .55s var(--ease-smooth) both; }
+  .hero-card .checklist li:nth-child(1)::before { animation-delay: .60s; }
+  .hero-card .checklist li:nth-child(2)::before { animation-delay: .78s; }
+  .hero-card .checklist li:nth-child(3)::before { animation-delay: .96s; }
 }
 
 /* --- Logo touch: settle on load, playful tilt on hover (motion only — all gated) --- */
 @media (prefers-reduced-motion: no-preference) {
-  .brand-logo { transition: transform .35s var(--ease-smooth); animation: logoSettle .7s var(--ease-smooth) both; }
+  .brand-logo { transition: transform .35s var(--ease-smooth); animation: logoSettle .8s var(--ease-back) both; }
   .brand-logo:hover                 { transform: rotate(-5deg) scale(1.06); }
   html[dir="rtl"] .brand-logo:hover { transform: rotate(5deg)  scale(1.06); }
 }
