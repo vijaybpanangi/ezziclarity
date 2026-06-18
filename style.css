@@ -1696,6 +1696,7 @@ html[dir="rtl"] .about-col { text-align: right; }
    ============================================= */
 :root {
   --ease-smooth: cubic-bezier(.22,.61,.36,1);
+  --ease-back:   cubic-bezier(.34,1.56,.64,1); /* gentle overshoot for playful pops */
 }
 
 html {
@@ -1925,5 +1926,38 @@ img {
   .card:hover, .service-card:hover, .quote-card:hover,
   .process-step:hover, .faq:hover, .chapter-card:hover,
   .btn-primary:hover, .btn-secondary:hover, .header-cta:hover,
+  .btn-primary:active, .btn-secondary:active, .header-cta:active,
+  .brand-logo:hover,
   .mobile-cta:hover, .nav-link:hover { transform: none; }
 }
+
+/* =============================================
+   CHARACTER & CHARISMA (v3.6.0)
+   Ambient + entrance motion and micro-interactions.
+   Keyframes are defined here unconditionally; every
+   *application* of them is gated behind
+   prefers-reduced-motion: no-preference (below and in
+   the per-feature blocks), and neutralised in the
+   MOTION reduce block above. Default states are always
+   fully visible so reduced-motion users lose nothing.
+   ============================================= */
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes bgDrift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(-3%, 2%, 0) scale(1.08); }
+}
+@keyframes bgDriftAlt {
+  from { transform: translate3d(0, 0, 0) scale(1.06); opacity: 0.9; }
+  to   { transform: translate3d(2.5%, -2%, 0) scale(1); opacity: 1; }
+}
+@keyframes logoSettle {
+  from { opacity: 0; transform: translateY(-4px) rotate(-6deg) scale(0.92); }
+  to   { opacity: 1; transform: translateY(0) rotate(0) scale(1); }
+}
+@keyframes swashDraw    { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes swashDrawRtl { from { clip-path: inset(0 0 0 100%); } to { clip-path: inset(0 0 0 0); } }
+@keyframes tickPop      { from { transform: rotate(45deg) scale(0); } to { transform: rotate(45deg) scale(1); } }
+
