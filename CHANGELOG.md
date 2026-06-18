@@ -4,6 +4,16 @@ Notable changes to the website, deployment configuration, and project documentat
 
 Every release is versioned with a semver git tag (`MAJOR.MINOR.PATCH`) on its merge commit — **major** = redesign or identity/structural shift, **minor** = new feature or notable enhancement, **patch** = fix, content, or docs. Each entry is stamped with its release time (UTC, from the merge commit) and listed newest-first. See [GitHub Releases](https://github.com/vijaybpanangi/ezziclarity/releases) and `git tag` for the full list.
 
+## v3.6.1 — Make the motion land: amplified hero/logo + checkmarks that draw (2026-06-18 22:48 UTC)
+
+Follow-up polish to `v3.6.0`. Three effects were running correctly but too subtle to notice; this makes them register (still CSS-only, still reduced-motion + no-JS safe, still RTL-aware):
+
+- **Hero entrance** rises further (16px → 26px), a touch slower (0.7s), with a wider stagger so it reads as a real "assemble" rather than a flicker.
+- **Logo** settles in with a more pronounced, gently bouncing entrance on load (`--ease-back`).
+- **Checklist ticks** now **draw themselves** — a left→right `clip-path` wipe traces the checkmark stroke (a ✓'s x-coordinates increase monotonically along the stroke, so the wipe *is* the pen drawing it), reusing the swash mechanism instead of a quick scale "pop". The tick became an SVG stroke; `border:none` + `border-radius:0` neutralise the inherited hero-card dot rule that would otherwise clip it.
+
+Verified by a focused adversarial pass (reduced-motion/no-JS safety + cascade/draw-geometry/data-URI), both lenses clean. (PR #17)
+
 ## v3.6.0 — Character & charisma motion pass (2026-06-18 22:16 UTC)
 
 A CSS-only motion + micro-interaction layer that gives the site life without spending its calm — six elements, all in `style.css`, **zero HTML changes**, so they land on EN / FR / AR (incl. RTL Arabic) in one pass:

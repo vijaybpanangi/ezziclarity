@@ -74,6 +74,7 @@ One row per release — every release is a semver git tag on its merge commit. F
 
 | Version | When (UTC) | PR | Summary |
 |---|---|---|---|
+| `v3.6.1` | 2026-06-18 22:48 | [#17](https://github.com/vijaybpanangi/ezziclarity/pull/17) | Make the motion land — amplified hero/logo entrance + checklist ticks that draw themselves |
 | `v3.6.0` | 2026-06-18 22:16 | [#16](https://github.com/vijaybpanangi/ezziclarity/pull/16) | Character & charisma motion pass — swash, living background, tactile cards, hero entrance, checkmark ticks, logo touch |
 | `v3.5.1` | 2026-06-15 19:21 | [#14](https://github.com/vijaybpanangi/ezziclarity/pull/14) | Docs — PR-level release-history table + v3.5.0 CHANGELOG entry |
 | `v3.5.0` | 2026-06-15 18:59 | [#13](https://github.com/vijaybpanangi/ezziclarity/pull/13) | Maximal Liquid Glass — glassy nav/buttons + hover light-sweep |
