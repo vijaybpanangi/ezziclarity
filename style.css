@@ -1146,6 +1146,55 @@ main { padding-bottom: 0; }
 .svc-pill.empl { background: var(--cream-mid);   color: var(--ink-soft); }
 
 /* =============================================
+   BOOK GALLERY (v3.7.0)
+   Book cards extend .service-card: a portrait cover
+   frame (real cover later, branded placeholder now)
+   + the standard body, plus a CTA row built to hold
+   "Buy on Amazon" and, later, a "Buy hardcover" button.
+   ============================================= */
+.book-cover {
+  height: auto;          /* override .service-card-img's fixed 168px */
+  min-height: 0;
+  aspect-ratio: 3 / 4;   /* portrait book-cover frame */
+  padding: 0;
+}
+.book-cover img { width: 100%; height: 100%; object-fit: cover; border-radius: 0; }
+
+/* Branded placeholder shown until real cover art exists */
+.book-cover--placeholder {
+  background: linear-gradient(150deg, var(--sky-pale), var(--peach-pale));
+}
+.book-cover--placeholder .book-cover-mark {
+  width: 46%;
+  height: auto;
+  opacity: 0.38;
+}
+
+.book-meta {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  margin: 0.15rem 0 0.55rem;
+}
+
+/* CTA row: holds up to two buttons; wraps + gap so it orders correctly under RTL */
+.book-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+.book-cta .btn-primary,
+.book-cta .btn-secondary { padding: 0.55rem 1.15rem; font-size: 0.85rem; }
+
+.book-cta-notify {
+  font-weight: 700;
+  color: var(--sky-dark);
+  font-size: 0.85rem;
+  align-self: center;
+}
+
+/* =============================================
    CHECKLIST
    ============================================= */
 .checklist { padding-left: 0; margin: 0.75rem 0 0; list-style: none; }
