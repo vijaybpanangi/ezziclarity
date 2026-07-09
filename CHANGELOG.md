@@ -4,6 +4,10 @@ Notable changes to the website, deployment configuration, and project documentat
 
 Every release is versioned with a semver git tag (`MAJOR.MINOR.PATCH`) on its merge commit — **major** = redesign or identity/structural shift, **minor** = new feature or notable enhancement, **patch** = fix, content, or docs. Each entry is stamped with its release time (UTC, from the merge commit) and listed newest-first. See [GitHub Releases](https://github.com/vijaybpanangi/ezziclarity/releases) and `git tag` for the full list.
 
+## v3.7.0 — Books gallery (2026-07-09 17:58 UTC)
+
+The Books pages become a proper gallery/library. Each title is now a **book card** — a portrait cover, a status pill, format/age, a blurb, and a call to action — built on the existing `.service-card` component (so it inherits the frosted glass + `v3.6` hover). Ships as a **framework**: branded placeholder covers (brand wash + a faint logo mark) + "Coming soon / Notify me" now, flipping per card to a real cover + "Buy on Amazon" (Amazon Associates) when a title goes live — the flip steps live in each card's `<!-- FLIP TO LIVE -->` HTML comment. CSS-only, trilingual (EN/FR/AR incl. RTL), no build/JS. The future direct-hardcover channel (Lulu Direct, printed in Ontario) is recorded as a reserved CTA slot + a ROADMAP entry. Spec: `docs/superpowers/specs/2026-06-25-books-gallery-design.md`; plan: `docs/superpowers/plans/2026-06-25-books-gallery.md`. (PR #18)
+
 ## v3.6.1 — Make the motion land: amplified hero/logo + checkmarks that draw (2026-06-18 22:48 UTC)
 
 Follow-up polish to `v3.6.0`. Three effects were running correctly but too subtle to notice; this makes them register (still CSS-only, still reduced-motion + no-JS safe, still RTL-aware):
