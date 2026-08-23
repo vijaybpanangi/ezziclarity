@@ -4,6 +4,10 @@ Notable changes to the website, deployment configuration, and project documentat
 
 Every release is versioned with a semver git tag (`MAJOR.MINOR.PATCH`) on its merge commit — **major** = redesign or identity/structural shift, **minor** = new feature or notable enhancement, **patch** = fix, content, or docs. Each entry is stamped with its release time (UTC, from the merge commit) and listed newest-first. See [GitHub Releases](https://github.com/vijaybpanangi/ezziclarity/releases) and `git tag` for the full list.
 
+## v3.9.2 — Switch to SiteStripe-generated buy links (2026-08-23 22:27 UTC)
+
+Swapped the hand-built `?tag=ezziclarity-20` buy links for the actual links Amazon's SiteStripe generates for each book (adds `linkCode=ll2`, `linkId`, `ref_=as_li_ss_tl` alongside the same tracking tag) — Amazon's own sub-tag/link-level reporting in Associates Central now has data to report against. JSON-LD `Offer` URLs stay untagged canonical links, unchanged.
+
 ## v3.9.1 — Amazon-orange Buy on Amazon button (2026-08-23 22:10 UTC)
 
 The "Buy on Amazon" CTA now uses a warm orange gradient with dark ink text, scoped to `.book-cta .btn-primary` only, so it reads as Amazon-branded by colour without using Amazon's logo/wordmark (restricted under their brand guidelines without a licensing agreement). ~8:1 contrast, well past AA.
