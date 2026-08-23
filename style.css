@@ -1152,6 +1152,25 @@ main { padding-bottom: 0; }
    + the standard body, plus a CTA row built to hold
    "Buy on Amazon" and, later, a "Buy hardcover" button.
    ============================================= */
+
+/* Grid items already stretch to equal height (CSS Grid default), but that
+   extra height has nowhere to go: .service-card-img keeps its own aspect
+   ratio and the body only takes what its content needs, leaving a gap
+   *after* the body on shorter cards instead of pinning book-cta to the
+   bottom. Make the card a column flex container so the body (flex: 1)
+   absorbs the stretched height, then make the body a column flex container
+   itself so book-cta's margin-top: auto pins it to the card's bottom edge
+   -- keeping "Buy on Amazon" aligned across a row regardless of blurb length. */
+.book-card {
+  display: flex;
+  flex-direction: column;
+}
+.book-card .service-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .book-cover {
   height: auto;          /* override .service-card-img's fixed 168px */
   min-height: 0;
@@ -1177,12 +1196,15 @@ main { padding-bottom: 0; }
   margin: 0.15rem 0 0.55rem;
 }
 
-/* CTA row: holds up to two buttons; wraps + gap so it orders correctly under RTL */
+/* CTA row: holds up to two buttons; wraps + gap so it orders correctly under RTL.
+   margin-top: auto (within the flex column above) pins this to the bottom of
+   the card so it lines up across a row even when blurb length varies. */
 .book-cta {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
-  margin-top: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
 }
 .book-cta .btn-primary,
 .book-cta .btn-secondary { padding: 0.55rem 1.15rem; font-size: 0.85rem; }
