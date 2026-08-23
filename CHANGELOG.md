@@ -4,6 +4,10 @@ Notable changes to the website, deployment configuration, and project documentat
 
 Every release is versioned with a semver git tag (`MAJOR.MINOR.PATCH`) on its merge commit — **major** = redesign or identity/structural shift, **minor** = new feature or notable enhancement, **patch** = fix, content, or docs. Each entry is stamped with its release time (UTC, from the merge commit) and listed newest-first. See [GitHub Releases](https://github.com/vijaybpanangi/ezziclarity/releases) and `git tag` for the full list.
 
+## v3.9.0 — Amazon Associates tag (2026-08-23 22:00 UTC)
+
+Arva registered an Amazon Associates account (Store/Tracking ID `ezziclarity-20`). All nine "Buy on Amazon" CTAs (3 books × EN/FR/AR) now carry `?tag=ezziclarity-20` on the `amazon.ca/dp/<ASIN>` link, so purchases earn a small commission. The schema.org `Book`/`Offer` JSON-LD `url` fields were deliberately left as clean canonical links (structured data for search engines, not a click-through affiliate link). Closes the Associates note in ROADMAP.md.
+
 ## v3.8.0 — First three books go live (2026-08-23 21:18 UTC)
 
 The Books gallery's first real flip: three titles from the Ezzi Bookshelf pipeline are now published on Amazon KDP and live on the site. Each `.book-card` (all three language trees) swapped its branded placeholder for a real cover (`assets/images/books/<slug>-cover.jpg`, optimized to ~900×1440), a working "Buy on Amazon" CTA (`amazon.ca/dp/<ASIN>`), an "Available now" status pill, and a schema.org `Book` node in the page's JSON-LD `@graph`.
