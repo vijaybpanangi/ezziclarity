@@ -4,6 +4,16 @@ Notable changes to the website, deployment configuration, and project documentat
 
 Every release is versioned with a semver git tag (`MAJOR.MINOR.PATCH`) on its merge commit — **major** = redesign or identity/structural shift, **minor** = new feature or notable enhancement, **patch** = fix, content, or docs. Each entry is stamped with its release time (UTC, from the merge commit) and listed newest-first. See [GitHub Releases](https://github.com/vijaybpanangi/ezziclarity/releases) and `git tag` for the full list.
 
+## v3.8.0 — First three books go live (2026-08-23 21:18 UTC)
+
+The Books gallery's first real flip: three titles from the Ezzi Bookshelf pipeline are now published on Amazon KDP and live on the site. Each `.book-card` (all three language trees) swapped its branded placeholder for a real cover (`assets/images/books/<slug>-cover.jpg`, optimized to ~900×1440), a working "Buy on Amazon" CTA (`amazon.ca/dp/<ASIN>`), an "Available now" status pill, and a schema.org `Book` node in the page's JSON-LD `@graph`.
+
+- ***The Blanket That Remembered*** — Kindle + paperback ($10.50).
+- ***Mei and the First Lantern*** — Kindle + paperback ($11.99).
+- ***Nova's First Skate*** — Kindle + paperback ($11.99).
+
+The section header copy moved from "In development" to "Now available" across EN/FR/AR. No Amazon Associates tag on the links yet (see ROADMAP). More titles from the pipeline (books 03-06, plus a new Chapter Books line) will repeat this same flip as they publish.
+
 ## v3.7.0 — Books gallery (2026-07-09 17:58 UTC)
 
 The Books pages become a proper gallery/library. Each title is now a **book card** — a portrait cover, a status pill, format/age, a blurb, and a call to action — built on the existing `.service-card` component (so it inherits the frosted glass + `v3.6` hover). Ships as a **framework**: branded placeholder covers (brand wash + a faint logo mark) + "Coming soon / Notify me" now, flipping per card to a real cover + "Buy on Amazon" (Amazon Associates) when a title goes live — the flip steps live in each card's `<!-- FLIP TO LIVE -->` HTML comment. CSS-only, trilingual (EN/FR/AR incl. RTL), no build/JS. The future direct-hardcover channel (Lulu Direct, printed in Ontario) is recorded as a reserved CTA slot + a ROADMAP entry. Spec: `docs/superpowers/specs/2026-06-25-books-gallery-design.md`; plan: `docs/superpowers/plans/2026-06-25-books-gallery.md`. (PR #18)
