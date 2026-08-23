@@ -1209,6 +1209,35 @@ main { padding-bottom: 0; }
 .book-cta .btn-primary,
 .book-cta .btn-secondary { padding: 0.55rem 1.15rem; font-size: 0.85rem; }
 
+/* "Buy on Amazon" reads as Amazon-branded via colour, not their logo/wordmark
+   (which brand guidelines restrict without a licensing agreement) -- warm
+   orange with dark ink text mirrors Amazon's own button convention and
+   clears AA contrast (~8:1) with room to spare. */
+.book-cta .btn-primary {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0) 46%),
+    linear-gradient(165deg, #FFA724, #E8890C);
+  color: var(--ink);
+  box-shadow:
+    0 3px 10px rgba(196,116,0,0.28),
+    inset 0 1px 0 rgba(255,255,255,0.55),
+    inset 0 0 18px -6px rgba(255,255,255,0.4);
+}
+.book-cta .btn-primary:hover {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.42), rgba(255,255,255,0) 46%),
+    linear-gradient(165deg, #FFB347, #F0940F);
+  transform: translateY(-1px);
+  box-shadow:
+    0 6px 18px rgba(196,116,0,0.36),
+    inset 0 1px 0 rgba(255,255,255,0.6),
+    inset 0 0 22px -6px rgba(255,255,255,0.45);
+  color: var(--ink);
+}
+.book-cta .btn-primary:focus-visible {
+  outline-color: rgba(196,116,0,0.55);
+}
+
 .book-cta-notify {
   font-weight: 700;
   color: var(--sky-dark);

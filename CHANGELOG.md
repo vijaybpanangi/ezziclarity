@@ -4,6 +4,10 @@ Notable changes to the website, deployment configuration, and project documentat
 
 Every release is versioned with a semver git tag (`MAJOR.MINOR.PATCH`) on its merge commit — **major** = redesign or identity/structural shift, **minor** = new feature or notable enhancement, **patch** = fix, content, or docs. Each entry is stamped with its release time (UTC, from the merge commit) and listed newest-first. See [GitHub Releases](https://github.com/vijaybpanangi/ezziclarity/releases) and `git tag` for the full list.
 
+## v3.9.1 — Amazon-orange Buy on Amazon button (2026-08-23 22:10 UTC)
+
+The "Buy on Amazon" CTA now uses a warm orange gradient with dark ink text, scoped to `.book-cta .btn-primary` only, so it reads as Amazon-branded by colour without using Amazon's logo/wordmark (restricted under their brand guidelines without a licensing agreement). ~8:1 contrast, well past AA.
+
 ## v3.9.0 — Amazon Associates tag (2026-08-23 22:00 UTC)
 
 Arva registered an Amazon Associates account (Store/Tracking ID `ezziclarity-20`). All nine "Buy on Amazon" CTAs (3 books × EN/FR/AR) now carry `?tag=ezziclarity-20` on the `amazon.ca/dp/<ASIN>` link, so purchases earn a small commission. The schema.org `Book`/`Offer` JSON-LD `url` fields were deliberately left as clean canonical links (structured data for search engines, not a click-through affiliate link). Closes the Associates note in ROADMAP.md.
