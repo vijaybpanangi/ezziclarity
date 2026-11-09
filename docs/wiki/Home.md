@@ -5,7 +5,7 @@
 *Clear paths. Confident decisions.*
 
 > [!NOTE]
-> **At a glance.** Ezzi Clarity is a small educational consulting practice in Southern Ontario with two pillars: student consulting and children's books. This wiki explains the public website at [ezziclarity.ca](https://ezziclarity.ca): what it says, how it is built (hand written HTML and one stylesheet, in English, French and Arabic), how it is deployed (Cloudflare Pages, straight from `main`), and how to change it safely. Current release: **v3.9.2** (2026-08-23).
+> **At a glance.** Ezzi Clarity is a small educational consulting practice in Southern Ontario with two pillars: student consulting and children's books. This wiki explains the public website at [ezziclarity.ca](https://ezziclarity.ca): what it says, how it is built (hand written HTML and one stylesheet, in English, French and Arabic), how it is deployed (Cloudflare Pages, straight from `main`), and how to change it safely. For the latest release, see [Release History](Release-History).
 
 ![The language gateway at ezziclarity.ca](images/gateway.jpg)
 
@@ -70,14 +70,13 @@ Colours in every diagram on this wiki follow who owns the box: **peach** is ours
 | [`docs/superpowers/`](https://github.com/vijaybpanangi/ezziclarity/tree/main/docs/superpowers) | Design specs and implementation plans |
 | [`docs/archive/`](https://github.com/vijaybpanangi/ezziclarity/tree/main/docs/archive) | The three earlier versions of the site, kept for history |
 
-**Last checked:** 2026-11-09, against `main` at `6c632f0` (v3.9.2) and the live site.
+**Last checked:** 2026-11-09, against `main` and the live site.
 
 <details>
 <summary>Sources</summary>
 
 - Repository tree at `6c632f0`: `index.html`, `en/`, `fr/`, `ar/`, `style.css`, `_redirects`, `sitemap.xml`, `robots.txt`, `404.html`
-- `CLAUDE.md`, `README.md`, `CHANGELOG.md` (latest entry v3.9.2), `ROADMAP.md`
+- `CLAUDE.md`, `README.md`, `CHANGELOG.md`, `ROADMAP.md`
 - Live checks on 2026-11-09: `https://ezziclarity.ca/` returns 200; screenshot taken in headless Chromium
-- Git tags `v1.0.0` to `v3.9.2`
 
 </details>

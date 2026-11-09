@@ -83,7 +83,7 @@ There is **no form**. Visitors book through the Titan booking page (`book.titan.
 
 ### 404
 
-A plain card with "Page not found", a link to the English site and a link back to the gateway. It currently loses its styling on nested paths; see [Known Issues](Known-Issues).
+A plain card with "Page not found", a link to the English site and a link back to the gateway. Cloudflare serves it at whatever URL was requested, so its stylesheet, logo and links use root-relative paths (`/style.css`, `/en/`, `/`); see [Site Architecture](Site-Architecture#relative-paths-shift-with-depth).
 
 ## Features shared by every page
 

@@ -51,12 +51,11 @@ The technical SEO foundation shipped on 2026-06-15 (see [`CHANGELOG.md`](CHANGEL
 
 ## Fixes found in the 2026-11-09 wiki review
 
-Found while checking the live site for the Wiki (details and screenshots: [Known Issues](https://github.com/vijaybpanangi/ezziclarity/wiki/Known-Issues)). None blocks a visitor, but the first three are visible:
+Found while checking the live site for the Wiki (details and screenshots: [Known Issues](https://github.com/vijaybpanangi/ezziclarity/wiki/Known-Issues)). None blocks a visitor, but the first two are visible:
 
-- **404 page unstyled on nested paths.** `404.html` links `style.css` and the logo relatively, so at `/en/anything/` the page renders as unstyled text. Use root-relative paths (`/style.css`, `/assets/images/logo-ec.svg`, `/en/`, `/`).
 - **Stale "books not out yet" copy.** The Books pages' closing call to action (EN/FR/AR) still says the books aren't out, and the gateway, footer brand line (all pages, all languages) and several meta descriptions say children's books are "in the works", although three titles are live since `v3.8.0`.
 - **Amazon Associates disclosure missing.** Add a short translated line such as "As an Amazon Associate we earn from qualifying purchases." on the Books pages.
-- **Gateway heading off-centre.** The gateway's `h1` sits about 62px left of the card's centre; it also uses an undefined `var(--text-soft)` (should be `--ink-soft`).
+- **Undefined token on the gateway.** The gateway's small print uses an undefined `var(--text-soft)` (should be `--ink-soft`). (The unstyled nested 404 and the off-centre gateway heading from this review were fixed in `v3.9.4`.)
 - **Absolute `og:image`.** Every page's `og:image` is relative; link previews want `https://ezziclarity.ca/assets/images/og-ezzi-clarity.png`.
 - **`Book` offer currency.** The JSON-LD offers say `USD` on `amazon.ca` links; confirm the price and use `CAD`.
 - **Sitemap `lastmod`.** All 19 entries still read 2026-06-15.
