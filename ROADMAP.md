@@ -41,11 +41,26 @@ The technical SEO foundation shipped on 2026-06-15 (see [`CHANGELOG.md`](CHANGEL
 
 - **BreadcrumbList schema.** Add a `BreadcrumbList` node to inner pages (Home > Section) once the navigation hierarchy is worth surfacing as rich results. Low effort, deferred only because the site is shallow.
 - **`sameAs` links.** The `ProfessionalService` node has no `sameAs` yet because there are no real social or directory profiles to point at. Add them (LinkedIn, Instagram, Google Business Profile URL, etc.) once those accounts actually exist. Do not invent placeholder URLs.
-- **Per-page Open Graph images.** Every page currently shares the one `og-ezzi-clarity.png`. Per-page or per-section OG images would improve link previews; deferred until there is art worth differentiating (pairs naturally with the Books cover art item above).
-- **Cloudflare prepends a managed `robots.txt`.** The live `robots.txt` is not byte-identical to the repo file. Cloudflare's AI Crawl Control feature injects a managed block ahead of our content: a `Content-Signal: search=yes,ai-train=no` header plus `Disallow: /` groups for AI crawlers (GPTBot, ClaudeBot, Google-Extended, Bytespider, CCBot, and others). Our `User-agent: * / Allow: /` and the `Sitemap:` directive are still served at the end, so search crawlers (Googlebot, Bingbot) are allowed and the sitemap is advertised. The SEO outcome is correct, but the managed prepend produces a second `User-agent: *` group and is not visible in the repo. To serve exactly the committed file instead, turn off the managed robots.txt / AI Crawl Control toggle in the Cloudflare dashboard (`ezziclarity.ca` → AI Crawl Control / Bots). Left on by default for now since it usefully blocks AI training crawlers without harming search indexing.
+- **Per-page Open Graph images.** Every page currently shares the one `og-ezzi-clarity.png`. Per-page or per-section OG images would improve link previews; deferred until there is art worth differentiating (the book covers in `assets/images/books/` are natural candidates for the Books pages).
+- **Cloudflare's managed `robots.txt`.** Cloudflare's AI Crawl Control feature can prepend a managed block (a `Content-Signal` header and `Disallow: /` groups for AI training crawlers) ahead of the committed `robots.txt`. It did so in June 2026; on 2026-11-09 the live file matched the repo byte for byte, so the toggle appears to be off now. Either state is fine for search: `User-agent: *`, `Allow: /` and the `Sitemap:` line are always served. If the managed block is wanted (it blocks AI training crawlers), turn it on in the Cloudflare dashboard (`ezziclarity.ca`, AI Crawl Control / Bots).
 - **Off-site actions (manual, off-repo).** These cannot be done from the repo and need Vijay:
   - **Google Business Profile.** Create and verify the business listing so the brand can appear in Maps and the local knowledge panel.
   - **Search Console + Bing Webmaster Tools.** Verify domain ownership in both, then submit `https://ezziclarity.ca/sitemap.xml` so the new sitemap is picked up and indexing can be monitored.
+
+---
+
+## Fixes found in the 2026-11-09 wiki review
+
+Found while checking the live site for the Wiki (details and screenshots: [Known Issues](https://github.com/vijaybpanangi/ezziclarity/wiki/Known-Issues)). None blocks a visitor, but the first three are visible:
+
+- **404 page unstyled on nested paths.** `404.html` links `style.css` and the logo relatively, so at `/en/anything/` the page renders as unstyled text. Use root-relative paths (`/style.css`, `/assets/images/logo-ec.svg`, `/en/`, `/`).
+- **Stale "books not out yet" copy.** The Books pages' closing call to action (EN/FR/AR) still says the books aren't out, and the gateway, footer brand line (all pages, all languages) and several meta descriptions say children's books are "in the works", although three titles are live since `v3.8.0`.
+- **Amazon Associates disclosure missing.** Add a short translated line such as "As an Amazon Associate we earn from qualifying purchases." on the Books pages.
+- **Gateway heading off-centre.** The gateway's `h1` sits about 62px left of the card's centre; it also uses an undefined `var(--text-soft)` (should be `--ink-soft`).
+- **Absolute `og:image`.** Every page's `og:image` is relative; link previews want `https://ezziclarity.ca/assets/images/og-ezzi-clarity.png`.
+- **`Book` offer currency.** The JSON-LD offers say `USD` on `amazon.ca` links; confirm the price and use `CAD`.
+- **Sitemap `lastmod`.** All 19 entries still read 2026-06-15.
+- **3px sideways scroll** on the home pages at phone width (likely the hero blob).
 
 ---
 

@@ -26,11 +26,13 @@ A small language-gateway page at `/index.html` lets first-time visitors choose. 
 /                       Language gateway
 /en/  /fr/  /ar/        Localized site trees, 6 pages each
                         (home, about, consulting, books, resources, contact)
-/style.css              All styling, one file (~1734 lines)
+/style.css              All styling, one file (~2160 lines)
 /assets/images/         Shared image assets
 /404.html               Static 404 page
 /_redirects             Host-level path redirects
 /sitemap.xml            Static sitemap
+/robots.txt             Crawler rules + sitemap pointer
+/docs/wiki/             Source of the GitHub Wiki (published by .github/workflows/wiki-sync.yml)
 ```
 
 No frameworks, no build system, no JavaScript bundle. Each page is a hand-written HTML file with a small inline `<script>` for the mobile-nav drawer.
@@ -66,7 +68,8 @@ Anything more substantial than copy edits should go through a brainstorm → spe
 - **`docs/superpowers/specs/`** — design specs for non-trivial changes (`YYYY-MM-DD-<topic>-design.md`).
 - **`docs/superpowers/plans/`** — implementation plans matched to specs (`YYYY-MM-DD-<topic>.md`).
 - **`CHANGELOG.md`** — curated trail of notable changes (infrastructure, documentation, deployment).
-- **`ROADMAP.md`** — future updates and deferred items (email migration to iCloud+ Custom Domain, canonical-URL redirect).
+- **`ROADMAP.md`**: future updates and deferred items (DMARC tightening, the `www` to apex redirect, deferred SEO, more books, direct hardcover sales).
+- **`docs/wiki/`**: the source of the [GitHub Wiki](https://github.com/vijaybpanangi/ezziclarity/wiki). Edit pages here in a pull request; the `wiki-sync` workflow publishes them on merge to `main`. Edits made on the Wiki tab itself are overwritten.
 
 ## Release history
 
@@ -74,6 +77,11 @@ One row per release — every release is a semver git tag on its merge commit. F
 
 | Version | When (UTC) | PR | Summary |
 |---|---|---|---|
+| `v3.9.3` | 2026-11-09 20:19 | [#25](https://github.com/vijaybpanangi/ezziclarity/pull/25) | Docs: the Wiki moves into `docs/wiki/` with a `wiki-sync` workflow; stale docs refreshed |
+| `v3.9.2` | 2026-08-23 22:27 | [#24](https://github.com/vijaybpanangi/ezziclarity/pull/24) | Buy links switched to the SiteStripe-generated links |
+| `v3.9.1` | 2026-08-23 22:10 | [#23](https://github.com/vijaybpanangi/ezziclarity/pull/23) | "Buy on Amazon" button styled in a warm orange |
+| `v3.9.0` | 2026-08-23 22:00 | [#22](https://github.com/vijaybpanangi/ezziclarity/pull/22) | Amazon Associates tag `ezziclarity-20` on all nine buy buttons |
+| `v3.8.0` | 2026-08-23 21:18 | [#20](https://github.com/vijaybpanangi/ezziclarity/pull/20) | First three books go live (covers, buy links, `Book` JSON-LD) |
 | `v3.7.0` | 2026-07-09 17:58 | [#18](https://github.com/vijaybpanangi/ezziclarity/pull/18) | Books gallery — book cards (cover · status · blurb · Buy-on-Amazon), framework state with per-card flip-to-live |
 | `v3.6.1` | 2026-06-18 22:48 | [#17](https://github.com/vijaybpanangi/ezziclarity/pull/17) | Make the motion land — amplified hero/logo entrance + checklist ticks that draw themselves |
 | `v3.6.0` | 2026-06-18 22:16 | [#16](https://github.com/vijaybpanangi/ezziclarity/pull/16) | Character & charisma motion pass — swash, living background, tactile cards, hero entrance, checkmark ticks, logo touch |
@@ -95,11 +103,11 @@ One row per release — every release is a semver git tag on its merge commit. F
 | `v2.0.0` | 2026-06-08 17:30 | [#1](https://github.com/vijaybpanangi/ezziclarity/pull/1) | Two-pillar restructure — Consulting + Books (student-only) |
 | `v1.0.0` | 2026-05-28 17:53 | [tag](https://github.com/vijaybpanangi/ezziclarity/releases/tag/v1.0.0) | Trilingual marketing site live |
 
-Pre-launch history (the WordPress-era archives in `docs/archive/`, the Wiki, and the initial docs/infra setup) is detailed in [`CHANGELOG.md`](CHANGELOG.md). Planned work lives in [`ROADMAP.md`](ROADMAP.md).
+Pre-launch history (the WordPress-era archives in `docs/archive/`, the first Wiki, and the initial docs/infra setup) is detailed in [`CHANGELOG.md`](CHANGELOG.md). Planned work lives in [`ROADMAP.md`](ROADMAP.md).
 
 ## Styling notes
 
-`style.css` (~1734 lines) defines the design system as CSS custom properties in `:root`:
+`style.css` (~2160 lines) defines the design system as CSS custom properties in `:root`:
 
 - Sky Blue primary (`--sky*`)
 - Warm Peach accent (`--peach*`)
