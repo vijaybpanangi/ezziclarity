@@ -4,6 +4,10 @@ Notable changes to the website, deployment configuration, and project documentat
 
 Every release is versioned with a semver git tag (`MAJOR.MINOR.PATCH`) on its merge commit — **major** = redesign or identity/structural shift, **minor** = new feature or notable enhancement, **patch** = fix, content, or docs. Each entry is stamped with its release time (UTC, from the merge commit) and listed newest-first. See [GitHub Releases](https://github.com/vijaybpanangi/ezziclarity/releases) and `git tag` for the full list.
 
+## v3.9.3, Wiki moves into the repo (2026-11-09 UTC)
+
+Documentation-only. The GitHub Wiki is now written in `docs/wiki/` and published by a new `wiki-sync` workflow (`.github/workflows/wiki-sync.yml`), which checks pages on pull requests and copies `docs/wiki/` to the wiki on merge to `main` or a manual run, using the built-in token. The wiki was rebuilt from 9 to 21 pages (Home, About, Pages and Features, Books and Buy Links, Site Architecture, Languages and RTL, SEO, Design System, Editing Workflow, Deployment, Runbooks, Release History, Project History, Decisions Log, Roadmap, Known Issues, Glossary, AI-Assisted Development, Wiki Maintenance), every page re-checked against the code and the live site, with a Mermaid diagram or screenshot per page and screenshots of the live site. Stale docs refreshed: README release table (v3.8.0 to v3.9.2 were missing) and line counts, CLAUDE.md latest version and books notes, ROADMAP robots.txt note, and a superseded note on the old DNS provenance section. The review's site findings (unstyled nested 404, stale "books not out yet" copy, missing Associates disclosure and smaller items) are logged in `ROADMAP.md` and the Wiki's Known Issues page. No site change.
+
 ## v3.9.2 — Switch to SiteStripe-generated buy links (2026-08-23 22:27 UTC)
 
 Swapped the hand-built `?tag=ezziclarity-20` buy links for the actual links Amazon's SiteStripe generates for each book (adds `linkCode=ll2`, `linkId`, `ref_=as_li_ss_tl` alongside the same tracking tag) — Amazon's own sub-tag/link-level reporting in Associates Central now has data to report against. JSON-LD `Offer` URLs stay untagged canonical links, unchanged.
@@ -269,7 +273,7 @@ The final WordPress theme (`Version: 8.5.0`) was converted to plain static HTML 
 
 ### DNS provenance
 
-The `_spf.wpcloud.com` SPF and `_dmarc` records still at Cloudflare DNS are legacy from the WordPress.com hosting era — slated for replacement during the iCloud+ Custom Email Domain migration on the [ROADMAP](ROADMAP.md).
+*(Superseded: the WordPress-era SPF include was removed and DMARC reporting enabled in `v3.2.0`, 2026-06-15. The original note follows.)* The `_spf.wpcloud.com` SPF and `_dmarc` records still at Cloudflare DNS are legacy from the WordPress.com hosting era — slated for replacement during the iCloud+ Custom Email Domain migration on the [ROADMAP](ROADMAP.md).
 
 ### Full narrative
 
