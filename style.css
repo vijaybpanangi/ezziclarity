@@ -574,6 +574,7 @@ a:hover { text-decoration: underline; }
 .hero {
   padding: 5rem 0 4.5rem;
   background: transparent;
+  overflow-x: clip; /* keep the soft hero blob from widening the page on phones */
 }
 
 .hero-inner {
@@ -794,6 +795,8 @@ main { padding-bottom: 0; }
 .grid { display: grid; gap: 1.1rem; }
 .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
 .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+/* Symmetry: a lone item in a three-column grid sits in the middle column */
+.grid-3 > :only-child { grid-column: 2; }
 
 /* =============================================
    CARDS
@@ -1746,8 +1749,15 @@ html[dir="rtl"] .about-col { text-align: right; }
   .hero-panel { width: 100%; }
   .hero-copy > p { max-width: 100%; }
   .grid-3 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  /* Symmetry: at two columns, centre an odd last item at one column's width */
+  .grid-3 > :last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc((100% - 1.1rem) / 2); }
   .section-cta-inner { flex-direction: column; align-items: flex-start; }
   .contact-layout { grid-template-columns: minmax(0,1fr); }
+}
+
+/* The full header (six links, language switch, Book a Call) needs about 1030px in French;
+   below 1060px switch to the menu button so nothing is clipped. */
+@media (max-width: 1060px) {
   .main-nav, .lang-switch, .header-cta { display: none; }
   .nav-toggle { display: flex; }
 }
@@ -1759,6 +1769,7 @@ html[dir="rtl"] .about-col { text-align: right; }
   .section, .section-alt { padding: 3rem 0; }
   .page-header { padding: 2.25rem 0 1.75rem; }
   .grid-2, .grid-3 { grid-template-columns: minmax(0,1fr); }
+  .grid-3 > :last-child:nth-child(odd) { grid-column: auto; justify-self: stretch; width: auto; }
   .section-cta { padding: 2.25rem 0; }
   .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }

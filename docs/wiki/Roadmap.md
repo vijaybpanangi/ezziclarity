@@ -3,12 +3,11 @@
 # Roadmap
 
 > [!NOTE]
-> **At a glance.** What is planned but not shipped, grouped by who has to act. The source of truth is [`ROADMAP.md`](https://github.com/vijaybpanangi/ezziclarity/blob/main/ROADMAP.md) in the repo; this page summarises it and adds the fixes from [Known Issues](Known-Issues). Nothing here has a fixed date. When an item ships it moves to `CHANGELOG.md`.
+> **At a glance.** What is planned but not shipped, grouped by who has to act. The source of truth is [`ROADMAP.md`](https://github.com/vijaybpanangi/ezziclarity/blob/main/ROADMAP.md) in the repo; this page summarises it. Fixes from the 2026-11-09 review are recorded in [Known Issues](Known-Issues). Nothing here has a fixed date. When an item ships it moves to `CHANGELOG.md`.
 
 ```mermaid
 flowchart TB
     subgraph Repo[In the repo]
-      R1[Centre the lone<br/>student-guide card]:::ours
       R3[Next book flips]:::ours
       R4[Resources reveal stagger]:::ours
       R5[BreadcrumbList, sameAs,<br/>per page OG images]:::ours
@@ -39,11 +38,10 @@ flowchart TB
 
 | Item | Notes |
 |---|---|
-| Centre the lone student-guide card | One card in a three column grid sits left; centre it until more guides exist. See [Known Issues](Known-Issues). |
 | More books go live | The bookshelf pipeline has more picture books and a new Chapter Books line. Repeat the flip for each, in three languages. See [Books and Buy Links](Books-and-Buy-Links). |
 | Direct hardcover sales | Lulu Direct, printed in Ontario. On site Shopify Buy Button or a link to lulu.com, still to decide. The second button slot is ready. |
 | Resources reveal stagger | A small delay ladder across the nine resource cards. Cosmetic. |
-| Deferred SEO | `BreadcrumbList` schema; `sameAs` once real profiles exist; per page Open Graph images; absolute `og:image`. |
+| Deferred SEO | `BreadcrumbList` schema; `sameAs` once real profiles exist; per page Open Graph images. |
 | Real device pass | Check the site on a real phone and tablet, especially the Arabic pages. |
 
 ## In the Cloudflare dashboard

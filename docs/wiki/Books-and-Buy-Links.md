@@ -36,7 +36,7 @@ Every placeholder card carries the steps in an HTML comment. In short, for **eac
 2. Replace the placeholder frame (`book-cover--placeholder` with the logo mark) with `<img class="book-cover" src="../../assets/images/books/<slug>-cover.jpg" alt="...">`, with the `alt` text translated.
 3. Change the status pill from "In development" to "Available now" (translated).
 4. Replace the **Notify me** link with the Buy on Amazon button, using the link Amazon's SiteStripe generates for that book (see below), with `target="_blank" rel="noopener sponsored"`.
-5. Add a schema.org `Book` node to the page's JSON-LD `@graph`, with a clean `https://www.amazon.ca/dp/<ASIN>` offer URL (no tag).
+5. Add a schema.org `Book` node to the page's JSON-LD `@graph`, with a clean `https://www.amazon.ca/dp/<ASIN>` offer URL (no tag) and the Amazon.ca paperback price in `CAD`.
 6. Update the section heading and intro if they still talk about books "in development", and add a `CHANGELOG.md` entry and tag.
 
 ## Buy links and the Amazon Associates tag
@@ -75,7 +75,7 @@ Book cards extend the shared `.service-card`, so they inherit the frosted glass 
 - [Pages and Features](Pages-and-Features): the rest of the Books page
 - [SEO](SEO): the `Book` nodes in context
 - [Runbooks](Runbooks#publish-a-new-book): the step list as a checklist
-- [Known Issues](Known-Issues): the lone student-guide card
+- [Known Issues](Known-Issues): what the 2026-11-09 review found and fixed
 
 **Last checked:** 2026-11-09, against `main` at `6c632f0` and the live Books pages.
 

@@ -4,7 +4,21 @@ Notable changes to the website, deployment configuration, and project documentat
 
 Every release is versioned with a semver git tag (`MAJOR.MINOR.PATCH`) on its merge commit — **major** = redesign or identity/structural shift, **minor** = new feature or notable enhancement, **patch** = fix, content, or docs. Each entry is stamped with its release time (UTC, from the merge commit) and listed newest-first. See [GitHub Releases](https://github.com/vijaybpanangi/ezziclarity/releases) and `git tag` for the full list.
 
-## v3.9.5, Books copy brought up to date; Amazon Associates disclosure (2026-11-09 UTC)
+## v3.9.6, Remaining review fixes: link previews, prices, sitemap, layout (2026-11-09 UTC)
+
+Closes the code-fixable items from the 2026-11-09 Wiki review:
+
+- **Link previews.** `og:image` on all 19 pages is now the absolute `https://ezziclarity.ca/assets/images/og-ezzi-clarity.png`; some apps ignore relative preview images.
+- **Book prices.** The JSON-LD `Book` offers said `USD` with the US list prices ($10.50, $11.99) on `amazon.ca` links. They now carry the Amazon.ca paperback prices in `CAD` as checked on 2026-11-09: $14.50 (*The Blanket That Remembered*) and $16.56 (*Mei and the First Lantern*, *Nova's First Skate*). EN/FR/AR.
+- **Sitemap.** All 19 `lastmod` dates move from 2026-06-15 to 2026-11-09 (every page changed today).
+- **Gateway token.** The gateway small print used an undefined `var(--text-soft)`; now `var(--ink-soft)`.
+- **Hero overflow.** `.hero` now has `overflow-x: clip`, so the soft hero blob no longer makes the home pages 3px wider than a phone screen.
+- **Grid symmetry.** In a `.grid-3`, a lone item now takes the middle column (the single student-guide card on the Books pages), and at two columns (900px and below) an odd last item spans the row, centred at one column's width, so three books, services or resources read as two plus a centred one on tablets.
+- **Header fit.** Found during this pass: between 901px and about 1030px the French header (about 950px in English) ran past the edge and clipped its "Book a Call" button. The header now switches to the menu button below 1060px instead of 900px; the drawer already carries the nav, language switch and call to action.
+
+Checked in headless Chromium: no page wider than the viewport at 16 widths from 360 to 1440px across the gateway, home pages, inner pages and 404; every grid row centred at 1280, 1000, 800 and 390px; all JSON-LD parses; `sitemap.xml` is well formed. Still open, needing a person: the `www` to apex redirect (Cloudflare dashboard) and the Arabic native review.
+
+## v3.9.5, Books copy brought up to date; Amazon Associates disclosure (2026-11-09 20:34 UTC)
 
 Content fix across all three languages. Since `v3.8.0` three picture books have been on sale, but several lines still said the books were not out:
 
