@@ -51,15 +51,14 @@ The technical SEO foundation shipped on 2026-06-15 (see [`CHANGELOG.md`](CHANGEL
 
 ## Fixes found in the 2026-11-09 wiki review
 
-Found while checking the live site for the Wiki (details and screenshots: [Known Issues](https://github.com/vijaybpanangi/ezziclarity/wiki/Known-Issues)). None blocks a visitor, but the first two are visible:
+Found while checking the live site for the Wiki (details and screenshots: [Known Issues](https://github.com/vijaybpanangi/ezziclarity/wiki/Known-Issues)). None blocks a visitor. The unstyled nested 404 and the off-centre gateway heading were fixed in `v3.9.4`; the stale "books not out yet" copy and the missing Amazon Associates disclosure in `v3.9.5`. Still open:
 
-- **Stale "books not out yet" copy.** The Books pages' closing call to action (EN/FR/AR) still says the books aren't out, and the gateway, footer brand line (all pages, all languages) and several meta descriptions say children's books are "in the works", although three titles are live since `v3.8.0`.
-- **Amazon Associates disclosure missing.** Add a short translated line such as "As an Amazon Associate we earn from qualifying purchases." on the Books pages.
-- **Undefined token on the gateway.** The gateway's small print uses an undefined `var(--text-soft)` (should be `--ink-soft`). (The unstyled nested 404 and the off-centre gateway heading from this review were fixed in `v3.9.4`.)
+- **Undefined token on the gateway.** The gateway's small print uses an undefined `var(--text-soft)` (should be `--ink-soft`).
 - **Absolute `og:image`.** Every page's `og:image` is relative; link previews want `https://ezziclarity.ca/assets/images/og-ezzi-clarity.png`.
 - **`Book` offer currency.** The JSON-LD offers say `USD` on `amazon.ca` links; confirm the price and use `CAD`.
 - **Sitemap `lastmod`.** All 19 entries still read 2026-06-15.
 - **3px sideways scroll** on the home pages at phone width (likely the hero blob).
+- **Lone student-guide card.** The "Practical guides for students" grid on the Books pages holds one card in a three-column grid, so it sits at the left with two empty columns beside it. Centre a short last row (or the single card) until more guides exist.
 
 ---
 

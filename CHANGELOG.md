@@ -4,7 +4,18 @@ Notable changes to the website, deployment configuration, and project documentat
 
 Every release is versioned with a semver git tag (`MAJOR.MINOR.PATCH`) on its merge commit — **major** = redesign or identity/structural shift, **minor** = new feature or notable enhancement, **patch** = fix, content, or docs. Each entry is stamped with its release time (UTC, from the merge commit) and listed newest-first. See [GitHub Releases](https://github.com/vijaybpanangi/ezziclarity/releases) and `git tag` for the full list.
 
-## v3.9.4, 404 page styled on every path; doc fixes (2026-11-09 UTC)
+## v3.9.5, Books copy brought up to date; Amazon Associates disclosure (2026-11-09 UTC)
+
+Content fix across all three languages. Since `v3.8.0` three picture books have been on sale, but several lines still said the books were not out:
+
+- **Books pages closing call to action** (EN/FR/AR): "The books aren't out yet... the first title" now says three stories are out, more are coming (including the first student guide), and readers can ask to hear about the next title. The eyebrow became "Want to know what comes next?".
+- **Home "We write" chapter** (EN/FR/AR): "The first titles are still in development" now says the first three picture books are out and the student guides are on the way.
+- **Footer brand line** (all 18 language pages) and the **language gateway**: "children's books and guides in the works" now reads "children's books, with student guides on the way" (translated).
+- **Amazon Associates disclosure** added under the book grid on the three Books pages, as the Associates program requires: "As an Amazon Associate, Ezzi Clarity earns from qualifying purchases." The French uses Amazon's own wording ("En tant que Partenaire Amazon, ... réalise un bénéfice sur les achats remplissant les conditions requises"). New `.book-disclosure` rule in `style.css`: small, muted and centred.
+
+The new Arabic and French strings are added to `docs/superpowers/specs/arabic-review-checklist.md` for native review. Wiki Known Issues, Roadmap and Books pages updated.
+
+## v3.9.4, 404 page styled on every path; doc fixes (2026-11-09 20:28 UTC)
 
 The 404 page now links its stylesheet, logo and buttons with root-relative paths (`/style.css`, `/assets/images/logo-ec.svg`, `/en/`, `/`). Cloudflare Pages serves `404.html` at whatever URL was requested, so the old relative paths broke on any nested path (for example `/en/no-such-page/`), leaving unstyled text. The heading on the gateway card is also centred now: the global `h1 { max-width: 14ch }` rule made it a narrow block pinned to the left inside the centred card, about 62px off-centre on both the language gateway and the 404 page; `.gateway-card h1` now uses `margin: 0 auto 0.5rem`. Doc fixes: the v3.9.3 release time is corrected to the merge time (20:16 UTC), the Wiki's Home page no longer names a release that goes stale, and the Wiki's Known Issues, Roadmap, Pages and Features and Release History pages reflect these fixes.
 

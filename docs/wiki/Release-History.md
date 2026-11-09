@@ -3,7 +3,7 @@
 # Release History
 
 > [!NOTE]
-> **At a glance.** 26 releases from **v1.0.0** (2026-05-28, the trilingual static site goes live) to **v3.9.4** (2026-11-09, 404 page fix). Major versions mark identity shifts: v2 is the two pillar restructure, v3 the Soft Modern redesign. Every release is a semver tag on its merge commit with a timestamped entry in [`CHANGELOG.md`](https://github.com/vijaybpanangi/ezziclarity/blob/main/CHANGELOG.md), which has the full notes.
+> **At a glance.** 27 releases from **v1.0.0** (2026-05-28, the trilingual static site goes live) to **v3.9.5** (2026-11-09, books copy and Associates disclosure). Major versions mark identity shifts: v2 is the two pillar restructure, v3 the Soft Modern redesign. Every release is a semver tag on its merge commit with a timestamped entry in [`CHANGELOG.md`](https://github.com/vijaybpanangi/ezziclarity/blob/main/CHANGELOG.md), which has the full notes.
 
 ```mermaid
 flowchart LR
@@ -13,7 +13,7 @@ flowchart LR
     V31 --> V36[v3.6<br/>Jun 18<br/>Motion pass]:::ours
     V36 --> V37[v3.7<br/>Jul 9<br/>Books gallery]:::ours
     V37 --> V38[v3.8 to v3.9.2<br/>Aug 23<br/>Books live, Associates]:::ours
-    V38 --> V39[v3.9.3 to v3.9.4<br/>Nov 9<br/>Wiki in repo, 404 fix]:::ours
+    V38 --> V39[v3.9.3 to v3.9.5<br/>Nov 9<br/>Wiki in repo, 404 fix,<br/>books copy, disclosure]:::ours
 
     classDef ours fill:#FDE7DC,stroke:#E8835A,color:#1e1c18
 ```
@@ -24,7 +24,8 @@ Times are UTC, from the merge commit. PR links point at `vijaybpanangi/ezziclari
 
 | Version | When | Change | Summary |
 |---|---|---|---|
-| `v3.9.4` | 2026-11-09 | [PR 26](https://github.com/vijaybpanangi/ezziclarity/pull/26) | 404 page styled on every path, gateway heading centred, doc fixes |
+| `v3.9.5` | 2026-11-09 | [PR 28](https://github.com/vijaybpanangi/ezziclarity/pull/28) | Books copy brought up to date in three languages; Amazon Associates disclosure |
+| `v3.9.4` | 2026-11-09 20:28 | [PR 26](https://github.com/vijaybpanangi/ezziclarity/pull/26) | 404 page styled on every path, gateway heading centred, doc fixes |
 | `v3.9.3` | 2026-11-09 20:16 | [PR 25](https://github.com/vijaybpanangi/ezziclarity/pull/25) | The wiki moves into `docs/wiki/` with a `wiki-sync` workflow |
 | `v3.9.2` | 2026-08-23 22:27 | [PR 24](https://github.com/vijaybpanangi/ezziclarity/pull/24) | Buy links switched to the SiteStripe generated links |
 | `v3.9.1` | 2026-08-23 22:10 | [PR 23](https://github.com/vijaybpanangi/ezziclarity/pull/23) | Buy on Amazon button styled in a warm orange |

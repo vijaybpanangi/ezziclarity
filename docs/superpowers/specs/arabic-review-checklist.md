@@ -45,5 +45,17 @@ All Arabic prose on the restructured pages was produced by translation during th
 15. Eyebrow "يسعدنا أن نسمع منك" (We'd love to hear from you). Confirm warmth/brand voice.
 16. "إن كان سؤالك لا يزال في طور التشكّل" (If your question is still taking shape) — somewhat literal; a more idiomatic phrasing may be preferred.
 
+## Added 2026-11-09 (v3.9.5, books copy and Associates disclosure)
+
+New strings, written by translation, to confirm with a native speaker:
+
+17. Books CTA eyebrow (`ar/books/index.html`): "هل تريد أن تعرف ما الذي سيصدر بعد ذلك؟" (Want to know what comes next?).
+18. Books CTA text: "صدرت ثلاث قصص حتى الآن، والمزيد في الطريق، ومنها أول دليل للطلاب. إن كان هذا يلامس شيئًا فيك، أخبرنا، وسنُعلمك في اللحظة التي يتوفر فيها العنوان التالي."
+19. Amazon Associates disclosure under the book grid: "بصفتها شريكًا في برنامج Amazon Associates، تحصل إيزي كلاريتي على عمولة من عمليات الشراء المؤهلة." Confirm the register, and whether to keep the program name in Latin script.
+20. Home "We write" chapter (`ar/index.html`): "صدرت الآن أول ثلاث قصص مصوّرة، والأدلة الخاصة بالطلاب قيد الإعداد."
+21. Footer brand line (all AR pages): "استشارات تعليمية للطلاب، إلى جانب كتب للأطفال، وأدلة للطلاب قيد الإعداد."
+
+French strings from the same change, for a French reader's check: the CTA eyebrow "Vous voulez connaître la suite ?", the CTA text, the home sentence "Les trois premiers albums sont maintenant parus, et les guides pour étudiants sont en préparation.", the footer line, and the disclosure (Amazon's own French wording).
+
 ## After review
 Vijay will return with any corrections; apply them to the AR pages and re-run the em-dash / structure checks before merge.

@@ -3,13 +3,12 @@
 # Known Issues
 
 > [!NOTE]
-> **At a glance.** Problems found on the live site and in the code during the wiki review on 2026-11-09. None stops a visitor from reading or booking, but two are visible: the **Books pages still say the books are not out yet** in their closing call to action, and the **Amazon Associates disclosure** is missing. The unstyled nested 404 page and the off-centre gateway heading found in the same review were fixed in v3.9.4. Each item says where it lives and how to fix it. When one is fixed, remove it here and record it in `CHANGELOG.md`.
+> **At a glance.** Problems found on the live site and in the code during the wiki review on 2026-11-09. None stops a visitor from reading or booking. The visible ones are fixed: the unstyled nested 404 and the off-centre gateway heading in v3.9.4, and the stale books copy and missing Amazon Associates disclosure in v3.9.5. What remains is mostly behind the scenes, plus the lone student-guide card on the Books pages. Each item says where it lives and how to fix it. When one is fixed, remove it here and record it in `CHANGELOG.md`.
 
 ```mermaid
 flowchart LR
     subgraph Visible[Visible to visitors]
-      I2[Stale books copy<br/>three languages]:::ours
-      I3[No Associates<br/>disclosure]:::thirdparty
+      I2[Lone student-guide card<br/>left aligned in a 3 column grid]:::ours
     end
     subgraph Hidden[Behind the scenes]
       I5[Relative og:image]:::visitor
@@ -31,8 +30,7 @@ flowchart LR
 
 | Issue | Where | Fix |
 |---|---|---|
-| **Books copy still says the books are not out.** The closing call to action reads "The books aren't out yet... We'll let you know the moment the first title is available", while three titles are live above it. The gateway, the footer and several meta descriptions also say "children's books and guides in the works". | `en/books/`, `fr/livres/`, `ar/books/` (closing section); `index.html`; the footer brand line on every page in all three languages | Reword to invite readers to hear about the *next* title; update the gateway, footer and descriptions in all three languages; get the Arabic checked. |
-| **No Amazon Associates disclosure.** Associates rules ask for a clear statement such as "As an Amazon Associate we earn from qualifying purchases." | Books pages, three languages | Add a short translated line near the book grid or in the footer of the Books pages. |
+| **Lone student-guide card.** "Practical guides for students" has one card in a three column grid, so it sits at the left with two empty columns beside it, which breaks the site's symmetry. | `en/books/`, `fr/livres/`, `ar/books/` | Centre a short last row (or the single card) until more guides exist. |
 
 ## Behind the scenes
 
@@ -52,6 +50,8 @@ flowchart LR
 |---|---|
 | 404 page unstyled on nested paths (relative `style.css` and logo); now root-relative | v3.9.4 |
 | Gateway and 404 heading about 62px off centre (global `h1` max width without auto margins) | v3.9.4 |
+| Books pages, home, footer and gateway still said the books were not out or "in the works" | v3.9.5 |
+| No Amazon Associates disclosure on the Books pages | v3.9.5 |
 
 ## Related pages
 
@@ -64,8 +64,7 @@ flowchart LR
 <details>
 <summary>Sources</summary>
 
-- `grep -rln "in the works"` across the HTML; Books pages' `section-cta` blocks in all three languages
-- `grep -i "associate\|commission\|affiliate"` on the Books pages: no matches
+- Books pages' second grid (one `.book-card`) at 1280px
 - `og:image` values in each `<head>`; JSON-LD `Book` offers; `sitemap.xml` `lastmod` values
 - `document.documentElement.scrollWidth` of 393 at a 390px viewport on `/en/` and `/ar/`
 
