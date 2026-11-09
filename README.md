@@ -77,7 +77,7 @@ One row per release — every release is a semver git tag on its merge commit. F
 
 | Version | When (UTC) | PR | Summary |
 |---|---|---|---|
-| `v3.9.3` | 2026-11-09 | this PR | Docs: the Wiki moves into `docs/wiki/` with a `wiki-sync` workflow; stale docs refreshed |
+| `v3.9.3` | 2026-11-09 | [#25](https://github.com/vijaybpanangi/ezziclarity/pull/25) | Docs: the Wiki moves into `docs/wiki/` with a `wiki-sync` workflow; stale docs refreshed |
 | `v3.9.2` | 2026-08-23 22:27 | [#24](https://github.com/vijaybpanangi/ezziclarity/pull/24) | Buy links switched to the SiteStripe-generated links |
 | `v3.9.1` | 2026-08-23 22:10 | [#23](https://github.com/vijaybpanangi/ezziclarity/pull/23) | "Buy on Amazon" button styled in a warm orange |
 | `v3.9.0` | 2026-08-23 22:00 | [#22](https://github.com/vijaybpanangi/ezziclarity/pull/22) | Amazon Associates tag `ezziclarity-20` on all nine buy buttons |
