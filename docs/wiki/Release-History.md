@@ -3,7 +3,7 @@
 # Release History
 
 > [!NOTE]
-> **At a glance.** 24 tagged releases from **v1.0.0** (2026-05-28, the trilingual static site goes live) to **v3.9.2** (2026-08-23, SiteStripe buy links). Major versions mark identity shifts: v2 is the two pillar restructure, v3 the Soft Modern redesign. Every release is a semver tag on its merge commit with a timestamped entry in [`CHANGELOG.md`](https://github.com/vijaybpanangi/ezziclarity/blob/main/CHANGELOG.md), which has the full notes.
+> **At a glance.** 26 releases from **v1.0.0** (2026-05-28, the trilingual static site goes live) to **v3.9.4** (2026-11-09, 404 page fix). Major versions mark identity shifts: v2 is the two pillar restructure, v3 the Soft Modern redesign. Every release is a semver tag on its merge commit with a timestamped entry in [`CHANGELOG.md`](https://github.com/vijaybpanangi/ezziclarity/blob/main/CHANGELOG.md), which has the full notes.
 
 ```mermaid
 flowchart LR
@@ -12,7 +12,8 @@ flowchart LR
     V30 --> V31[v3.1 to v3.5<br/>Jun 15<br/>SEO, email, About, Liquid Glass]:::ours
     V31 --> V36[v3.6<br/>Jun 18<br/>Motion pass]:::ours
     V36 --> V37[v3.7<br/>Jul 9<br/>Books gallery]:::ours
-    V37 --> V38[v3.8 to v3.9<br/>Aug 23<br/>Books live, Associates]:::ours
+    V37 --> V38[v3.8 to v3.9.2<br/>Aug 23<br/>Books live, Associates]:::ours
+    V38 --> V39[v3.9.3 to v3.9.4<br/>Nov 9<br/>Wiki in repo, 404 fix]:::ours
 
     classDef ours fill:#FDE7DC,stroke:#E8835A,color:#1e1c18
 ```
@@ -23,6 +24,8 @@ Times are UTC, from the merge commit. PR links point at `vijaybpanangi/ezziclari
 
 | Version | When | Change | Summary |
 |---|---|---|---|
+| `v3.9.4` | 2026-11-09 | [PR 26](https://github.com/vijaybpanangi/ezziclarity/pull/26) | 404 page styled on every path, gateway heading centred, doc fixes |
+| `v3.9.3` | 2026-11-09 20:16 | [PR 25](https://github.com/vijaybpanangi/ezziclarity/pull/25) | The wiki moves into `docs/wiki/` with a `wiki-sync` workflow |
 | `v3.9.2` | 2026-08-23 22:27 | [PR 24](https://github.com/vijaybpanangi/ezziclarity/pull/24) | Buy links switched to the SiteStripe generated links |
 | `v3.9.1` | 2026-08-23 22:10 | [PR 23](https://github.com/vijaybpanangi/ezziclarity/pull/23) | Buy on Amazon button styled in a warm orange |
 | `v3.9.0` | 2026-08-23 22:00 | [PR 22](https://github.com/vijaybpanangi/ezziclarity/pull/22) | Amazon Associates tag `ezziclarity-20` on all nine buy buttons |
@@ -67,7 +70,7 @@ The repo's first commits on 2026-05-26 were an upload of the static conversion o
 <details>
 <summary>Sources</summary>
 
-- `git for-each-ref refs/tags` (24 tags)
+- `git for-each-ref refs/tags` (24 tags as of 2026-11-09 before v3.9.3 and v3.9.4 were tagged)
 - `git log --format='%h %ad %s'` on `main`
 - `CHANGELOG.md` headings and `README.md` release table
 

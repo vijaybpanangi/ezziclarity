@@ -54,7 +54,8 @@ All links and assets are relative, so the number of `../` depends on how deep a 
 
 | Page | Stylesheet | Image |
 |---|---|---|
-| `/index.html`, `/404.html` | `style.css` | `assets/images/...` |
+| `/index.html` | `style.css` | `assets/images/...` |
+| `/404.html` | `/style.css` (root-relative, because it is served at any URL) | `/assets/images/...` |
 | `/en/index.html` | `../style.css` | `../assets/images/...` |
 | `/en/about/index.html` | `../../style.css` | `../../assets/images/...` |
 

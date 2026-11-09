@@ -8,7 +8,7 @@
 ```mermaid
 flowchart TB
     subgraph Repo[In the repo]
-      R1[Fix 404 paths and<br/>stale books copy]:::ours
+      R1[Fix stale books copy]:::ours
       R2[Associates disclosure]:::ours
       R3[Next book flips]:::ours
       R4[Resources reveal stagger]:::ours
@@ -40,7 +40,7 @@ flowchart TB
 
 | Item | Notes |
 |---|---|
-| Fix the visible issues | 404 paths, stale "not out yet" books copy, gateway centring. See [Known Issues](Known-Issues). |
+| Fix the stale books copy | The "not out yet" call to action and "in the works" lines, in three languages. See [Known Issues](Known-Issues). |
 | Amazon Associates disclosure | A translated line on the Books pages. |
 | More books go live | The bookshelf pipeline has more picture books and a new Chapter Books line. Repeat the flip for each, in three languages. See [Books and Buy Links](Books-and-Buy-Links). |
 | Direct hardcover sales | Lulu Direct, printed in Ontario. On site Shopify Buy Button or a link to lulu.com, still to decide. The second button slot is ready. |
