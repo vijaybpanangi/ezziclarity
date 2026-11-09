@@ -97,7 +97,7 @@ A plain card with "Page not found", a link to the English site and a link back t
 | Structured data | A JSON-LD `@graph` on every page; see [SEO](SEO) |
 | Accessibility scaffolding | Skip link, `aria-label`, `aria-expanded`, `aria-current`, empty `alt` on decorative images |
 
-On a phone the header collapses to the logo and a menu button, and columns stack:
+Below 1060px wide the header collapses to the logo and a menu button; on a phone the columns stack too:
 
 | English Books, phone width | Arabic Home, phone width |
 |---|---|

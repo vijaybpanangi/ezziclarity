@@ -51,14 +51,7 @@ The technical SEO foundation shipped on 2026-06-15 (see [`CHANGELOG.md`](CHANGEL
 
 ## Fixes found in the 2026-11-09 wiki review
 
-Found while checking the live site for the Wiki (details and screenshots: [Known Issues](https://github.com/vijaybpanangi/ezziclarity/wiki/Known-Issues)). None blocks a visitor. The unstyled nested 404 and the off-centre gateway heading were fixed in `v3.9.4`; the stale "books not out yet" copy and the missing Amazon Associates disclosure in `v3.9.5`. Still open:
-
-- **Undefined token on the gateway.** The gateway's small print uses an undefined `var(--text-soft)` (should be `--ink-soft`).
-- **Absolute `og:image`.** Every page's `og:image` is relative; link previews want `https://ezziclarity.ca/assets/images/og-ezzi-clarity.png`.
-- **`Book` offer currency.** The JSON-LD offers say `USD` on `amazon.ca` links; confirm the price and use `CAD`.
-- **Sitemap `lastmod`.** All 19 entries still read 2026-06-15.
-- **3px sideways scroll** on the home pages at phone width (likely the hero blob).
-- **Lone student-guide card.** The "Practical guides for students" grid on the Books pages holds one card in a three-column grid, so it sits at the left with two empty columns beside it. Centre a short last row (or the single card) until more guides exist.
+All fixed. While checking the live site for the Wiki, the review found a set of small problems; they shipped in `v3.9.4` (unstyled nested 404, off-centre gateway heading), `v3.9.5` (stale "books not out yet" copy, missing Amazon Associates disclosure) and `v3.9.6` (relative `og:image`, `USD` offer prices on `amazon.ca` links, stale sitemap dates, an undefined gateway colour token, the hero blob widening the page on phones, the lone student-guide card, and the French header clipping its Book a Call button between 901 and 1060px). Details: [Known Issues](https://github.com/vijaybpanangi/ezziclarity/wiki/Known-Issues). Two items need a person rather than a code change: the `www` to apex redirect (above) and the Arabic native review (`docs/superpowers/specs/arabic-review-checklist.md`).
 
 ---
 

@@ -54,7 +54,7 @@ Note that the local server does not apply `_redirects` and serves its own 404, s
 2. Save the cover as `assets/images/books/<slug>-cover.jpg`, about 900 by 1440, stripped of metadata.
 3. In Amazon Associates, use **SiteStripe** on the book's Amazon.ca page to get the tagged link (`tag=ezziclarity-20`).
 4. In `en/books/`, `fr/livres/` and `ar/books/`, add or flip the card following its `<!-- FLIP TO LIVE -->` comment: real `<img class="book-cover">`, "Available now" pill, Buy on Amazon button with `target="_blank" rel="noopener sponsored"`.
-5. Add a `Book` node to each page's JSON-LD with the clean `https://www.amazon.ca/dp/<ASIN>` link, and check the price and currency.
+5. Add a `Book` node to each page's JSON-LD with the clean `https://www.amazon.ca/dp/<ASIN>` link, the paperback price as shown on Amazon.ca, and `"priceCurrency": "CAD"` (not the US list price).
 6. Keep the grid balanced (three per row, or centre a short last row).
 7. Update the section intro and closing call to action if they mention books "coming" or "not out yet".
 8. Release as a minor version.

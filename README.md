@@ -77,7 +77,8 @@ One row per release — every release is a semver git tag on its merge commit. F
 
 | Version | When (UTC) | PR | Summary |
 |---|---|---|---|
-| `v3.9.5` | 2026-11-09 | [#28](https://github.com/vijaybpanangi/ezziclarity/pull/28) | Books copy brought up to date (EN/FR/AR); Amazon Associates disclosure on the Books pages |
+| `v3.9.6` | 2026-11-09 | [#29](https://github.com/vijaybpanangi/ezziclarity/pull/29) | Review fixes: absolute og:image, CAD book prices, sitemap dates, grid and header symmetry, hero overflow |
+| `v3.9.5` | 2026-11-09 20:34 | [#28](https://github.com/vijaybpanangi/ezziclarity/pull/28) | Books copy brought up to date (EN/FR/AR); Amazon Associates disclosure on the Books pages |
 | `v3.9.4` | 2026-11-09 20:28 | [#26](https://github.com/vijaybpanangi/ezziclarity/pull/26) | 404 page styled on nested paths; gateway heading centred; doc fixes |
 | `v3.9.3` | 2026-11-09 20:16 | [#25](https://github.com/vijaybpanangi/ezziclarity/pull/25) | Docs: the Wiki moves into `docs/wiki/` with a `wiki-sync` workflow; stale docs refreshed |
 | `v3.9.2` | 2026-08-23 22:27 | [#24](https://github.com/vijaybpanangi/ezziclarity/pull/24) | Buy links switched to the SiteStripe-generated links |

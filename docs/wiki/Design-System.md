@@ -48,7 +48,7 @@ All three `@import`s must stay at the very top of the file: an `@import` after a
 
 ## Layout tokens
 
-`--container: 1140px`, `--header-h: 88px`, radii `--r-sm` 6px, `--r-md` 10px, `--r-lg` 16px, `--r-xl` 24px, `--r-xxl` 28px and `--r-pill`. Breakpoints are 1024px, 900px and 640px.
+`--container: 1140px`, `--header-h: 88px`, radii `--r-sm` 6px, `--r-md` 10px, `--r-lg` 16px, `--r-xl` 24px, `--r-xxl` 28px and `--r-pill`. Breakpoints: the header switches to the menu button below 1060px (the French header needs about 1030px); layouts adjust at 1024px, 900px (three column grids become two) and 640px (one column).
 
 ## Components
 
@@ -90,6 +90,8 @@ Introduced in v3.6.0 and strengthened in v3.6.1, all in CSS:
 ## Symmetry and balance
 
 Grids divide evenly (three services, three books, nine resources as three by three), cards in a row share a height, and buttons pin to the bottom of cards so they line up. Keep that balance when you add items: four books would read better as two by two, or as a centred last row, than as three plus an orphan.
+
+The stylesheet helps (v3.9.6): in a `.grid-3`, a lone item takes the middle column, and at two columns (900px and below) an odd last item spans the row and is centred at one column's width, so three books or three services read as two plus a centred one on a tablet.
 
 ## Related pages
 
