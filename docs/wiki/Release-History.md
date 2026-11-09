@@ -24,7 +24,7 @@ Times are UTC, from the merge commit. PR links point at `vijaybpanangi/ezziclari
 
 | Version | When | Change | Summary |
 |---|---|---|---|
-| `v3.9.6` | 2026-11-09 | [PR 29](https://github.com/vijaybpanangi/ezziclarity/pull/29) | Review fixes: absolute og:image, CAD prices, sitemap dates, grid and header symmetry, hero overflow |
+| `v3.9.6` | 2026-11-09 20:49 | [PR 29](https://github.com/vijaybpanangi/ezziclarity/pull/29) | Review fixes: absolute og:image, CAD prices, sitemap dates, grid and header symmetry, hero overflow |
 | `v3.9.5` | 2026-11-09 20:34 | [PR 28](https://github.com/vijaybpanangi/ezziclarity/pull/28) | Books copy brought up to date in three languages; Amazon Associates disclosure |
 | `v3.9.4` | 2026-11-09 20:28 | [PR 26](https://github.com/vijaybpanangi/ezziclarity/pull/26) | 404 page styled on every path, gateway heading centred, doc fixes |
 | `v3.9.3` | 2026-11-09 20:16 | [PR 25](https://github.com/vijaybpanangi/ezziclarity/pull/25) | The wiki moves into `docs/wiki/` with a `wiki-sync` workflow |
