@@ -1238,6 +1238,13 @@ main { padding-bottom: 0; }
   outline-color: rgba(196,116,0,0.55);
 }
 
+.book-disclosure {
+  margin: 1.75rem auto 0;
+  max-width: 60ch;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
 .book-cta-notify {
   font-weight: 700;
   color: var(--sky-dark);

@@ -60,7 +60,7 @@ flowchart LR
 - **The button colour (v3.9.1).** `.book-cta .btn-primary` is a warm orange gradient with dark text, so it reads as an Amazon button without using Amazon's logo or wordmark, which their brand rules restrict. Contrast is about 8 to 1.
 
 > [!IMPORTANT]
-> Amazon's Associates rules ask sites to show a clear disclosure such as "As an Amazon Associate we earn from qualifying purchases." The Books pages do not show one yet. This is tracked in [Known Issues](Known-Issues) and the [Roadmap](Roadmap).
+> **Keep the disclosure.** Amazon's Associates rules require a clear disclosure wherever tagged links appear. Since v3.9.5 each Books page shows one, centred under the book grid (`.book-disclosure`): "As an Amazon Associate, Ezzi Clarity earns from qualifying purchases." The French uses Amazon's own wording ("En tant que Partenaire Amazon, ... réalise un bénéfice sur les achats remplissant les conditions requises"), and the Arabic is a translation awaiting native review. If buy links ever appear on another page, add the disclosure there too.
 
 ## Direct hardcover sales (future)
 
@@ -75,7 +75,7 @@ Book cards extend the shared `.service-card`, so they inherit the frosted glass 
 - [Pages and Features](Pages-and-Features): the rest of the Books page
 - [SEO](SEO): the `Book` nodes in context
 - [Runbooks](Runbooks#publish-a-new-book): the step list as a checklist
-- [Known Issues](Known-Issues): stale "not out yet" copy and the missing disclosure
+- [Known Issues](Known-Issues): the lone student-guide card
 
 **Last checked:** 2026-11-09, against `main` at `6c632f0` and the live Books pages.
 

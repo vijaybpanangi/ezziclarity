@@ -61,7 +61,7 @@ Three service cards, the four step process as a vertical timeline, a short set o
 
 ### Books
 
-See [Books and Buy Links](Books-and-Buy-Links) for the full story. The page has an introduction to the children's series, a "Now available" grid of three live books with **Buy on Amazon** buttons, a "Practical guides for students" section with one guide in development, and a closing call to action.
+See [Books and Buy Links](Books-and-Buy-Links) for the full story. The page has an introduction to the children's series, a "Now available" grid of three live books with **Buy on Amazon** buttons, the Amazon Associates disclosure, a "Practical guides for students" section with one guide in development, and a closing call to action inviting readers to hear about the next title.
 
 ### Resources
 
