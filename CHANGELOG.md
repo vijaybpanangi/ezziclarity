@@ -4,7 +4,7 @@ Notable changes to the website, deployment configuration, and project documentat
 
 Every release is versioned with a semver git tag (`MAJOR.MINOR.PATCH`) on its merge commit — **major** = redesign or identity/structural shift, **minor** = new feature or notable enhancement, **patch** = fix, content, or docs. Each entry is stamped with its release time (UTC, from the merge commit) and listed newest-first. See [GitHub Releases](https://github.com/vijaybpanangi/ezziclarity/releases) and `git tag` for the full list.
 
-## v3.9.6, Remaining review fixes: link previews, prices, sitemap, layout (2026-11-09 UTC)
+## v3.9.6, Remaining review fixes: link previews, prices, sitemap, layout (2026-11-09 20:49 UTC)
 
 Closes the code-fixable items from the 2026-11-09 Wiki review:
 
